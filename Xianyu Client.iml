@@ -7,5 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="akka-actor_2.11-2.3.3" level="project" />
+    <orderEntry type="library" exported="" name="native" level="project" />
   </component>
 </module>
