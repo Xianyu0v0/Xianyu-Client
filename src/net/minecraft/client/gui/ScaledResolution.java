@@ -7,8 +7,8 @@ public class ScaledResolution
 {
     private final double scaledWidthD;
     private final double scaledHeightD;
-    private int scaledWidth;
-    private int scaledHeight;
+    private static int scaledWidth;
+    private static int scaledHeight;
     private int scaleFactor;
 
     public ScaledResolution(Minecraft p_i46445_1_)
@@ -40,14 +40,14 @@ public class ScaledResolution
         this.scaledHeight = MathHelper.ceiling_double_int(this.scaledHeightD);
     }
 
-    public int getScaledWidth()
+    public static int getScaledWidth()
     {
-        return this.scaledWidth;
+        return scaledWidth;
     }
 
-    public int getScaledHeight()
+    public static int getScaledHeight()
     {
-        return this.scaledHeight;
+        return scaledHeight;
     }
 
     public double getScaledWidth_double()
