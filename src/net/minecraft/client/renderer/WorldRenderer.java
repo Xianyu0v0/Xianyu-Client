@@ -275,7 +275,7 @@ public class WorldRenderer
         this.modeTriangles = false;
     }
 
-    public void func_181668_a(int p_181668_1_, VertexFormat p_181668_2_)
+    public void begin(int p_181668_1_, VertexFormat p_181668_2_)
     {
         if (this.isDrawing)
         {
@@ -323,7 +323,7 @@ public class WorldRenderer
         }
     }
 
-    public WorldRenderer func_181673_a(double p_181673_1_, double p_181673_3_)
+    public WorldRenderer tex(double p_181673_1_, double p_181673_3_)
     {
         if (this.quadSprite != null && this.quadSprites != null)
         {
@@ -499,7 +499,7 @@ public class WorldRenderer
         this.needsUpdate = true;
     }
 
-    public WorldRenderer func_181666_a(float p_181666_1_, float p_181666_2_, float p_181666_3_, float p_181666_4_)
+    public WorldRenderer color(float p_181666_1_, float p_181666_2_, float p_181666_3_, float p_181666_4_)
     {
         return this.func_181669_b((int)(p_181666_1_ * 255.0F), (int)(p_181666_2_ * 255.0F), (int)(p_181666_3_ * 255.0F), (int)(p_181666_4_ * 255.0F));
     }
@@ -580,7 +580,7 @@ public class WorldRenderer
         }
     }
 
-    public void func_181675_d()
+    public void endVertex()
     {
         ++this.vertexCount;
         this.func_181670_b(this.vertexFormat.func_181719_f());
@@ -593,7 +593,7 @@ public class WorldRenderer
         }
     }
 
-    public WorldRenderer func_181662_b(double p_181662_1_, double p_181662_3_, double p_181662_5_)
+    public WorldRenderer pos(double p_181662_1_, double p_181662_3_, double p_181662_5_)
     {
         if (Config.isShaders())
         {
@@ -1076,5 +1076,22 @@ public class WorldRenderer
         {
             return this.stateVertexFormat;
         }
+    }
+
+    public void addVertexWithUV(double p_178985_1_, double p_178985_3_, double p_178985_5_, double p_178985_7_, double p_178985_9_) {
+        this.tex(p_178985_7_, p_178985_9_);
+        this.pos(p_178985_1_, p_178985_3_, p_178985_5_);
+    }
+
+    public void startDrawingQuads() {
+        this.startDrawing(7);
+    }
+    public void startDrawing(int mode) {
+        if (this.isDrawing) {
+            throw new IllegalStateException("Already building!");
+        }
+        this.isDrawing = true;
+        this.reset();
+        this.drawMode = mode;
     }
 }

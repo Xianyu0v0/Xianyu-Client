@@ -14,13 +14,13 @@ public class Tezzelator
 
     public Tezzelator vertex(double p_vertex_1_, double p_vertex_3_, double p_vertex_5_)
     {
-        t.getWorldRenderer().func_181662_b(p_vertex_1_, p_vertex_3_, p_vertex_5_);
+        t.getWorldRenderer().pos(p_vertex_1_, p_vertex_3_, p_vertex_5_);
         return this;
     }
 
     public void color(float p_color_1_, float p_color_2_, float p_color_3_, float p_color_4_)
     {
-        t.getWorldRenderer().func_181666_a(p_color_1_, p_color_2_, p_color_3_, p_color_4_);
+        t.getWorldRenderer().color(p_color_1_, p_color_2_, p_color_3_, p_color_4_);
     }
 
     public void tex2(short p_tex2_1_, short p_tex2_2_)
@@ -35,12 +35,12 @@ public class Tezzelator
 
     public void begin(int p_begin_1_, RealmsVertexFormat p_begin_2_)
     {
-        t.getWorldRenderer().func_181668_a(p_begin_1_, p_begin_2_.getVertexFormat());
+        t.getWorldRenderer().begin(p_begin_1_, p_begin_2_.getVertexFormat());
     }
 
     public void endVertex()
     {
-        t.getWorldRenderer().func_181675_d();
+        t.getWorldRenderer().endVertex();
     }
 
     public void offset(double p_offset_1_, double p_offset_3_, double p_offset_5_)
@@ -55,7 +55,7 @@ public class Tezzelator
 
     public Tezzelator tex(double p_tex_1_, double p_tex_3_)
     {
-        t.getWorldRenderer().func_181673_a(p_tex_1_, p_tex_3_);
+        t.getWorldRenderer().tex(p_tex_1_, p_tex_3_);
         return this;
     }
 }

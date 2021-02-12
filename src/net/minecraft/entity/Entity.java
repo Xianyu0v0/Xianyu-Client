@@ -100,7 +100,7 @@ public abstract class Entity implements ICommandSender
     public float prevRotationPitch;
 
     /** Axis aligned bounding box. */
-    private AxisAlignedBB boundingBox;
+    public AxisAlignedBB boundingBox;
     public boolean onGround;
 
     /**
@@ -1344,6 +1344,25 @@ public abstract class Entity implements ICommandSender
         double d1 = this.posY - y;
         double d2 = this.posZ - z;
         return (double)MathHelper.sqrt_double(d0 * d0 + d1 * d1 + d2 * d2);
+    }
+
+    public String getName()
+    {
+        if (this.hasCustomName())
+        {
+            return this.getCustomNameTag();
+        }
+        else
+        {
+            String s = EntityList.getEntityString(this);
+
+            if (s == null)
+            {
+                s = "generic";
+            }
+
+            return StatCollector.translateToLocal("entity." + s + ".name");
+        }
     }
 
     /**

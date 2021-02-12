@@ -414,7 +414,7 @@ public class RenderChunk
 
     private void preRenderBlocks(WorldRenderer worldRendererIn, BlockPos pos)
     {
-        worldRendererIn.func_181668_a(7, DefaultVertexFormats.BLOCK);
+        worldRendererIn.begin(7, DefaultVertexFormats.BLOCK);
 
         if (Config.isRenderRegions())
         {

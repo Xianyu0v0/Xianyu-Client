@@ -1637,6 +1637,11 @@ public abstract class EntityPlayer extends EntityLivingBase
         }
     }
 
+    @Override
+    public String getName() {
+        return this.gameProfile.getName();
+    }
+
     private boolean isInBed()
     {
         return this.worldObj.getBlockState(this.playerLocation).getBlock() == Blocks.bed;
