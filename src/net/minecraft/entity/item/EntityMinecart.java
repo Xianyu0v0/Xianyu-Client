@@ -196,7 +196,7 @@ public abstract class EntityMinecart extends Entity implements IWorldNameable
     {
         this.setDead();
 
-        if (this.worldObj.getGameRules().getBoolean("doEntityDrops"))
+        if (this.worldObj.getGameRules().getGameRuleBooleanValue("doEntityDrops"))
         {
             ItemStack itemstack = new ItemStack(Items.minecart, 1);
 
@@ -1095,9 +1095,9 @@ public abstract class EntityMinecart extends Entity implements IWorldNameable
     /**
      * Gets the name of this command sender (usually username, but possibly "Rcon")
      */
-    public String getName()
+    public String getCommandSenderName()
     {
-        return this.entityName != null ? this.entityName : super.getName();
+        return this.entityName != null ? this.entityName : super.getCommandSenderName();
     }
 
     /**
@@ -1127,7 +1127,7 @@ public abstract class EntityMinecart extends Entity implements IWorldNameable
         }
         else
         {
-            ChatComponentTranslation chatcomponenttranslation = new ChatComponentTranslation(this.getName(), new Object[0]);
+            ChatComponentTranslation chatcomponenttranslation = new ChatComponentTranslation(this.getCommandSenderName(), new Object[0]);
             chatcomponenttranslation.getChatStyle().setChatHoverEvent(this.getHoverEvent());
             chatcomponenttranslation.getChatStyle().setInsertion(this.getUniqueID().toString());
             return chatcomponenttranslation;

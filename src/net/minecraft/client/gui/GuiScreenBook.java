@@ -190,7 +190,7 @@ public class GuiScreenBook extends GuiScreen
                 if (publish)
                 {
                     s2 = "MC|BSign";
-                    this.bookObj.setTagInfo("author", new NBTTagString(this.editingPlayer.getName()));
+                    this.bookObj.setTagInfo("author", new NBTTagString(this.editingPlayer.getCommandSenderName()));
                     this.bookObj.setTagInfo("title", new NBTTagString(this.bookTitle.trim()));
 
                     for (int i = 0; i < this.bookPages.tagCount(); ++i)
@@ -297,6 +297,9 @@ public class GuiScreenBook extends GuiScreen
 
     /**
      * Processes keystrokes when editing the text of a book
+     *  
+     * @param typedChar The typed character
+     * @param keyCode The numerical key code
      */
     private void keyTypedInBook(char typedChar, int keyCode)
     {
@@ -435,7 +438,7 @@ public class GuiScreenBook extends GuiScreen
             this.fontRendererObj.drawString(s1, i + 36 + (116 - k) / 2, j + 16 + 16, 0);
             int l = this.fontRendererObj.getStringWidth(s);
             this.fontRendererObj.drawString(s, i + 36 + (116 - l) / 2, j + 48, 0);
-            String s2 = I18n.format("book.byAuthor", new Object[] {this.editingPlayer.getName()});
+            String s2 = I18n.format("book.byAuthor", new Object[] {this.editingPlayer.getCommandSenderName()});
             int i1 = this.fontRendererObj.getStringWidth(s2);
             this.fontRendererObj.drawString(EnumChatFormatting.DARK_GRAY + s2, i + 36 + (116 - i1) / 2, j + 48 + 10, 0);
             String s3 = I18n.format("book.finalizeWarning", new Object[0]);

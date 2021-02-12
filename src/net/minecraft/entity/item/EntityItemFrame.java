@@ -97,7 +97,7 @@ public class EntityItemFrame extends EntityHanging
 
     public void dropItemOrSelf(Entity p_146065_1_, boolean p_146065_2_)
     {
-        if (this.worldObj.getGameRules().getBoolean("doEntityDrops"))
+        if (this.worldObj.getGameRules().getGameRuleBooleanValue("doEntityDrops"))
         {
             ItemStack itemstack = this.getDisplayedItem();
 
@@ -136,7 +136,7 @@ public class EntityItemFrame extends EntityHanging
             if (p_110131_1_.getItem() == Items.filled_map)
             {
                 MapData mapdata = ((ItemMap)p_110131_1_.getItem()).getMapData(p_110131_1_, this.worldObj);
-                mapdata.mapDecorations.remove("frame-" + this.getEntityId());
+                mapdata.playersVisibleOnMap.remove("frame-" + this.getEntityId());
             }
 
             p_110131_1_.setItemFrame((EntityItemFrame)null);

@@ -14,7 +14,7 @@ public class VertexFormat
     /** The next available offset in this vertex format */
     private int nextOffset;
     private int colorElementOffset;
-    private List<Integer> uvOffsetsById;
+    private List<Integer> elementOffsetsById;
     private int normalElementOffset;
 
     public VertexFormat(VertexFormat vertexFormatIn)
@@ -35,7 +35,7 @@ public class VertexFormat
         this.offsets = Lists.<Integer>newArrayList();
         this.nextOffset = 0;
         this.colorElementOffset = -1;
-        this.uvOffsetsById = Lists.<Integer>newArrayList();
+        this.elementOffsetsById = Lists.<Integer>newArrayList();
         this.normalElementOffset = -1;
     }
 
@@ -44,7 +44,7 @@ public class VertexFormat
         this.elements.clear();
         this.offsets.clear();
         this.colorElementOffset = -1;
-        this.uvOffsetsById.clear();
+        this.elementOffsetsById.clear();
         this.normalElementOffset = -1;
         this.nextOffset = 0;
     }
@@ -73,7 +73,7 @@ public class VertexFormat
                     break;
 
                 case UV:
-                    this.uvOffsetsById.add(p_181721_1_.getIndex(), Integer.valueOf(this.nextOffset));
+                    this.elementOffsetsById.add(p_181721_1_.getIndex(), Integer.valueOf(this.nextOffset));
             }
 
             this.nextOffset += p_181721_1_.getSize();
@@ -101,14 +101,14 @@ public class VertexFormat
         return this.colorElementOffset;
     }
 
-    public boolean hasUvOffset(int id)
+    public boolean hasElementOffset(int id)
     {
-        return this.uvOffsetsById.size() - 1 >= id;
+        return this.elementOffsetsById.size() - 1 >= id;
     }
 
-    public int getUvOffsetById(int id)
+    public int getElementOffsetById(int id)
     {
-        return ((Integer)this.uvOffsetsById.get(id)).intValue();
+        return ((Integer)this.elementOffsetsById.get(id)).intValue();
     }
 
     public String toString()

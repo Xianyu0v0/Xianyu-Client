@@ -283,7 +283,7 @@ public class EntityCreeper extends EntityMob
     {
         if (!this.worldObj.isRemote)
         {
-            boolean flag = this.worldObj.getGameRules().getBoolean("mobGriefing");
+            boolean flag = this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing");
             float f = this.getPowered() ? 2.0F : 1.0F;
             this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius * f, flag);
             this.setDead();
@@ -305,7 +305,7 @@ public class EntityCreeper extends EntityMob
      */
     public boolean isAIEnabled()
     {
-        return this.field_175494_bm < 1 && this.worldObj.getGameRules().getBoolean("doMobLoot");
+        return this.field_175494_bm < 1 && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot");
     }
 
     public void func_175493_co()

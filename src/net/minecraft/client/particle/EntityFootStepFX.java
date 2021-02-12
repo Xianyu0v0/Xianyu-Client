@@ -28,6 +28,8 @@ public class EntityFootStepFX extends EntityFX
 
     /**
      * Renders the particle
+     *  
+     * @param worldRendererIn The WorldRenderer instance
      */
     public void renderParticle(WorldRenderer worldRendererIn, Entity entityIn, float partialTicks, float p_180434_4_, float p_180434_5_, float p_180434_6_, float p_180434_7_, float p_180434_8_)
     {
@@ -50,11 +52,11 @@ public class EntityFootStepFX extends EntityFX
         this.currentFootSteps.bindTexture(FOOTPRINT_TEXTURE);
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(770, 771);
-        worldRendererIn.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
-        worldRendererIn.pos((double)(f3 - 0.125F), (double)f4, (double)(f5 + 0.125F)).tex(0.0D, 1.0D).color(f6, f6, f6, f1).endVertex();
-        worldRendererIn.pos((double)(f3 + 0.125F), (double)f4, (double)(f5 + 0.125F)).tex(1.0D, 1.0D).color(f6, f6, f6, f1).endVertex();
-        worldRendererIn.pos((double)(f3 + 0.125F), (double)f4, (double)(f5 - 0.125F)).tex(1.0D, 0.0D).color(f6, f6, f6, f1).endVertex();
-        worldRendererIn.pos((double)(f3 - 0.125F), (double)f4, (double)(f5 - 0.125F)).tex(0.0D, 0.0D).color(f6, f6, f6, f1).endVertex();
+        worldRendererIn.func_181668_a(7, DefaultVertexFormats.field_181709_i);
+        worldRendererIn.func_181662_b((double)(f3 - 0.125F), (double)f4, (double)(f5 + 0.125F)).func_181673_a(0.0D, 1.0D).func_181666_a(f6, f6, f6, f1).func_181675_d();
+        worldRendererIn.func_181662_b((double)(f3 + 0.125F), (double)f4, (double)(f5 + 0.125F)).func_181673_a(1.0D, 1.0D).func_181666_a(f6, f6, f6, f1).func_181675_d();
+        worldRendererIn.func_181662_b((double)(f3 + 0.125F), (double)f4, (double)(f5 - 0.125F)).func_181673_a(1.0D, 0.0D).func_181666_a(f6, f6, f6, f1).func_181675_d();
+        worldRendererIn.func_181662_b((double)(f3 - 0.125F), (double)f4, (double)(f5 - 0.125F)).func_181673_a(0.0D, 0.0D).func_181666_a(f6, f6, f6, f1).func_181675_d();
         Tessellator.getInstance().draw();
         GlStateManager.disableBlend();
         GlStateManager.enableLighting();

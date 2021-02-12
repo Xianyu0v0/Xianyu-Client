@@ -411,7 +411,7 @@ public class ContainerRepair extends Container
         {
             for (int i = 0; i < this.inputSlots.getSizeInventory(); ++i)
             {
-                ItemStack itemstack = this.inputSlots.removeStackFromSlot(i);
+                ItemStack itemstack = this.inputSlots.getStackInSlotOnClosing(i);
 
                 if (itemstack != null)
                 {

@@ -26,6 +26,7 @@ import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -52,11 +53,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFishFood;
 import net.minecraft.item.ItemPotion;
 import net.minecraft.item.ItemStack;
+import net.minecraft.src.Config;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.util.ReportedException;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3i;
+import net.optifine.CustomColors;
+import net.optifine.CustomItems;
+import net.optifine.reflect.Reflector;
+import net.optifine.reflect.ReflectorForge;
+import net.optifine.shaders.Shaders;
+import net.optifine.shaders.ShadersRender;
 
 public class RenderItem implements IResourceManagerReloadListener
 {
@@ -67,11 +76,25 @@ public class RenderItem implements IResourceManagerReloadListener
     public float zLevel;
     private final ItemModelMesher itemModelMesher;
     private final TextureManager textureManager;
+    private boolean renderItemGui = false;
+    public ModelManager modelManager = null;
+    private boolean renderModelHasEmissive = false;
+    private boolean renderModelEmissive = false;
 
     public RenderItem(TextureManager textureManager, ModelManager modelManager)
     {
         this.textureManager = textureManager;
-        this.itemModelMesher = new ItemModelMesher(modelManager);
+        this.modelManager = modelManager;
+
+        if (Reflector.ItemModelMesherForge_Constructor.exists())
+        {
+            this.itemModelMesher = (ItemModelMesher)Reflector.newInstance(Reflector.ItemModelMesherForge_Constructor, new Object[] {modelManager});
+        }
+        else
+        {
+            this.itemModelMesher = new ItemModelMesher(modelManager);
+        }
+
         this.registerItems();
     }
 
@@ -110,7 +133,7 @@ public class RenderItem implements IResourceManagerReloadListener
         this.renderModel(model, -1, stack);
     }
 
-    private void renderModel(IBakedModel model, int color)
+    public void renderModel(IBakedModel model, int color)
     {
         this.renderModel(model, color, (ItemStack)null);
     }
@@ -119,15 +142,29 @@ public class RenderItem implements IResourceManagerReloadListener
     {
         Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-        worldrenderer.begin(7, DefaultVertexFormats.ITEM);
+        boolean flag = Minecraft.getMinecraft().getTextureMapBlocks().isTextureBound();
+        boolean flag1 = Config.isMultiTexture() && flag;
 
-        for (EnumFacing enumfacing : EnumFacing.values())
+        if (flag1)
+        {
+            worldrenderer.setBlockLayer(EnumWorldBlockLayer.SOLID);
+        }
+
+        worldrenderer.func_181668_a(7, DefaultVertexFormats.ITEM);
+
+        for (EnumFacing enumfacing : EnumFacing.VALUES)
         {
             this.renderQuads(worldrenderer, model.getFaceQuads(enumfacing), color, stack);
         }
 
         this.renderQuads(worldrenderer, model.getGeneralQuads(), color, stack);
         tessellator.draw();
+
+        if (flag1)
+        {
+            worldrenderer.setBlockLayer((EnumWorldBlockLayer)null);
+            GlStateManager.bindCurrentTexture();
+        }
     }
 
     public void renderItem(ItemStack stack, IBakedModel model)
@@ -148,9 +185,27 @@ public class RenderItem implements IResourceManagerReloadListener
             else
             {
                 GlStateManager.translate(-0.5F, -0.5F, -0.5F);
+
+                if (Config.isCustomItems())
+                {
+                    model = CustomItems.getCustomItemModel(stack, model, (ResourceLocation)null, false);
+                }
+
+                this.renderModelHasEmissive = false;
                 this.renderModel(model, stack);
 
-                if (stack.hasEffect())
+                if (this.renderModelHasEmissive)
+                {
+                    float f = OpenGlHelper.lastBrightnessX;
+                    float f1 = OpenGlHelper.lastBrightnessY;
+                    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240.0F, f1);
+                    this.renderModelEmissive = true;
+                    this.renderModel(model, stack);
+                    this.renderModelEmissive = false;
+                    OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, f, f1);
+                }
+
+                if (stack.hasEffect() && (!Config.isCustomItems() || !CustomItems.renderCustomEffect(this, stack, model)))
                 {
                     this.renderEffect(model);
                 }
@@ -162,32 +217,49 @@ public class RenderItem implements IResourceManagerReloadListener
 
     private void renderEffect(IBakedModel model)
     {
-        GlStateManager.depthMask(false);
-        GlStateManager.depthFunc(514);
-        GlStateManager.disableLighting();
-        GlStateManager.blendFunc(768, 1);
-        this.textureManager.bindTexture(RES_ITEM_GLINT);
-        GlStateManager.matrixMode(5890);
-        GlStateManager.pushMatrix();
-        GlStateManager.scale(8.0F, 8.0F, 8.0F);
-        float f = (float)(Minecraft.getSystemTime() % 3000L) / 3000.0F / 8.0F;
-        GlStateManager.translate(f, 0.0F, 0.0F);
-        GlStateManager.rotate(-50.0F, 0.0F, 0.0F, 1.0F);
-        this.renderModel(model, -8372020);
-        GlStateManager.popMatrix();
-        GlStateManager.pushMatrix();
-        GlStateManager.scale(8.0F, 8.0F, 8.0F);
-        float f1 = (float)(Minecraft.getSystemTime() % 4873L) / 4873.0F / 8.0F;
-        GlStateManager.translate(-f1, 0.0F, 0.0F);
-        GlStateManager.rotate(10.0F, 0.0F, 0.0F, 1.0F);
-        this.renderModel(model, -8372020);
-        GlStateManager.popMatrix();
-        GlStateManager.matrixMode(5888);
-        GlStateManager.blendFunc(770, 771);
-        GlStateManager.enableLighting();
-        GlStateManager.depthFunc(515);
-        GlStateManager.depthMask(true);
-        this.textureManager.bindTexture(TextureMap.locationBlocksTexture);
+        if (!Config.isCustomItems() || CustomItems.isUseGlint())
+        {
+            if (!Config.isShaders() || !Shaders.isShadowPass)
+            {
+                GlStateManager.depthMask(false);
+                GlStateManager.depthFunc(514);
+                GlStateManager.disableLighting();
+                GlStateManager.blendFunc(768, 1);
+                this.textureManager.bindTexture(RES_ITEM_GLINT);
+
+                if (Config.isShaders() && !this.renderItemGui)
+                {
+                    ShadersRender.renderEnchantedGlintBegin();
+                }
+
+                GlStateManager.matrixMode(5890);
+                GlStateManager.pushMatrix();
+                GlStateManager.scale(8.0F, 8.0F, 8.0F);
+                float f = (float)(Minecraft.getSystemTime() % 3000L) / 3000.0F / 8.0F;
+                GlStateManager.translate(f, 0.0F, 0.0F);
+                GlStateManager.rotate(-50.0F, 0.0F, 0.0F, 1.0F);
+                this.renderModel(model, -8372020);
+                GlStateManager.popMatrix();
+                GlStateManager.pushMatrix();
+                GlStateManager.scale(8.0F, 8.0F, 8.0F);
+                float f1 = (float)(Minecraft.getSystemTime() % 4873L) / 4873.0F / 8.0F;
+                GlStateManager.translate(-f1, 0.0F, 0.0F);
+                GlStateManager.rotate(10.0F, 0.0F, 0.0F, 1.0F);
+                this.renderModel(model, -8372020);
+                GlStateManager.popMatrix();
+                GlStateManager.matrixMode(5888);
+                GlStateManager.blendFunc(770, 771);
+                GlStateManager.enableLighting();
+                GlStateManager.depthFunc(515);
+                GlStateManager.depthMask(true);
+                this.textureManager.bindTexture(TextureMap.locationBlocksTexture);
+
+                if (Config.isShaders() && !this.renderItemGui)
+                {
+                    ShadersRender.renderEnchantedGlintEnd();
+                }
+            }
+        }
     }
 
     private void putQuadNormal(WorldRenderer renderer, BakedQuad quad)
@@ -198,8 +270,40 @@ public class RenderItem implements IResourceManagerReloadListener
 
     private void renderQuad(WorldRenderer renderer, BakedQuad quad, int color)
     {
-        renderer.addVertexData(quad.getVertexData());
-        renderer.putColor4(color);
+        if (this.renderModelEmissive)
+        {
+            if (quad.getQuadEmissive() == null)
+            {
+                return;
+            }
+
+            quad = quad.getQuadEmissive();
+        }
+        else if (quad.getQuadEmissive() != null)
+        {
+            this.renderModelHasEmissive = true;
+        }
+
+        if (renderer.isMultiTexture())
+        {
+            renderer.addVertexData(quad.getVertexDataSingle());
+        }
+        else
+        {
+            renderer.addVertexData(quad.getVertexData());
+        }
+
+        renderer.putSprite(quad.getSprite());
+
+        if (Reflector.IColoredBakedQuad.exists() && Reflector.IColoredBakedQuad.isInstance(quad))
+        {
+            forgeHooksClient_putQuadColor(renderer, quad, color);
+        }
+        else
+        {
+            renderer.putColor4(color);
+        }
+
         this.putQuadNormal(renderer, quad);
     }
 
@@ -216,6 +320,11 @@ public class RenderItem implements IResourceManagerReloadListener
             if (flag && bakedquad.hasTintIndex())
             {
                 k = stack.getItem().getColorFromItemStack(stack, bakedquad.getTintIndex());
+
+                if (Config.isCustomColors())
+                {
+                    k = CustomColors.getColorFromItemStack(stack, bakedquad.getTintIndex(), k);
+                }
 
                 if (EntityRenderer.anaglyphEnable)
                 {
@@ -295,10 +404,19 @@ public class RenderItem implements IResourceManagerReloadListener
                         modelresourcelocation = new ModelResourceLocation("bow_pulling_0", "inventory");
                     }
                 }
+                else if (Reflector.ForgeItem_getModel.exists())
+                {
+                    modelresourcelocation = (ModelResourceLocation)Reflector.call(item, Reflector.ForgeItem_getModel, new Object[] {stack, entityplayer, Integer.valueOf(entityplayer.getItemInUseCount())});
+                }
 
                 if (modelresourcelocation != null)
                 {
                     ibakedmodel = this.itemModelMesher.getModelManager().getModel(modelresourcelocation);
+
+                    if (Config.isCustomItems())
+                    {
+                        ibakedmodel = CustomItems.getCustomItemModel(stack, ibakedmodel, modelresourcelocation, true);
+                    }
                 }
             }
 
@@ -316,12 +434,20 @@ public class RenderItem implements IResourceManagerReloadListener
         GlStateManager.enableBlend();
         GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
         GlStateManager.pushMatrix();
-        ItemCameraTransforms itemcameratransforms = model.getItemCameraTransforms();
-        itemcameratransforms.applyTransform(cameraTransformType);
 
-        if (this.func_183005_a(itemcameratransforms.getTransform(cameraTransformType)))
+        if (Reflector.ForgeHooksClient_handleCameraTransforms.exists())
         {
-            GlStateManager.cullFace(1028);
+            model = (IBakedModel)Reflector.call(Reflector.ForgeHooksClient_handleCameraTransforms, new Object[] {model, cameraTransformType});
+        }
+        else
+        {
+            ItemCameraTransforms itemcameratransforms = model.getItemCameraTransforms();
+            itemcameratransforms.func_181689_a(cameraTransformType);
+
+            if (this.func_183005_a(itemcameratransforms.func_181688_b(cameraTransformType)))
+            {
+                GlStateManager.cullFace(1028);
+            }
         }
 
         this.renderItem(stack, model);
@@ -340,6 +466,7 @@ public class RenderItem implements IResourceManagerReloadListener
 
     public void renderItemIntoGUI(ItemStack stack, int x, int y)
     {
+        this.renderItemGui = true;
         IBakedModel ibakedmodel = this.itemModelMesher.getItemModel(stack);
         GlStateManager.pushMatrix();
         this.textureManager.bindTexture(TextureMap.locationBlocksTexture);
@@ -351,7 +478,16 @@ public class RenderItem implements IResourceManagerReloadListener
         GlStateManager.blendFunc(770, 771);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.setupGuiTransform(x, y, ibakedmodel.isGui3d());
-        ibakedmodel.getItemCameraTransforms().applyTransform(ItemCameraTransforms.TransformType.GUI);
+
+        if (Reflector.ForgeHooksClient_handleCameraTransforms.exists())
+        {
+            ibakedmodel = (IBakedModel)Reflector.call(Reflector.ForgeHooksClient_handleCameraTransforms, new Object[] {ibakedmodel, ItemCameraTransforms.TransformType.GUI});
+        }
+        else
+        {
+            ibakedmodel.getItemCameraTransforms().func_181689_a(ItemCameraTransforms.TransformType.GUI);
+        }
+
         this.renderItem(stack, ibakedmodel);
         GlStateManager.disableAlpha();
         GlStateManager.disableRescaleNormal();
@@ -359,6 +495,7 @@ public class RenderItem implements IResourceManagerReloadListener
         GlStateManager.popMatrix();
         this.textureManager.bindTexture(TextureMap.locationBlocksTexture);
         this.textureManager.getTexture(TextureMap.locationBlocksTexture).restoreLastBlurMipmap();
+        this.renderItemGui = false;
     }
 
     private void setupGuiTransform(int xPosition, int yPosition, boolean isGui3d)
@@ -459,12 +596,21 @@ public class RenderItem implements IResourceManagerReloadListener
                 fr.drawStringWithShadow(s, (float)(xPosition + 19 - 2 - fr.getStringWidth(s)), (float)(yPosition + 6 + 3), 16777215);
                 GlStateManager.enableLighting();
                 GlStateManager.enableDepth();
+                GlStateManager.enableBlend();
             }
 
-            if (stack.isItemDamaged())
+            if (ReflectorForge.isItemDamaged(stack))
             {
-                int j = (int)Math.round(13.0D - (double)stack.getItemDamage() * 13.0D / (double)stack.getMaxDamage());
+                int j1 = (int)Math.round(13.0D - (double)stack.getItemDamage() * 13.0D / (double)stack.getMaxDamage());
                 int i = (int)Math.round(255.0D - (double)stack.getItemDamage() * 255.0D / (double)stack.getMaxDamage());
+
+                if (Reflector.ForgeItem_getDurabilityForDisplay.exists())
+                {
+                    double d0 = Reflector.callDouble(stack.getItem(), Reflector.ForgeItem_getDurabilityForDisplay, new Object[] {stack});
+                    j1 = (int)Math.round(13.0D - d0 * 13.0D);
+                    i = (int)Math.round(255.0D - d0 * 255.0D);
+                }
+
                 GlStateManager.disableLighting();
                 GlStateManager.disableDepth();
                 GlStateManager.disableTexture2D();
@@ -474,7 +620,23 @@ public class RenderItem implements IResourceManagerReloadListener
                 WorldRenderer worldrenderer = tessellator.getWorldRenderer();
                 this.func_181565_a(worldrenderer, xPosition + 2, yPosition + 13, 13, 2, 0, 0, 0, 255);
                 this.func_181565_a(worldrenderer, xPosition + 2, yPosition + 13, 12, 1, (255 - i) / 4, 64, 0, 255);
-                this.func_181565_a(worldrenderer, xPosition + 2, yPosition + 13, j, 1, 255 - i, i, 0, 255);
+                int j = 255 - i;
+                int k = i;
+                int l = 0;
+
+                if (Config.isCustomColors())
+                {
+                    int i1 = CustomColors.getDurabilityColor(i);
+
+                    if (i1 >= 0)
+                    {
+                        j = i1 >> 16 & 255;
+                        k = i1 >> 8 & 255;
+                        l = i1 >> 0 & 255;
+                    }
+                }
+
+                this.func_181565_a(worldrenderer, xPosition + 2, yPosition + 13, j1, 1, j, k, l, 255);
                 GlStateManager.enableBlend();
                 GlStateManager.enableAlpha();
                 GlStateManager.enableTexture2D();
@@ -486,11 +648,11 @@ public class RenderItem implements IResourceManagerReloadListener
 
     private void func_181565_a(WorldRenderer p_181565_1_, int p_181565_2_, int p_181565_3_, int p_181565_4_, int p_181565_5_, int p_181565_6_, int p_181565_7_, int p_181565_8_, int p_181565_9_)
     {
-        p_181565_1_.begin(7, DefaultVertexFormats.POSITION_COLOR);
-        p_181565_1_.pos((double)(p_181565_2_ + 0), (double)(p_181565_3_ + 0), 0.0D).color(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).endVertex();
-        p_181565_1_.pos((double)(p_181565_2_ + 0), (double)(p_181565_3_ + p_181565_5_), 0.0D).color(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).endVertex();
-        p_181565_1_.pos((double)(p_181565_2_ + p_181565_4_), (double)(p_181565_3_ + p_181565_5_), 0.0D).color(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).endVertex();
-        p_181565_1_.pos((double)(p_181565_2_ + p_181565_4_), (double)(p_181565_3_ + 0), 0.0D).color(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).endVertex();
+        p_181565_1_.func_181668_a(7, DefaultVertexFormats.field_181706_f);
+        p_181565_1_.func_181662_b((double)(p_181565_2_ + 0), (double)(p_181565_3_ + 0), 0.0D).func_181669_b(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).func_181675_d();
+        p_181565_1_.func_181662_b((double)(p_181565_2_ + 0), (double)(p_181565_3_ + p_181565_5_), 0.0D).func_181669_b(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).func_181675_d();
+        p_181565_1_.func_181662_b((double)(p_181565_2_ + p_181565_4_), (double)(p_181565_3_ + p_181565_5_), 0.0D).func_181669_b(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).func_181675_d();
+        p_181565_1_.func_181662_b((double)(p_181565_2_ + p_181565_4_), (double)(p_181565_3_ + 0), 0.0D).func_181669_b(p_181565_6_, p_181565_7_, p_181565_8_, p_181565_9_).func_181675_d();
         Tessellator.getInstance().draw();
     }
 
@@ -1040,10 +1202,39 @@ public class RenderItem implements IResourceManagerReloadListener
         this.registerBlock(Blocks.brown_mushroom_block, BlockHugeMushroom.EnumType.ALL_INSIDE.getMetadata(), "brown_mushroom_block");
         this.registerBlock(Blocks.red_mushroom_block, BlockHugeMushroom.EnumType.ALL_INSIDE.getMetadata(), "red_mushroom_block");
         this.registerBlock(Blocks.dragon_egg, "dragon_egg");
+
+        if (Reflector.ModelLoader_onRegisterItems.exists())
+        {
+            Reflector.call(Reflector.ModelLoader_onRegisterItems, new Object[] {this.itemModelMesher});
+        }
     }
 
     public void onResourceManagerReload(IResourceManager resourceManager)
     {
         this.itemModelMesher.rebuildCache();
+    }
+
+    public static void forgeHooksClient_putQuadColor(WorldRenderer p_forgeHooksClient_putQuadColor_0_, BakedQuad p_forgeHooksClient_putQuadColor_1_, int p_forgeHooksClient_putQuadColor_2_)
+    {
+        float f = (float)(p_forgeHooksClient_putQuadColor_2_ & 255);
+        float f1 = (float)(p_forgeHooksClient_putQuadColor_2_ >>> 8 & 255);
+        float f2 = (float)(p_forgeHooksClient_putQuadColor_2_ >>> 16 & 255);
+        float f3 = (float)(p_forgeHooksClient_putQuadColor_2_ >>> 24 & 255);
+        int[] aint = p_forgeHooksClient_putQuadColor_1_.getVertexData();
+        int i = aint.length / 4;
+
+        for (int j = 0; j < 4; ++j)
+        {
+            int k = aint[3 + i * j];
+            float f4 = (float)(k & 255);
+            float f5 = (float)(k >>> 8 & 255);
+            float f6 = (float)(k >>> 16 & 255);
+            float f7 = (float)(k >>> 24 & 255);
+            int l = Math.min(255, (int)(f * f4 / 255.0F));
+            int i1 = Math.min(255, (int)(f1 * f5 / 255.0F));
+            int j1 = Math.min(255, (int)(f2 * f6 / 255.0F));
+            int k1 = Math.min(255, (int)(f3 * f7 / 255.0F));
+            p_forgeHooksClient_putQuadColor_0_.putColorRGBA(p_forgeHooksClient_putQuadColor_0_.getColorIndex(4 - j), l, i1, j1, k1);
+        }
     }
 }

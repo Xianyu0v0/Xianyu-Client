@@ -151,7 +151,7 @@ public class EntityAIMate extends EntityAIBase
                 this.theWorld.spawnParticle(EnumParticleTypes.HEART, this.theAnimal.posX + d3, this.theAnimal.posY + d4, this.theAnimal.posZ + d5, d0, d1, d2, new int[0]);
             }
 
-            if (this.theWorld.getGameRules().getBoolean("doMobLoot"))
+            if (this.theWorld.getGameRules().getGameRuleBooleanValue("doMobLoot"))
             {
                 this.theWorld.spawnEntityInWorld(new EntityXPOrb(this.theWorld, this.theAnimal.posX, this.theAnimal.posY, this.theAnimal.posZ, random.nextInt(7) + 1));
             }

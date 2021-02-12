@@ -57,6 +57,8 @@ public class RegistryNamespaced<K, V> extends RegistrySimple<K, V> implements IO
 
     /**
      * Gets the object identified by the given ID.
+     *  
+     * @param id The id to fetch from the registry
      */
     public V getObjectById(int id)
     {

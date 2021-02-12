@@ -50,6 +50,9 @@ public class ItemSword extends Item
     /**
      * Current implementations of this method in child classes do not use the entry argument beside ev. They just raise
      * the damage on the stack.
+     *  
+     * @param target The Entity being hit
+     * @param attacker the attacking entity
      */
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
@@ -129,6 +132,9 @@ public class ItemSword extends Item
 
     /**
      * Return whether this item is repairable in an anvil.
+     *  
+     * @param toRepair The ItemStack to be repaired
+     * @param repair The ItemStack that should repair this Item (leather for leather armor, etc.)
      */
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
     {

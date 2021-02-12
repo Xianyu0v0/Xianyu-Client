@@ -252,6 +252,8 @@ public abstract class StructureComponent
 
     /**
      * Returns the direction-shifted metadata for blocks that require orientation, e.g. doors, stairs, ladders.
+     *  
+     * @param meta block direction meta data
      */
     protected int getMetadataWithOffset(Block blockIn, int meta)
     {
@@ -627,6 +629,19 @@ public abstract class StructureComponent
 
     /**
      * Fill the given area with the selected blocks
+     *  
+     * @param worldIn World object
+     * @param boundingboxIn Building bounding box
+     * @param xMin Minimum X plotting coordinate, inclusive. Minimum must be less than or equal to the maximum
+     * @param yMin Minimum Y plotting coordinate, inclusive
+     * @param zMin Minimum Z plotting coordinate, inclusive
+     * @param xMax Maximum X plotting coordinate, inclusive
+     * @param yMax Maximum Y plotting coordinate, inclusive
+     * @param zMax Maximum Z plotting coordinate, inclusive
+     * @param boundaryBlockState This block is used for any position on the edge of the designated area
+     * @param insideBlockState This block is used for filling in the interior. For a hollow object, you'd pass in air.
+     * @param existingOnly Only replace non-air blocks. Set to true if you want caves and such to eat away your
+     * structure.
      */
     protected void fillWithBlocks(World worldIn, StructureBoundingBox boundingboxIn, int xMin, int yMin, int zMin, int xMax, int yMax, int zMax, IBlockState boundaryBlockState, IBlockState insideBlockState, boolean existingOnly)
     {
@@ -759,6 +774,8 @@ public abstract class StructureComponent
 
     /**
      * Replaces air and liquid from given position downwards. Stops when hitting anything else than air or liquid
+     *  
+     * @param blockstateIn replacement to use
      */
     protected void replaceAirAndLiquidDownwards(World worldIn, IBlockState blockstateIn, int x, int y, int z, StructureBoundingBox boundingboxIn)
     {

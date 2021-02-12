@@ -26,6 +26,8 @@ public class RenderFireball extends Render<EntityFireball>
      * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
      * (Render<T extends Entity>) and this method has signature public void doRender(T entity, double d, double d1,
      * double d2, float f, float f1). But JAD is pre 1.5 so doe
+     *  
+     * @param entityYaw The yaw rotation of the passed entity
      */
     public void doRender(EntityFireball entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
@@ -46,11 +48,11 @@ public class RenderFireball extends Render<EntityFireball>
         float f6 = 0.25F;
         GlStateManager.rotate(180.0F - this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
         GlStateManager.rotate(-this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_NORMAL);
-        worldrenderer.pos(-0.5D, -0.25D, 0.0D).tex((double)f, (double)f3).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(0.5D, -0.25D, 0.0D).tex((double)f1, (double)f3).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(0.5D, 0.75D, 0.0D).tex((double)f1, (double)f2).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(-0.5D, 0.75D, 0.0D).tex((double)f, (double)f2).normal(0.0F, 1.0F, 0.0F).endVertex();
+        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181710_j);
+        worldrenderer.func_181662_b(-0.5D, -0.25D, 0.0D).func_181673_a((double)f, (double)f3).func_181663_c(0.0F, 1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(0.5D, -0.25D, 0.0D).func_181673_a((double)f1, (double)f3).func_181663_c(0.0F, 1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(0.5D, 0.75D, 0.0D).func_181673_a((double)f1, (double)f2).func_181663_c(0.0F, 1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(-0.5D, 0.75D, 0.0D).func_181673_a((double)f, (double)f2).func_181663_c(0.0F, 1.0F, 0.0F).func_181675_d();
         tessellator.draw();
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();

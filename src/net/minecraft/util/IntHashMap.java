@@ -15,6 +15,8 @@ public class IntHashMap<V>
 
     /**
      * Makes the passed in integer suitable for hashing by a number of shifts
+     *  
+     * @param integer Integer to make suitable for hashing
      */
     private static int computeHash(int integer)
     {

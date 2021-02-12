@@ -37,6 +37,9 @@ public class EnchantmentHelper
 
     /**
      * Returns the level of enchantment on the ItemStack passed.
+     *  
+     * @param enchID The ID for the enchantment you are looking for.
+     * @param stack The ItemStack being searched.
      */
     public static int getEnchantmentLevel(int enchID, ItemStack stack)
     {
@@ -90,6 +93,10 @@ public class EnchantmentHelper
 
     /**
      * Set the enchantments for the specified stack.
+     *  
+     * @param enchMap A map containing all the enchantments you wish to add. Enchantments stored with the ID as the key,
+     * and the level as the value.
+     * @param stack The stack to have enchantments applied to.
      */
     public static void setEnchantments(Map<Integer, Integer> enchMap, ItemStack stack)
     {
@@ -130,6 +137,9 @@ public class EnchantmentHelper
 
     /**
      * Returns the biggest level of the enchantment on the array of ItemStack passed.
+     *  
+     * @param enchID The ID of the enchantment being searched for.
+     * @param stacks The array of stacks being searched.
      */
     public static int getMaxEnchantmentLevel(int enchID, ItemStack[] stacks)
     {
@@ -157,6 +167,9 @@ public class EnchantmentHelper
 
     /**
      * Executes the enchantment modifier on the ItemStack passed.
+     *  
+     * @param modifier The modifier being applied.
+     * @param stack The ItemStack having a modifier applied to.
      */
     private static void applyEnchantmentModifier(EnchantmentHelper.IModifier modifier, ItemStack stack)
     {
@@ -182,6 +195,9 @@ public class EnchantmentHelper
 
     /**
      * Executes the enchantment modifier on the array of ItemStack passed.
+     *  
+     * @param modifier The modifier being applied.
+     * @param stacks An array of ItemStacks that will have the modifier applied to them.
      */
     private static void applyEnchantmentModifierArray(EnchantmentHelper.IModifier modifier, ItemStack[] stacks)
     {
@@ -193,6 +209,9 @@ public class EnchantmentHelper
 
     /**
      * Returns the modifier of protection enchantments on armors equipped on player.
+     *  
+     * @param stacks An array of ItemStacks being checked.
+     * @param source The source of the damage.
      */
     public static int getEnchantmentModifierDamage(ItemStack[] stacks, DamageSource source)
     {
@@ -254,6 +273,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the Knockback modifier of the enchantment on the players held item.
+     *  
+     * @param player The player being checked.
      */
     public static int getKnockbackModifier(EntityLivingBase player)
     {
@@ -262,6 +283,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the fire aspect modifier of the players held item.
+     *  
+     * @param player The player being checked.
      */
     public static int getFireAspectModifier(EntityLivingBase player)
     {
@@ -270,6 +293,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the 'Water Breathing' modifier of enchantments on player equipped armors.
+     *  
+     * @param player The player being checked.
      */
     public static int getRespiration(Entity player)
     {
@@ -278,6 +303,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the level of the Depth Strider enchantment.
+     *  
+     * @param player The player being checked.
      */
     public static int getDepthStriderModifier(Entity player)
     {
@@ -286,6 +313,8 @@ public class EnchantmentHelper
 
     /**
      * Return the extra efficiency of tools based on enchantments on equipped player item.
+     *  
+     * @param player The player being checked.
      */
     public static int getEfficiencyModifier(EntityLivingBase player)
     {
@@ -294,6 +323,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the silk touch status of enchantments on current equipped item of player.
+     *  
+     * @param player The player being checked.
      */
     public static boolean getSilkTouchModifier(EntityLivingBase player)
     {
@@ -302,6 +333,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the fortune enchantment modifier of the current equipped item of player.
+     *  
+     * @param player The player being checked.
      */
     public static int getFortuneModifier(EntityLivingBase player)
     {
@@ -310,6 +343,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the level of the 'Luck Of The Sea' enchantment.
+     *  
+     * @param player The player being checked.
      */
     public static int getLuckOfSeaModifier(EntityLivingBase player)
     {
@@ -318,6 +353,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the level of the 'Lure' enchantment on the players held item.
+     *  
+     * @param player The player being checked.
      */
     public static int getLureModifier(EntityLivingBase player)
     {
@@ -326,6 +363,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the looting enchantment modifier of the current equipped item of player.
+     *  
+     * @param player The player being checked.
      */
     public static int getLootingModifier(EntityLivingBase player)
     {
@@ -334,6 +373,8 @@ public class EnchantmentHelper
 
     /**
      * Returns the aqua affinity status of enchantments on current equipped item of player.
+     *  
+     * @param player The player being checked.
      */
     public static boolean getAquaAffinityModifier(EntityLivingBase player)
     {

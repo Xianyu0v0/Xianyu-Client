@@ -69,6 +69,9 @@ public class AnvilChunkLoader implements IChunkLoader, IThreadedFileIO
 
     /**
      * Wraps readChunkFromNBT. Checks the coordinates and several NBT tags.
+     *  
+     * @param x Chunk X Coordinate
+     * @param z Chunk Z Coordinate
      */
     protected Chunk checkedReadChunkFromNBT(World worldIn, int x, int z, NBTTagCompound p_75822_4_)
     {

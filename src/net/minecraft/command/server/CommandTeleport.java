@@ -34,6 +34,8 @@ public class CommandTeleport extends CommandBase
 
     /**
      * Gets the usage string for the command.
+     *  
+     * @param sender The {@link ICommandSender} who is requesting usage details.
      */
     public String getCommandUsage(ICommandSender sender)
     {
@@ -42,6 +44,9 @@ public class CommandTeleport extends CommandBase
 
     /**
      * Callback when the command is invoked
+     *  
+     * @param sender The {@link ICommandSender sender} who executed the command
+     * @param args The arguments that were passed with the command
      */
     public void processCommand(ICommandSender sender, String[] args) throws CommandException
     {
@@ -147,7 +152,7 @@ public class CommandTeleport extends CommandBase
                         entity.setRotationYawHead(f2);
                     }
 
-                    notifyOperators(sender, this, "commands.tp.success.coordinates", new Object[] {entity.getName(), Double.valueOf(commandbase$coordinatearg.func_179628_a()), Double.valueOf(commandbase$coordinatearg1.func_179628_a()), Double.valueOf(commandbase$coordinatearg2.func_179628_a())});
+                    notifyOperators(sender, this, "commands.tp.success.coordinates", new Object[] {entity.getCommandSenderName(), Double.valueOf(commandbase$coordinatearg.func_179628_a()), Double.valueOf(commandbase$coordinatearg1.func_179628_a()), Double.valueOf(commandbase$coordinatearg2.func_179628_a())});
                 }
             }
             else
@@ -171,7 +176,7 @@ public class CommandTeleport extends CommandBase
                         entity.setLocationAndAngles(entity1.posX, entity1.posY, entity1.posZ, entity1.rotationYaw, entity1.rotationPitch);
                     }
 
-                    notifyOperators(sender, this, "commands.tp.success", new Object[] {entity.getName(), entity1.getName()});
+                    notifyOperators(sender, this, "commands.tp.success", new Object[] {entity.getCommandSenderName(), entity1.getCommandSenderName()});
                 }
             }
         }
@@ -184,6 +189,9 @@ public class CommandTeleport extends CommandBase
 
     /**
      * Return whether the specified command parameter index is a username parameter.
+     *  
+     * @param args The arguments that were given
+     * @param index The argument index that we are checking
      */
     public boolean isUsernameIndex(String[] args, int index)
     {

@@ -32,7 +32,7 @@ public class EntityAIHarvestFarmland extends EntityAIMoveToBlock
     {
         if (this.runDelay <= 0)
         {
-            if (!this.theVillager.worldObj.getGameRules().getBoolean("mobGriefing"))
+            if (!this.theVillager.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"))
             {
                 return false;
             }

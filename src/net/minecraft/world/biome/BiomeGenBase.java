@@ -403,6 +403,8 @@ public abstract class BiomeGenBase
 
     /**
      * Gets a floating point representation of this biome's temperature
+     *  
+     * @param pos The coordinates for a block in the biome
      */
     public final float getFloatTemperature(BlockPos pos)
     {

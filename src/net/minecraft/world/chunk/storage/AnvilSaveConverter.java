@@ -106,6 +106,8 @@ public class AnvilSaveConverter extends SaveFormatOld
 
     /**
      * gets if the map is old chunk saving (true) or McRegion (false)
+     *  
+     * @param saveName The name of the directory containing the world
      */
     public boolean isOldMapFormat(String saveName)
     {
@@ -115,6 +117,8 @@ public class AnvilSaveConverter extends SaveFormatOld
 
     /**
      * converts the map to mcRegion
+     *  
+     * @param filename Filename for the level.dat_mcr backup
      */
     public boolean convertMapFormat(String filename, IProgressUpdate progressCallback)
     {
@@ -170,6 +174,8 @@ public class AnvilSaveConverter extends SaveFormatOld
 
     /**
      * par: filename for the level.dat_mcr backup
+     *  
+     * @param filename Filename for the level.dat_mcr backup
      */
     private void createFile(String filename)
     {

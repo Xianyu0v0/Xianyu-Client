@@ -208,7 +208,7 @@ public class Material
     }
 
     /**
-     * Sorry:)
+     * Sorry:D
      */
     protected Material setAdventureModeExempt()
     {

@@ -94,7 +94,7 @@ public class EntityAIEatGrass extends EntityAIBase
 
             if (field_179505_b.apply(this.entityWorld.getBlockState(blockpos)))
             {
-                if (this.entityWorld.getGameRules().getBoolean("mobGriefing"))
+                if (this.entityWorld.getGameRules().getGameRuleBooleanValue("mobGriefing"))
                 {
                     this.entityWorld.destroyBlock(blockpos, false);
                 }
@@ -107,7 +107,7 @@ public class EntityAIEatGrass extends EntityAIBase
 
                 if (this.entityWorld.getBlockState(blockpos1).getBlock() == Blocks.grass)
                 {
-                    if (this.entityWorld.getGameRules().getBoolean("mobGriefing"))
+                    if (this.entityWorld.getGameRules().getGameRuleBooleanValue("mobGriefing"))
                     {
                         this.entityWorld.playAuxSFX(2001, blockpos1, Block.getIdFromBlock(Blocks.grass));
                         this.entityWorld.setBlockState(blockpos1, Blocks.dirt.getDefaultState(), 2);

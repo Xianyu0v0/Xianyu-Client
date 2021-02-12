@@ -228,7 +228,7 @@ public class EntitySquid extends EntityWaterMob
         return this.posY > 45.0D && this.posY < (double)this.worldObj.func_181545_F() && super.getCanSpawnHere();
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 19)
         {
@@ -236,7 +236,7 @@ public class EntitySquid extends EntityWaterMob
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 

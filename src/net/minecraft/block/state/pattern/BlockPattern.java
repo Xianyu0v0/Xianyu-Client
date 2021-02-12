@@ -113,6 +113,14 @@ public class BlockPattern
     /**
      * Offsets the position of pos in the direction of finger and thumb facing by offset amounts, follows the right-hand
      * rule for cross products (finger, thumb, palm) @return A new BlockPos offset in the facing directions
+     *  
+     * @param pos The original block position
+     * @param finger Finger direction
+     * @param thumb Thumb direction
+     * @param palmOffset An amount to offset in the palm direction. Palm is the direction of the result of the cross-
+     * product between finger and thumb
+     * @param thumbOffset An amount to offset in the thumb direction
+     * @param fingerOffset An amount to offset in the finger direction
      */
     protected static BlockPos translateOffset(BlockPos pos, EnumFacing finger, EnumFacing thumb, int palmOffset, int thumbOffset, int fingerOffset)
     {

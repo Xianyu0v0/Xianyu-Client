@@ -34,6 +34,8 @@ public class EntityLeashKnot extends EntityHanging
 
     /**
      * Updates facing and bounding box based on it
+     *  
+     * @param facingDirectionIn The direction this hanging entity faces
      */
     public void updateFacingWithBoundingBox(EnumFacing facingDirectionIn)
     {

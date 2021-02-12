@@ -24,6 +24,8 @@ public class Scoreboard
 
     /**
      * Returns a ScoreObjective for the objective name
+     *  
+     * @param name The objective name
      */
     public ScoreObjective getObjective(String name)
     {
@@ -32,6 +34,9 @@ public class Scoreboard
 
     /**
      * Create and returns the score objective for the given name and ScoreCriteria
+     *  
+     * @param name The ScoreObjective Name
+     * @param criteria The ScoreObjective Criteria
      */
     public ScoreObjective addScoreObjective(String name, IScoreObjectiveCriteria criteria)
     {
@@ -74,6 +79,8 @@ public class Scoreboard
 
     /**
      * Returns if the entity has the given ScoreObjective
+     *  
+     * @param name The Entity name
      */
     public boolean entityHasObjective(String name, ScoreObjective p_178819_2_)
     {
@@ -92,6 +99,9 @@ public class Scoreboard
 
     /**
      * Returns the value of the given objective for the given entity name
+     *  
+     * @param name The entity name
+     * @param objective The ScoreObjective to get the value from
      */
     public Score getValueFromObjective(String name, ScoreObjective objective)
     {
@@ -151,6 +161,9 @@ public class Scoreboard
 
     /**
      * Remove the given ScoreObjective for the given Entity name.
+     *  
+     * @param name The entity Name
+     * @param objective The ScoreObjective
      */
     public void removeObjectiveFromEntity(String name, ScoreObjective objective)
     {
@@ -305,6 +318,9 @@ public class Scoreboard
 
     /**
      * Adds a player to the given team
+     *  
+     * @param player The name of the player to add
+     * @param newTeam The name of the team
      */
     public boolean addPlayerToTeam(String player, String newTeam)
     {

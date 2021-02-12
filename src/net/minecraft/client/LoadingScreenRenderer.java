@@ -10,6 +10,9 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MinecraftError;
+import net.optifine.CustomLoadingScreen;
+import net.optifine.CustomLoadingScreens;
+import net.optifine.reflect.Reflector;
 
 public class LoadingScreenRenderer implements IProgressUpdate
 {
@@ -157,41 +160,66 @@ public class LoadingScreenRenderer implements IProgressUpdate
                     GlStateManager.clear(16640);
                 }
 
-                Tessellator tessellator = Tessellator.getInstance();
-                WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-                this.mc.getTextureManager().bindTexture(Gui.optionsBackground);
-                float f = 32.0F;
-                worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
-                worldrenderer.pos(0.0D, (double)l, 0.0D).tex(0.0D, (double)((float)l / f)).color(64, 64, 64, 255).endVertex();
-                worldrenderer.pos((double)k, (double)l, 0.0D).tex((double)((float)k / f), (double)((float)l / f)).color(64, 64, 64, 255).endVertex();
-                worldrenderer.pos((double)k, 0.0D, 0.0D).tex((double)((float)k / f), 0.0D).color(64, 64, 64, 255).endVertex();
-                worldrenderer.pos(0.0D, 0.0D, 0.0D).tex(0.0D, 0.0D).color(64, 64, 64, 255).endVertex();
-                tessellator.draw();
+                boolean flag = true;
 
-                if (progress >= 0)
+                if (Reflector.FMLClientHandler_handleLoadingScreen.exists())
                 {
-                    int i1 = 100;
-                    int j1 = 2;
-                    int k1 = k / 2 - i1 / 2;
-                    int l1 = l / 2 + 16;
-                    GlStateManager.disableTexture2D();
-                    worldrenderer.begin(7, DefaultVertexFormats.POSITION_COLOR);
-                    worldrenderer.pos((double)k1, (double)l1, 0.0D).color(128, 128, 128, 255).endVertex();
-                    worldrenderer.pos((double)k1, (double)(l1 + j1), 0.0D).color(128, 128, 128, 255).endVertex();
-                    worldrenderer.pos((double)(k1 + i1), (double)(l1 + j1), 0.0D).color(128, 128, 128, 255).endVertex();
-                    worldrenderer.pos((double)(k1 + i1), (double)l1, 0.0D).color(128, 128, 128, 255).endVertex();
-                    worldrenderer.pos((double)k1, (double)l1, 0.0D).color(128, 255, 128, 255).endVertex();
-                    worldrenderer.pos((double)k1, (double)(l1 + j1), 0.0D).color(128, 255, 128, 255).endVertex();
-                    worldrenderer.pos((double)(k1 + progress), (double)(l1 + j1), 0.0D).color(128, 255, 128, 255).endVertex();
-                    worldrenderer.pos((double)(k1 + progress), (double)l1, 0.0D).color(128, 255, 128, 255).endVertex();
-                    tessellator.draw();
-                    GlStateManager.enableTexture2D();
+                    Object object = Reflector.call(Reflector.FMLClientHandler_instance, new Object[0]);
+
+                    if (object != null)
+                    {
+                        flag = !Reflector.callBoolean(object, Reflector.FMLClientHandler_handleLoadingScreen, new Object[] {scaledresolution});
+                    }
                 }
 
-                GlStateManager.enableBlend();
-                GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
-                this.mc.fontRendererObj.drawStringWithShadow(this.currentlyDisplayedText, (float)((k - this.mc.fontRendererObj.getStringWidth(this.currentlyDisplayedText)) / 2), (float)(l / 2 - 4 - 16), 16777215);
-                this.mc.fontRendererObj.drawStringWithShadow(this.message, (float)((k - this.mc.fontRendererObj.getStringWidth(this.message)) / 2), (float)(l / 2 - 4 + 8), 16777215);
+                if (flag)
+                {
+                    Tessellator tessellator = Tessellator.getInstance();
+                    WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+                    CustomLoadingScreen customloadingscreen = CustomLoadingScreens.getCustomLoadingScreen();
+
+                    if (customloadingscreen != null)
+                    {
+                        customloadingscreen.drawBackground(scaledresolution.getScaledWidth(), scaledresolution.getScaledHeight());
+                    }
+                    else
+                    {
+                        this.mc.getTextureManager().bindTexture(Gui.optionsBackground);
+                        float f = 32.0F;
+                        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181709_i);
+                        worldrenderer.func_181662_b(0.0D, (double)l, 0.0D).func_181673_a(0.0D, (double)((float)l / f)).func_181669_b(64, 64, 64, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)k, (double)l, 0.0D).func_181673_a((double)((float)k / f), (double)((float)l / f)).func_181669_b(64, 64, 64, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)k, 0.0D, 0.0D).func_181673_a((double)((float)k / f), 0.0D).func_181669_b(64, 64, 64, 255).func_181675_d();
+                        worldrenderer.func_181662_b(0.0D, 0.0D, 0.0D).func_181673_a(0.0D, 0.0D).func_181669_b(64, 64, 64, 255).func_181675_d();
+                        tessellator.draw();
+                    }
+
+                    if (progress >= 0)
+                    {
+                        int l1 = 100;
+                        int i1 = 2;
+                        int j1 = k / 2 - l1 / 2;
+                        int k1 = l / 2 + 16;
+                        GlStateManager.disableTexture2D();
+                        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181706_f);
+                        worldrenderer.func_181662_b((double)j1, (double)k1, 0.0D).func_181669_b(128, 128, 128, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)j1, (double)(k1 + i1), 0.0D).func_181669_b(128, 128, 128, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)(j1 + l1), (double)(k1 + i1), 0.0D).func_181669_b(128, 128, 128, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)(j1 + l1), (double)k1, 0.0D).func_181669_b(128, 128, 128, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)j1, (double)k1, 0.0D).func_181669_b(128, 255, 128, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)j1, (double)(k1 + i1), 0.0D).func_181669_b(128, 255, 128, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)(j1 + progress), (double)(k1 + i1), 0.0D).func_181669_b(128, 255, 128, 255).func_181675_d();
+                        worldrenderer.func_181662_b((double)(j1 + progress), (double)k1, 0.0D).func_181669_b(128, 255, 128, 255).func_181675_d();
+                        tessellator.draw();
+                        GlStateManager.enableTexture2D();
+                    }
+
+                    GlStateManager.enableBlend();
+                    GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
+                    this.mc.fontRendererObj.drawStringWithShadow(this.currentlyDisplayedText, (float)((k - this.mc.fontRendererObj.getStringWidth(this.currentlyDisplayedText)) / 2), (float)(l / 2 - 4 - 16), 16777215);
+                    this.mc.fontRendererObj.drawStringWithShadow(this.message, (float)((k - this.mc.fontRendererObj.getStringWidth(this.message)) / 2), (float)(l / 2 - 4 + 8), 16777215);
+                }
+
                 this.framebuffer.unbindFramebuffer();
 
                 if (OpenGlHelper.isFramebufferEnabled())
@@ -205,7 +233,7 @@ public class LoadingScreenRenderer implements IProgressUpdate
                 {
                     Thread.yield();
                 }
-                catch (Exception var15)
+                catch (Exception var16)
                 {
                     ;
                 }

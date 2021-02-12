@@ -114,6 +114,8 @@ public class BlockPistonMoving extends BlockContainer
 
     /**
      * Get the Item that this Block should drop when harvested.
+     *  
+     * @param fortune the level of the Fortune enchantment on the player's tool
      */
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
@@ -122,6 +124,9 @@ public class BlockPistonMoving extends BlockContainer
 
     /**
      * Spawns this Block's drops into the World as EntityItems.
+     *  
+     * @param chance The chance that each Item is actually spawned (1.0 = always, 0.0 = never)
+     * @param fortune The player's fortune level
      */
     public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
     {
@@ -139,6 +144,9 @@ public class BlockPistonMoving extends BlockContainer
 
     /**
      * Ray traces through the blocks collision from start vector to end vector returning a ray trace hit.
+     *  
+     * @param start The start vector
+     * @param end The end vector
      */
     public MovingObjectPosition collisionRayTrace(World worldIn, BlockPos pos, Vec3 start, Vec3 end)
     {
@@ -276,6 +284,9 @@ public class BlockPistonMoving extends BlockContainer
         return tileentity instanceof TileEntityPiston ? (TileEntityPiston)tileentity : null;
     }
 
+    /**
+     * Used by pick block on the client to get a block's item form, if it exists.
+     */
     public Item getItem(World worldIn, BlockPos pos)
     {
         return null;

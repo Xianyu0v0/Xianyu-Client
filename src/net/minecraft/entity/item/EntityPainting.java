@@ -108,7 +108,7 @@ public class EntityPainting extends EntityHanging
      */
     public void onBroken(Entity brokenEntity)
     {
-        if (this.worldObj.getGameRules().getBoolean("doEntityDrops"))
+        if (this.worldObj.getGameRules().getGameRuleBooleanValue("doEntityDrops"))
         {
             if (brokenEntity instanceof EntityPlayer)
             {

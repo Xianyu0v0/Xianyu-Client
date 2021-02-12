@@ -25,6 +25,8 @@ public class RenderBoat extends Render<EntityBoat>
      * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
      * (Render<T extends Entity>) and this method has signature public void doRender(T entity, double d, double d1,
      * double d2, float f, float f1). But JAD is pre 1.5 so doe
+     *  
+     * @param entityYaw The yaw rotation of the passed entity
      */
     public void doRender(EntityBoat entity, double x, double y, double z, float entityYaw, float partialTicks)
     {

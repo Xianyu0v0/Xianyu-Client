@@ -753,7 +753,7 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
                 if (this.tickCounter % 20 == 0)
                 {
                     this.theProfiler.startSection("timeSync");
-                    this.serverConfigManager.sendPacketToAllPlayersInDimension(new S03PacketTimeUpdate(worldserver.getTotalWorldTime(), worldserver.getWorldTime(), worldserver.getGameRules().getBoolean("doDaylightCycle")), worldserver.provider.getDimensionId());
+                    this.serverConfigManager.sendPacketToAllPlayersInDimension(new S03PacketTimeUpdate(worldserver.getTotalWorldTime(), worldserver.getWorldTime(), worldserver.getGameRules().getGameRuleBooleanValue("doDaylightCycle")), worldserver.provider.getDimensionId());
                     this.theProfiler.endSection();
                 }
 
@@ -972,13 +972,15 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
     /**
      * Gets the name of this command sender (usually username, but possibly "Rcon")
      */
-    public String getName()
+    public String getCommandSenderName()
     {
         return "Server";
     }
 
     /**
      * Send a chat message to the CommandSender
+     *  
+     * @param component The ChatComponent to send
      */
     public void addChatMessage(IChatComponent component)
     {
@@ -987,6 +989,9 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
 
     /**
      * Returns {@code true} if the CommandSender is allowed to execute the command, {@code false} if not
+     *  
+     * @param permLevel The permission level required to execute the command
+     * @param commandName The name of the command
      */
     public boolean canCommandSenderUseCommand(int permLevel, String commandName)
     {
@@ -1286,7 +1291,7 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
         this.buildLimit = maxBuildHeight;
     }
 
-    public boolean isServerStopped()
+    public boolean func_71241_aa()
     {
         return this.serverStopped;
     }
@@ -1425,7 +1430,7 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
      */
     public IChatComponent getDisplayName()
     {
-        return new ChatComponentText(this.getName());
+        return new ChatComponentText(this.getCommandSenderName());
     }
 
     public boolean isAnnouncingPlayerAchievements()
@@ -1481,7 +1486,7 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
      */
     public boolean sendCommandFeedback()
     {
-        return getServer().worldServers[0].getGameRules().getBoolean("sendCommandFeedback");
+        return getServer().worldServers[0].getGameRules().getGameRuleBooleanValue("sendCommandFeedback");
     }
 
     public void setCommandStat(CommandResultStats.Type type, int amount)
@@ -1497,7 +1502,7 @@ public abstract class MinecraftServer implements Runnable, ICommandSender, IThre
     {
         Validate.notNull(callable);
 
-        if (!this.isCallingFromMinecraftThread() && !this.isServerStopped())
+        if (!this.isCallingFromMinecraftThread() && !this.func_71241_aa())
         {
             ListenableFutureTask<V> listenablefuturetask = ListenableFutureTask.<V>create(callable);
 

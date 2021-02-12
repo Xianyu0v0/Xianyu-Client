@@ -37,6 +37,8 @@ public class CommandBanIp extends CommandBase
 
     /**
      * Returns true if the given command sender is allowed to use this command.
+     *  
+     * @param sender The CommandSender
      */
     public boolean canCommandSenderUseCommand(ICommandSender sender)
     {
@@ -45,6 +47,8 @@ public class CommandBanIp extends CommandBase
 
     /**
      * Gets the usage string for the command.
+     *  
+     * @param sender The {@link ICommandSender} who is requesting usage details.
      */
     public String getCommandUsage(ICommandSender sender)
     {
@@ -53,6 +57,9 @@ public class CommandBanIp extends CommandBase
 
     /**
      * Callback when the command is invoked
+     *  
+     * @param sender The {@link ICommandSender sender} who executed the command
+     * @param args The arguments that were passed with the command
      */
     public void processCommand(ICommandSender sender, String[] args) throws CommandException
     {
@@ -90,7 +97,7 @@ public class CommandBanIp extends CommandBase
 
     protected void func_147210_a(ICommandSender p_147210_1_, String p_147210_2_, String p_147210_3_)
     {
-        IPBanEntry ipbanentry = new IPBanEntry(p_147210_2_, (Date)null, p_147210_1_.getName(), (Date)null, p_147210_3_);
+        IPBanEntry ipbanentry = new IPBanEntry(p_147210_2_, (Date)null, p_147210_1_.getCommandSenderName(), (Date)null, p_147210_3_);
         MinecraftServer.getServer().getConfigurationManager().getBannedIPs().addEntry(ipbanentry);
         List<EntityPlayerMP> list = MinecraftServer.getServer().getConfigurationManager().getPlayersMatchingAddress(p_147210_2_);
         String[] astring = new String[list.size()];
@@ -99,7 +106,7 @@ public class CommandBanIp extends CommandBase
         for (EntityPlayerMP entityplayermp : list)
         {
             entityplayermp.playerNetServerHandler.kickPlayerFromServer("You have been IP banned.");
-            astring[i++] = entityplayermp.getName();
+            astring[i++] = entityplayermp.getCommandSenderName();
         }
 
         if (list.isEmpty())

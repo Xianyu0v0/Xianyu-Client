@@ -412,7 +412,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
                 for (ScoreObjective scoreobjective : this.getWorldScoreboard().getObjectivesFromCriteria(IScoreObjectiveCriteria.health))
                 {
-                    this.getWorldScoreboard().getValueFromObjective(this.getName(), scoreobjective).func_96651_a(Arrays.<EntityPlayer>asList(new EntityPlayer[] {this}));
+                    this.getWorldScoreboard().getValueFromObjective(this.getCommandSenderName(), scoreobjective).func_96651_a(Arrays.<EntityPlayer>asList(new EntityPlayer[] {this}));
                 }
             }
 
@@ -488,7 +488,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
      */
     public void onDeath(DamageSource cause)
     {
-        if (this.worldObj.getGameRules().getBoolean("showDeathMessages"))
+        if (this.worldObj.getGameRules().getGameRuleBooleanValue("showDeathMessages"))
         {
             Team team = this.getTeam();
 
@@ -509,14 +509,14 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
             }
         }
 
-        if (!this.worldObj.getGameRules().getBoolean("keepInventory"))
+        if (!this.worldObj.getGameRules().getGameRuleBooleanValue("keepInventory"))
         {
             this.inventory.dropAllItems();
         }
 
         for (ScoreObjective scoreobjective : this.worldObj.getScoreboard().getObjectivesFromCriteria(IScoreObjectiveCriteria.deathCount))
         {
-            Score score = this.getWorldScoreboard().getValueFromObjective(this.getName(), scoreobjective);
+            Score score = this.getWorldScoreboard().getValueFromObjective(this.getCommandSenderName(), scoreobjective);
             score.func_96648_a();
         }
 
@@ -850,6 +850,10 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     /**
      * Sends the contents of an inventory slot to the client-side Container. This doesn't have to match the actual
      * contents of that slot. Args: Container, slot number, slot contents
+     *  
+     * @param containerToSend The container that is to be updated on the client.
+     * @param slotInd The slot index that is to be updated.
+     * @param stack The itemstack to be updated in the selected slot.
      */
     public void sendSlotContents(Container containerToSend, int slotInd, ItemStack stack)
     {
@@ -869,6 +873,9 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
     /**
      * update the crafting window inventory with the items in the list
+     *  
+     * @param containerToSend The container whose contents are to be sent to the player.
+     * @param itemsList The items to be sent to the player.
      */
     public void updateCraftingInventory(Container containerToSend, List<ItemStack> itemsList)
     {
@@ -880,6 +887,10 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
      * Sends two ints to the client-side Container. Used for furnace burning time, smelting progress, brewing progress,
      * and enchanting level. Normally the first int identifies which variable to update, and the second contains the new
      * value. Both are truncated to shorts in non-local SMP.
+     *  
+     * @param containerIn The container sending a progress bar update.
+     * @param varToUpdate The integer corresponding the variable to be updated.
+     * @param newValue The value the variable is to be updated with.
      */
     public void sendProgressBarUpdate(Container containerIn, int varToUpdate, int newValue)
     {
@@ -953,7 +964,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
             for (ScoreObjective scoreobjective : this.getWorldScoreboard().getObjectivesFromCriteria(stat.func_150952_k()))
             {
-                this.getWorldScoreboard().getValueFromObjective(this.getName(), scoreobjective).increseScore(amount);
+                this.getWorldScoreboard().getValueFromObjective(this.getCommandSenderName(), scoreobjective).increseScore(amount);
             }
 
             if (this.statsFile.func_150879_e())
@@ -971,7 +982,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
             for (ScoreObjective scoreobjective : this.getWorldScoreboard().getObjectivesFromCriteria(p_175145_1_.func_150952_k()))
             {
-                this.getWorldScoreboard().getValueFromObjective(this.getName(), scoreobjective).setScorePoints(0);
+                this.getWorldScoreboard().getValueFromObjective(this.getCommandSenderName(), scoreobjective).setScorePoints(0);
             }
 
             if (this.statsFile.func_150879_e())
@@ -1130,6 +1141,8 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
     /**
      * Send a chat message to the CommandSender
+     *  
+     * @param component The ChatComponent to send
      */
     public void addChatMessage(IChatComponent component)
     {
@@ -1138,6 +1151,9 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
     /**
      * Returns {@code true} if the CommandSender is allowed to execute the command, {@code false} if not
+     *  
+     * @param permLevel The permission level required to execute the command
+     * @param commandName The name of the command
      */
     public boolean canCommandSenderUseCommand(int permLevel, String commandName)
     {

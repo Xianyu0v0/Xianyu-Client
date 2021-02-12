@@ -69,6 +69,9 @@ public class EnchantmentProtection extends Enchantment
 
     /**
      * Calculates the damage protection of the enchantment based on level and damage source passed.
+     *  
+     * @param level The level of this enchantment.
+     * @param source The source of the damage.
      */
     public int calcModifierDamage(int level, DamageSource source)
     {
@@ -93,6 +96,8 @@ public class EnchantmentProtection extends Enchantment
 
     /**
      * Determines if the enchantment passed can be applyied together with this enchantment.
+     *  
+     * @param ench A possible enchantment that may be applied along side this enchantment, depending on the results.
      */
     public boolean canApplyTogether(Enchantment ench)
     {

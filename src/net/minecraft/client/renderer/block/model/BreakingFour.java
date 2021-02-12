@@ -12,6 +12,7 @@ public class BreakingFour extends BakedQuad
         super(Arrays.copyOf(p_i46217_1_.getVertexData(), p_i46217_1_.getVertexData().length), p_i46217_1_.tintIndex, FaceBakery.getFacingFromVertexData(p_i46217_1_.getVertexData()));
         this.texture = textureIn;
         this.func_178217_e();
+        this.fixVertexData();
     }
 
     private void func_178217_e()
@@ -24,10 +25,11 @@ public class BreakingFour extends BakedQuad
 
     private void func_178216_a(int p_178216_1_)
     {
-        int i = 7 * p_178216_1_;
-        float f = Float.intBitsToFloat(this.vertexData[i]);
-        float f1 = Float.intBitsToFloat(this.vertexData[i + 1]);
-        float f2 = Float.intBitsToFloat(this.vertexData[i + 2]);
+        int i = this.vertexData.length / 4;
+        int j = i * p_178216_1_;
+        float f = Float.intBitsToFloat(this.vertexData[j]);
+        float f1 = Float.intBitsToFloat(this.vertexData[j + 1]);
+        float f2 = Float.intBitsToFloat(this.vertexData[j + 2]);
         float f3 = 0.0F;
         float f4 = 0.0F;
 
@@ -63,7 +65,7 @@ public class BreakingFour extends BakedQuad
                 f4 = (1.0F - f1) * 16.0F;
         }
 
-        this.vertexData[i + 4] = Float.floatToRawIntBits(this.texture.getInterpolatedU((double)f3));
-        this.vertexData[i + 4 + 1] = Float.floatToRawIntBits(this.texture.getInterpolatedV((double)f4));
+        this.vertexData[j + 4] = Float.floatToRawIntBits(this.texture.getInterpolatedU((double)f3));
+        this.vertexData[j + 4 + 1] = Float.floatToRawIntBits(this.texture.getInterpolatedV((double)f4));
     }
 }

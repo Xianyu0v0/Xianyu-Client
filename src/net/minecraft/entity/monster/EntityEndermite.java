@@ -128,6 +128,8 @@ public class EntityEndermite extends EntityMob
 
     /**
      * Sets if this mob was spawned by a player or not.
+     *  
+     * @param spawnedByPlayer If the mob was spawned by a player or not.
      */
     public void setSpawnedByPlayer(boolean spawnedByPlayer)
     {

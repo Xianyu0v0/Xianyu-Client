@@ -73,6 +73,8 @@ public class WorldChunkManagerHell extends WorldChunkManager
     /**
      * Return a list of biomes for the specified blocks. Args: listToReuse, x, y, width, length, cacheFlag (if false,
      * don't check biomeCache to avoid infinite loop in BiomeCacheBlock)
+     *  
+     * @param cacheFlag If false, don't check biomeCache to avoid infinite loop in BiomeCacheBlock
      */
     public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] listToReuse, int x, int z, int width, int length, boolean cacheFlag)
     {

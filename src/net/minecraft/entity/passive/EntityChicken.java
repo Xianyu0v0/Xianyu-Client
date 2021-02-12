@@ -233,6 +233,8 @@ public class EntityChicken extends EntityAnimal
 
     /**
      * Sets whether this chicken is a jockey or not.
+     *  
+     * @param jockey Whether this chicken is a jockey or not
      */
     public void setChickenJockey(boolean jockey)
     {

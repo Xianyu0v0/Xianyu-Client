@@ -151,14 +151,14 @@ public class ContainerMerchant extends Container
 
         if (!this.theWorld.isRemote)
         {
-            ItemStack itemstack = this.merchantInventory.removeStackFromSlot(0);
+            ItemStack itemstack = this.merchantInventory.getStackInSlotOnClosing(0);
 
             if (itemstack != null)
             {
                 playerIn.dropPlayerItemWithRandomChoice(itemstack, false);
             }
 
-            itemstack = this.merchantInventory.removeStackFromSlot(1);
+            itemstack = this.merchantInventory.getStackInSlotOnClosing(1);
 
             if (itemstack != null)
             {

@@ -162,7 +162,7 @@ public class BlockAnvil extends BlockFalling
             this.position = pos;
         }
 
-        public String getName()
+        public String getCommandSenderName()
         {
             return "anvil";
         }

@@ -221,7 +221,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
         return otherAnimal == this ? false : (otherAnimal.getClass() != this.getClass() ? false : this.isInLove() && otherAnimal.isInLove());
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 18)
         {
@@ -235,7 +235,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 }

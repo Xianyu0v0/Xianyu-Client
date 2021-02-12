@@ -53,7 +53,7 @@ public class SimpleBakedModel implements IBakedModel
         return false;
     }
 
-    public TextureAtlasSprite getParticleTexture()
+    public TextureAtlasSprite getTexture()
     {
         return this.texture;
     }
@@ -80,7 +80,7 @@ public class SimpleBakedModel implements IBakedModel
         public Builder(IBakedModel p_i46075_1_, TextureAtlasSprite p_i46075_2_)
         {
             this(p_i46075_1_.isAmbientOcclusion(), p_i46075_1_.isGui3d(), p_i46075_1_.getItemCameraTransforms());
-            this.builderTexture = p_i46075_1_.getParticleTexture();
+            this.builderTexture = p_i46075_1_.getTexture();
 
             for (EnumFacing enumfacing : EnumFacing.values())
             {

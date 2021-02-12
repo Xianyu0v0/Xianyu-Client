@@ -24,7 +24,7 @@ public class EntityAIBreakDoor extends EntityAIDoorInteract
         {
             return false;
         }
-        else if (!this.theEntity.worldObj.getGameRules().getBoolean("mobGriefing"))
+        else if (!this.theEntity.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"))
         {
             return false;
         }

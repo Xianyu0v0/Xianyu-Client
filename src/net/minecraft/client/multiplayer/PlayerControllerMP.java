@@ -115,6 +115,9 @@ public class PlayerControllerMP
 
     /**
      * Called when a player completes the destruction of a block
+     *  
+     * @param pos The block's coordinates
+     * @param side The side it was destroyed from
      */
     public boolean onPlayerDestroyBlock(BlockPos pos, EnumFacing side)
     {
@@ -190,6 +193,9 @@ public class PlayerControllerMP
 
     /**
      * Called when the player is hitting a block with an item.
+     *  
+     * @param loc location of the block being clicked
+     * @param face Blockface being clicked
      */
     public boolean clickBlock(BlockPos loc, EnumFacing face)
     {

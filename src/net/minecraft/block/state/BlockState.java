@@ -184,7 +184,7 @@ public class BlockState
                     {
                         if (comparable != this.properties.get(iproperty))
                         {
-                            table.put(iproperty, comparable, map.get(this.getPropertiesWithValue(iproperty, comparable)));
+                            table.put(iproperty, comparable, map.get(this.setPropertyValue(iproperty, comparable)));
                         }
                     }
                 }
@@ -193,7 +193,7 @@ public class BlockState
             }
         }
 
-        private Map<IProperty, Comparable> getPropertiesWithValue(IProperty property, Comparable value)
+        private Map<IProperty, Comparable> setPropertyValue(IProperty property, Comparable value)
         {
             Map<IProperty, Comparable> map = Maps.<IProperty, Comparable>newHashMap(this.properties);
             map.put(property, value);

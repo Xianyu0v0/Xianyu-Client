@@ -262,6 +262,8 @@ public abstract class CreativeTabs
 
     /**
      * Adds the enchantment books from the supplied EnumEnchantmentType to the given list.
+     *  
+     * @param itemList A list of ItemStacks that contains every item/block in the creative tab.
      */
     public void addEnchantmentBooksToList(List<ItemStack> itemList, EnumEnchantmentType... enchantmentType)
     {

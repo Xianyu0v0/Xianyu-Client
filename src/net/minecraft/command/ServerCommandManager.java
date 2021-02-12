@@ -110,6 +110,11 @@ public class ServerCommandManager extends CommandHandler implements IAdminComman
 
     /**
      * Send an informative message to the server operators
+     *  
+     * @param sender The command sender
+     * @param command The command that was executed
+     * @param msgFormat The message, optionally with formatting wildcards
+     * @param msgParams The formatting arguments for the {@code msgFormat}
      */
     public void notifyOperators(ICommandSender sender, ICommand command, int flags, String msgFormat, Object... msgParams)
     {
@@ -121,7 +126,7 @@ public class ServerCommandManager extends CommandHandler implements IAdminComman
             flag = false;
         }
 
-        IChatComponent ichatcomponent = new ChatComponentTranslation("chat.type.admin", new Object[] {sender.getName(), new ChatComponentTranslation(msgFormat, msgParams)});
+        IChatComponent ichatcomponent = new ChatComponentTranslation("chat.type.admin", new Object[] {sender.getCommandSenderName(), new ChatComponentTranslation(msgFormat, msgParams)});
         ichatcomponent.getChatStyle().setColor(EnumChatFormatting.GRAY);
         ichatcomponent.getChatStyle().setItalic(Boolean.valueOf(true));
 
@@ -142,12 +147,12 @@ public class ServerCommandManager extends CommandHandler implements IAdminComman
             }
         }
 
-        if (sender != minecraftserver && minecraftserver.worldServers[0].getGameRules().getBoolean("logAdminCommands"))
+        if (sender != minecraftserver && minecraftserver.worldServers[0].getGameRules().getGameRuleBooleanValue("logAdminCommands"))
         {
             minecraftserver.addChatMessage(ichatcomponent);
         }
 
-        boolean flag3 = minecraftserver.worldServers[0].getGameRules().getBoolean("sendCommandFeedback");
+        boolean flag3 = minecraftserver.worldServers[0].getGameRules().getGameRuleBooleanValue("sendCommandFeedback");
 
         if (sender instanceof CommandBlockLogic)
         {

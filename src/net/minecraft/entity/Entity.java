@@ -1006,6 +1006,8 @@ public abstract class Entity implements ICommandSender
 
     /**
      * When set to true the entity will not play sounds.
+     *  
+     * @param isSilent Should the mob be set to silent?
      */
     public void setSilent(boolean isSilent)
     {
@@ -1462,6 +1464,9 @@ public abstract class Entity implements ICommandSender
 
     /**
      * Creates a Vec3 using the pitch and yaw of the entities rotation.
+     *  
+     * @param pitch The rotational pitch of the entity.
+     * @param yaw The rotational yaw of the entity.
      */
     protected final Vec3 getVectorForRotation(float pitch, float yaw)
     {
@@ -2078,7 +2083,7 @@ public abstract class Entity implements ICommandSender
         this.motionZ = z;
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
     }
 
@@ -2331,7 +2336,7 @@ public abstract class Entity implements ICommandSender
     /**
      * Gets the name of this command sender (usually username, but possibly "Rcon")
      */
-    public String getName()
+    public String getCommandSenderName()
     {
         if (this.hasCustomName())
         {
@@ -2400,7 +2405,7 @@ public abstract class Entity implements ICommandSender
 
     public String toString()
     {
-        return String.format("%s[\'%s\'/%d, l=\'%s\', x=%.2f, y=%.2f, z=%.2f]", new Object[] {this.getClass().getSimpleName(), this.getName(), Integer.valueOf(this.entityId), this.worldObj == null ? "~NULL~" : this.worldObj.getWorldInfo().getWorldName(), Double.valueOf(this.posX), Double.valueOf(this.posY), Double.valueOf(this.posZ)});
+        return String.format("%s[\'%s\'/%d, l=\'%s\', x=%.2f, y=%.2f, z=%.2f]", new Object[] {this.getClass().getSimpleName(), this.getCommandSenderName(), Integer.valueOf(this.entityId), this.worldObj == null ? "~NULL~" : this.worldObj.getWorldInfo().getWorldName(), Double.valueOf(this.posX), Double.valueOf(this.posY), Double.valueOf(this.posZ)});
     }
 
     public boolean isEntityInvulnerable(DamageSource source)
@@ -2531,7 +2536,7 @@ public abstract class Entity implements ICommandSender
         {
             public String call() throws Exception
             {
-                return Entity.this.getName();
+                return Entity.this.getCommandSenderName();
             }
         });
         category.addCrashSection("Entity\'s Exact location", String.format("%.2f, %.2f, %.2f", new Object[] {Double.valueOf(this.posX), Double.valueOf(this.posY), Double.valueOf(this.posZ)}));
@@ -2576,7 +2581,7 @@ public abstract class Entity implements ICommandSender
      */
     public IChatComponent getDisplayName()
     {
-        ChatComponentText chatcomponenttext = new ChatComponentText(this.getName());
+        ChatComponentText chatcomponenttext = new ChatComponentText(this.getCommandSenderName());
         chatcomponenttext.getChatStyle().setChatHoverEvent(this.getHoverEvent());
         chatcomponenttext.getChatStyle().setInsertion(this.getUniqueID().toString());
         return chatcomponenttext;
@@ -2646,7 +2651,7 @@ public abstract class Entity implements ICommandSender
             nbttagcompound.setString("type", s);
         }
 
-        nbttagcompound.setString("name", this.getName());
+        nbttagcompound.setString("name", this.getCommandSenderName());
         return new HoverEvent(HoverEvent.Action.SHOW_ENTITY, new ChatComponentText(nbttagcompound.toString()));
     }
 
@@ -2687,6 +2692,8 @@ public abstract class Entity implements ICommandSender
 
     /**
      * Send a chat message to the CommandSender
+     *  
+     * @param component The ChatComponent to send
      */
     public void addChatMessage(IChatComponent component)
     {
@@ -2694,6 +2701,9 @@ public abstract class Entity implements ICommandSender
 
     /**
      * Returns {@code true} if the CommandSender is allowed to execute the command, {@code false} if not
+     *  
+     * @param permLevel The permission level required to execute the command
+     * @param commandName The name of the command
      */
     public boolean canCommandSenderUseCommand(int permLevel, String commandName)
     {

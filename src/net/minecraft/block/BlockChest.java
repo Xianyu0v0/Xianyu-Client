@@ -519,7 +519,7 @@ public class BlockChest extends BlockContainer
         return this.chestType == 1;
     }
 
-    public int getWeakPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
+    public int isProvidingWeakPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
     {
         if (!this.canProvidePower())
         {
@@ -539,9 +539,9 @@ public class BlockChest extends BlockContainer
         }
     }
 
-    public int getStrongPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
+    public int isProvidingStrongPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
     {
-        return side == EnumFacing.UP ? this.getWeakPower(worldIn, pos, state, side) : 0;
+        return side == EnumFacing.UP ? this.isProvidingWeakPower(worldIn, pos, state, side) : 0;
     }
 
     private boolean isBlocked(World worldIn, BlockPos pos)

@@ -138,7 +138,7 @@ public class EntityFireworkRocket extends Entity
         }
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 17 && this.worldObj.isRemote)
         {
@@ -153,7 +153,7 @@ public class EntityFireworkRocket extends Entity
             this.worldObj.makeFireworks(this.posX, this.posY, this.posZ, this.motionX, this.motionY, this.motionZ, nbttagcompound);
         }
 
-        super.handleStatusUpdate(id);
+        super.handleHealthUpdate(id);
     }
 
     /**

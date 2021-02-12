@@ -187,7 +187,7 @@ public class EntityIronGolem extends EntityGolem
         return flag;
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 4)
         {
@@ -200,7 +200,7 @@ public class EntityIronGolem extends EntityGolem
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 
@@ -292,7 +292,7 @@ public class EntityIronGolem extends EntityGolem
     {
         if (!this.isPlayerCreated() && this.attackingPlayer != null && this.villageObj != null)
         {
-            this.villageObj.setReputationForPlayer(this.attackingPlayer.getName(), -5);
+            this.villageObj.setReputationForPlayer(this.attackingPlayer.getCommandSenderName(), -5);
         }
 
         super.onDeath(cause);

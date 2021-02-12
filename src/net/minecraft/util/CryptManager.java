@@ -68,6 +68,10 @@ public class CryptManager
 
     /**
      * Compute a serverId hash for use by sendSessionRequest()
+     *  
+     * @param serverId The server ID
+     * @param publicKey The public key
+     * @param secretKey The secret key
      */
     public static byte[] getServerIdHash(String serverId, PublicKey publicKey, SecretKey secretKey)
     {
@@ -84,6 +88,9 @@ public class CryptManager
 
     /**
      * Compute a message digest on arbitrary byte[] data
+     *  
+     * @param algorithm The name of the algorithm
+     * @param data The data
      */
     private static byte[] digestOperation(String algorithm, byte[]... data)
     {
@@ -107,6 +114,8 @@ public class CryptManager
 
     /**
      * Create a new PublicKey from encoded X.509 data
+     *  
+     * @param encodedKey The key, encoded to the X.509 standard
      */
     public static PublicKey decodePublicKey(byte[] encodedKey)
     {
@@ -131,6 +140,9 @@ public class CryptManager
 
     /**
      * Decrypt shared secret AES key using RSA private key
+     *  
+     * @param key The encryption key
+     * @param secretKeyEncrypted The encrypted secret key
      */
     public static SecretKey decryptSharedKey(PrivateKey key, byte[] secretKeyEncrypted)
     {
@@ -139,6 +151,9 @@ public class CryptManager
 
     /**
      * Encrypt byte[] data with RSA public key
+     *  
+     * @param key The encryption key
+     * @param data The data
      */
     public static byte[] encryptData(Key key, byte[] data)
     {
@@ -147,6 +162,9 @@ public class CryptManager
 
     /**
      * Decrypt byte[] data with RSA private key
+     *  
+     * @param key The encryption key
+     * @param data The data
      */
     public static byte[] decryptData(Key key, byte[] data)
     {
@@ -155,6 +173,11 @@ public class CryptManager
 
     /**
      * Encrypt or decrypt byte[] data using the specified key
+     *  
+     * @param opMode The operation mode of the cipher. (this is one of the following: Cipher.ENCRYPT_MODE,
+     * Cipher.DECRYPT_MODE, Cipher.WRAP_MODE or Cipher.UNWRAP_MODE)
+     * @param key The encryption key
+     * @param data The data
      */
     private static byte[] cipherOperation(int opMode, Key key, byte[] data)
     {
@@ -177,6 +200,11 @@ public class CryptManager
 
     /**
      * Creates the Cipher Instance.
+     *  
+     * @param opMode The operation mode of the cipher. (this is one of the following: Cipher.ENCRYPT_MODE,
+     * Cipher.DECRYPT_MODE, Cipher.WRAP_MODE or Cipher.UNWRAP_MODE)
+     * @param transformation The name of the transformation, e.g. DES/CBC/PKCS5Padding.
+     * @param key The encryption key
      */
     private static Cipher createTheCipherInstance(int opMode, String transformation, Key key)
     {
@@ -205,6 +233,10 @@ public class CryptManager
 
     /**
      * Creates an Cipher instance using the AES/CFB8/NoPadding algorithm. Used for protocol encryption.
+     *  
+     * @param opMode The operation mode of the cipher. (this is one of the following: Cipher.ENCRYPT_MODE,
+     * Cipher.DECRYPT_MODE, Cipher.WRAP_MODE or Cipher.UNWRAP_MODE)
+     * @param key The encryption key
      */
     public static Cipher createNetCipherInstance(int opMode, Key key)
     {

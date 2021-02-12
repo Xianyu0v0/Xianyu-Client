@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import net.minecraft.util.ReportedException;
 import net.minecraft.world.gen.layer.IntCache;
+import net.optifine.CrashReporter;
+import net.optifine.reflect.Reflector;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
@@ -37,6 +39,7 @@ public class CrashReport
     private File crashReportFile;
     private boolean field_85059_f = true;
     private StackTraceElement[] stacktrace = new StackTraceElement[0];
+    private boolean reported = false;
 
     public CrashReport(String descriptionIn, Throwable causeThrowable)
     {
@@ -125,6 +128,12 @@ public class CrashReport
                 return IntCache.getCacheSizes();
             }
         });
+
+        if (Reflector.FMLCommonHandler_enhanceCrashReport.exists())
+        {
+            Object object = Reflector.call(Reflector.FMLCommonHandler_instance, new Object[0]);
+            Reflector.callString(object, Reflector.FMLCommonHandler_enhanceCrashReport, new Object[] {this, this.theReportCategory});
+        }
     }
 
     /**
@@ -150,7 +159,7 @@ public class CrashReport
     {
         if ((this.stacktrace == null || this.stacktrace.length <= 0) && this.crashReportSections.size() > 0)
         {
-            this.stacktrace = (StackTraceElement[])ArrayUtils.subarray(((CrashReportCategory)this.crashReportSections.get(0)).getStackTrace(), 0, 1);
+            this.stacktrace = (StackTraceElement[])((StackTraceElement[])ArrayUtils.subarray(((CrashReportCategory)this.crashReportSections.get(0)).getStackTrace(), 0, 1));
         }
 
         if (this.stacktrace != null && this.stacktrace.length > 0)
@@ -226,8 +235,16 @@ public class CrashReport
      */
     public String getCompleteReport()
     {
+        if (!this.reported)
+        {
+            this.reported = true;
+            CrashReporter.onCrashReport(this, this.theReportCategory);
+        }
+
         StringBuilder stringbuilder = new StringBuilder();
         stringbuilder.append("---- Minecraft Crash Report ----\n");
+        Reflector.call(Reflector.BlamingTransformer_onCrash, new Object[] {stringbuilder});
+        Reflector.call(Reflector.CoreModManager_onCrash, new Object[] {stringbuilder});
         stringbuilder.append("// ");
         stringbuilder.append(getWittyComment());
         stringbuilder.append("\n\n");

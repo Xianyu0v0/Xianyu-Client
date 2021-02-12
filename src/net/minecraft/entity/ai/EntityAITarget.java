@@ -135,6 +135,12 @@ public abstract class EntityAITarget extends EntityAIBase
 
     /**
      * A static method used to see if an entity is a suitable target through a number of checks.
+     *  
+     * @param attacker entity which is attacking
+     * @param target attack target
+     * @param includeInvincibles should ignore {@link net.minecraft.entity.player.EntityPlayer#capabilities
+     * EntityPlayer.capabilities}.{@link net.minecraft.entity.player.PlayerCapabilities#disableDamage disableDamage}
+     * @param checkSight should check if attacker can see target
      */
     public static boolean isSuitableTarget(EntityLiving attacker, EntityLivingBase target, boolean includeInvincibles, boolean checkSight)
     {

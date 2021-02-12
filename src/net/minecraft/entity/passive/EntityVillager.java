@@ -77,7 +77,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
     /** addDefaultEquipmentAndRecipies is called if this is true */
     private boolean needsInitilization;
-    private boolean isWillingToMate;
+    private boolean isWillingToTrade;
     private int wealth;
 
     /** Last player to trade with this villager, used for aggressivity. */
@@ -262,7 +262,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         tagCompound.setInteger("Riches", this.wealth);
         tagCompound.setInteger("Career", this.careerId);
         tagCompound.setInteger("CareerLevel", this.careerLevel);
-        tagCompound.setBoolean("Willing", this.isWillingToMate);
+        tagCompound.setBoolean("Willing", this.isWillingToTrade);
 
         if (this.buyingList != null)
         {
@@ -294,7 +294,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         this.wealth = tagCompund.getInteger("Riches");
         this.careerId = tagCompund.getInteger("Career");
         this.careerLevel = tagCompund.getInteger("CareerLevel");
-        this.isWillingToMate = tagCompund.getBoolean("Willing");
+        this.isWillingToTrade = tagCompund.getBoolean("Willing");
 
         if (tagCompund.hasKey("Offers", 10))
         {
@@ -397,7 +397,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
                     i = -3;
                 }
 
-                this.villageObj.setReputationForPlayer(livingBase.getName(), i);
+                this.villageObj.setReputationForPlayer(livingBase.getCommandSenderName(), i);
 
                 if (this.isEntityAlive())
                 {
@@ -420,7 +420,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
             {
                 if (entity instanceof EntityPlayer)
                 {
-                    this.villageObj.setReputationForPlayer(entity.getName(), -2);
+                    this.villageObj.setReputationForPlayer(entity.getCommandSenderName(), -2);
                 }
                 else if (entity instanceof IMob)
                 {
@@ -457,11 +457,13 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
     }
 
     /**
-     * Returns current or updated value of {@link #isWillingToMate}
+     * Returns current or updated value of {@link #isWillingToTrade}
+     *  
+     * @param updateFirst Updates {@link #isWillingToTrade} variable if set to true
      */
-    public boolean getIsWillingToMate(boolean updateFirst)
+    public boolean getIsWillingToTrade(boolean updateFirst)
     {
-        if (!this.isWillingToMate && updateFirst && this.func_175553_cp())
+        if (!this.isWillingToTrade && updateFirst && this.func_175553_cp())
         {
             boolean flag = false;
 
@@ -486,18 +488,18 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
                 if (flag)
                 {
                     this.worldObj.setEntityState(this, (byte)18);
-                    this.isWillingToMate = true;
+                    this.isWillingToTrade = true;
                     break;
                 }
             }
         }
 
-        return this.isWillingToMate;
+        return this.isWillingToTrade;
     }
 
-    public void setIsWillingToMate(boolean willingToTrade)
+    public void setIsWillingToTrade(boolean willingToTrade)
     {
-        this.isWillingToMate = willingToTrade;
+        this.isWillingToTrade = willingToTrade;
     }
 
     public void useRecipe(MerchantRecipe recipe)
@@ -511,11 +513,11 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         {
             this.timeUntilReset = 40;
             this.needsInitilization = true;
-            this.isWillingToMate = true;
+            this.isWillingToTrade = true;
 
             if (this.buyingPlayer != null)
             {
-                this.lastBuyingPlayer = this.buyingPlayer.getName();
+                this.lastBuyingPlayer = this.buyingPlayer.getCommandSenderName();
             }
             else
             {
@@ -711,7 +713,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         return f;
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 12)
         {
@@ -727,7 +729,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 
@@ -850,6 +852,8 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
     /**
      * Returns true if villager has enough items in inventory
+     *  
+     * @param multiplier requirement multiplier
      */
     private boolean hasEnoughItems(int multiplier)
     {

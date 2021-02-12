@@ -119,6 +119,8 @@ public enum EnumChatFormatting
 
     /**
      * Returns a copy of the given string, with formatting codes stripped away.
+     *  
+     * @param text The text to strip formatting codes from
      */
     public static String getTextWithoutFormattingCodes(String text)
     {
@@ -127,6 +129,8 @@ public enum EnumChatFormatting
 
     /**
      * Gets a value by its friendly name; null if the given name does not map to a defined value.
+     *  
+     * @param friendlyName The friendly name
      */
     public static EnumChatFormatting getValueByName(String friendlyName)
     {

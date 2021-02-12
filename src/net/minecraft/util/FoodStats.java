@@ -57,7 +57,7 @@ public class FoodStats
             }
         }
 
-        if (player.worldObj.getGameRules().getBoolean("naturalRegeneration") && this.foodLevel >= 18 && player.shouldHeal())
+        if (player.worldObj.getGameRules().getGameRuleBooleanValue("naturalRegeneration") && this.foodLevel >= 18 && player.shouldHeal())
         {
             ++this.foodTimer;
 

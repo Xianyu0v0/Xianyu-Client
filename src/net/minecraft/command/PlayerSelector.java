@@ -54,6 +54,9 @@ public class PlayerSelector
 
     /**
      * Returns the one player that matches the given at-token.  Returns null if more than one player matches.
+     *  
+     * @param sender The command sender to match the token for
+     * @param token The selector token to match
      */
     public static EntityPlayerMP matchOnePlayer(ICommandSender sender, String token)
     {
@@ -330,7 +333,7 @@ public class PlayerSelector
                             return false;
                         }
 
-                        String s1 = p_apply_1_ instanceof EntityPlayerMP ? p_apply_1_.getName() : p_apply_1_.getUniqueID().toString();
+                        String s1 = p_apply_1_ instanceof EntityPlayerMP ? p_apply_1_.getCommandSenderName() : p_apply_1_.getUniqueID().toString();
 
                         if (!scoreboard.entityHasObjective(s1, scoreobjective))
                         {
@@ -377,7 +380,7 @@ public class PlayerSelector
             {
                 public boolean apply(Entity p_apply_1_)
                 {
-                    return p_apply_1_.getName().equals(s_f) != flag;
+                    return p_apply_1_.getCommandSenderName().equals(s_f) != flag;
                 }
             });
         }

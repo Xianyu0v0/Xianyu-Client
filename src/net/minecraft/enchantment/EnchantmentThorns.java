@@ -42,6 +42,8 @@ public class EnchantmentThorns extends Enchantment
 
     /**
      * Determines if this enchantment can be applied to a specific ItemStack.
+     *  
+     * @param stack The ItemStack that is attempting to become enchanted with with enchantment.
      */
     public boolean canApply(ItemStack stack)
     {
@@ -51,6 +53,10 @@ public class EnchantmentThorns extends Enchantment
     /**
      * Whenever an entity that has this enchantment on one of its associated items is damaged this method will be
      * called.
+     *  
+     * @param user An instance of the entity that is associated with this enchantment.
+     * @param attacker An instance of the entity that has attacked the using entity.
+     * @param level The level of the enchantment used.
      */
     public void onUserHurt(EntityLivingBase user, Entity attacker, int level)
     {

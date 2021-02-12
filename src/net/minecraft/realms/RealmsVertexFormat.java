@@ -32,7 +32,7 @@ public class RealmsVertexFormat
 
     public int getUvOffset(int p_getUvOffset_1_)
     {
-        return this.v.getUvOffsetById(p_getUvOffset_1_);
+        return this.v.getElementOffsetById(p_getUvOffset_1_);
     }
 
     public int getElementCount()
@@ -47,7 +47,7 @@ public class RealmsVertexFormat
 
     public boolean hasUv(int p_hasUv_1_)
     {
-        return this.v.hasUvOffset(p_hasUv_1_);
+        return this.v.hasElementOffset(p_hasUv_1_);
     }
 
     public RealmsVertexFormatElement getElement(int p_getElement_1_)

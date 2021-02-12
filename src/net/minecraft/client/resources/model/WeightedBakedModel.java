@@ -48,9 +48,9 @@ public class WeightedBakedModel implements IBakedModel
         return this.baseModel.isBuiltInRenderer();
     }
 
-    public TextureAtlasSprite getParticleTexture()
+    public TextureAtlasSprite getTexture()
     {
-        return this.baseModel.getParticleTexture();
+        return this.baseModel.getTexture();
     }
 
     public ItemCameraTransforms getItemCameraTransforms()

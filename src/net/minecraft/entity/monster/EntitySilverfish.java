@@ -283,7 +283,7 @@ public class EntitySilverfish extends EntityMob
 
                             if (iblockstate.getBlock() == Blocks.monster_egg)
                             {
-                                if (world.getGameRules().getBoolean("mobGriefing"))
+                                if (world.getGameRules().getGameRuleBooleanValue("mobGriefing"))
                                 {
                                     world.destroyBlock(blockpos1, true);
                                 }

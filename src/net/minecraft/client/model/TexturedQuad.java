@@ -3,7 +3,9 @@ package net.minecraft.client.model;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.src.Config;
 import net.minecraft.util.Vec3;
+import net.optifine.shaders.SVertexFormat;
 
 public class TexturedQuad
 {
@@ -43,6 +45,9 @@ public class TexturedQuad
     /**
      * Draw this primitve. This is typically called only once as the generated drawing instructions are saved by the
      * renderer and reused later.
+     *  
+     * @param renderer The renderer instance
+     * @param scale The amount of scale to apply to this object
      */
     public void draw(WorldRenderer renderer, float scale)
     {
@@ -60,12 +65,19 @@ public class TexturedQuad
             f2 = -f2;
         }
 
-        renderer.begin(7, DefaultVertexFormats.OLDMODEL_POSITION_TEX_NORMAL);
+        if (Config.isShaders())
+        {
+            renderer.func_181668_a(7, SVertexFormat.defVertexFormatTextured);
+        }
+        else
+        {
+            renderer.func_181668_a(7, DefaultVertexFormats.field_181703_c);
+        }
 
         for (int i = 0; i < 4; ++i)
         {
             PositionTextureVertex positiontexturevertex = this.vertexPositions[i];
-            renderer.pos(positiontexturevertex.vector3D.xCoord * (double)scale, positiontexturevertex.vector3D.yCoord * (double)scale, positiontexturevertex.vector3D.zCoord * (double)scale).tex((double)positiontexturevertex.texturePositionX, (double)positiontexturevertex.texturePositionY).normal(f, f1, f2).endVertex();
+            renderer.func_181662_b(positiontexturevertex.vector3D.xCoord * (double)scale, positiontexturevertex.vector3D.yCoord * (double)scale, positiontexturevertex.vector3D.zCoord * (double)scale).func_181673_a((double)positiontexturevertex.texturePositionX, (double)positiontexturevertex.texturePositionY).func_181663_c(f, f1, f2).func_181675_d();
         }
 
         Tessellator.getInstance().draw();

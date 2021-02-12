@@ -45,6 +45,8 @@ public class UserListOps extends UserList<GameProfile, UserListOpsEntry>
 
     /**
      * Gets the GameProfile of based on the provided username.
+     *  
+     * @param username The username to match to a GameProfile
      */
     public GameProfile getGameProfileFromName(String username)
     {

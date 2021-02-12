@@ -89,6 +89,10 @@ public class Vec3i implements Comparable<Vec3i>
 
     /**
      * Calculate squared distance to the given coordinates
+     *  
+     * @param toX X Coordinate
+     * @param toY Y Coordinate
+     * @param toZ Z Coordinate
      */
     public double distanceSq(double toX, double toY, double toZ)
     {

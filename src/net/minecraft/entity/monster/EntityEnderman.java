@@ -551,7 +551,7 @@ public class EntityEnderman extends EntityMob
 
         public boolean shouldExecute()
         {
-            return !this.enderman.worldObj.getGameRules().getBoolean("mobGriefing") ? false : (this.enderman.getHeldBlockState().getBlock().getMaterial() == Material.air ? false : this.enderman.getRNG().nextInt(2000) == 0);
+            return !this.enderman.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing") ? false : (this.enderman.getHeldBlockState().getBlock().getMaterial() == Material.air ? false : this.enderman.getRNG().nextInt(2000) == 0);
         }
 
         public void updateTask()
@@ -589,7 +589,7 @@ public class EntityEnderman extends EntityMob
 
         public boolean shouldExecute()
         {
-            return !this.enderman.worldObj.getGameRules().getBoolean("mobGriefing") ? false : (this.enderman.getHeldBlockState().getBlock().getMaterial() != Material.air ? false : this.enderman.getRNG().nextInt(20) == 0);
+            return !this.enderman.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing") ? false : (this.enderman.getHeldBlockState().getBlock().getMaterial() != Material.air ? false : this.enderman.getRNG().nextInt(20) == 0);
         }
 
         public void updateTask()

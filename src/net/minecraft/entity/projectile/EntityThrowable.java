@@ -98,6 +98,8 @@ public abstract class EntityThrowable extends Entity implements IProjectile
 
     /**
      * Similar to setArrowHeading, it's point the throwable entity to a x, y, z direction.
+     *  
+     * @param inaccuracy Higher means more error.
      */
     public void setThrowableHeading(double x, double y, double z, float velocity, float inaccuracy)
     {
@@ -314,7 +316,7 @@ public abstract class EntityThrowable extends Entity implements IProjectile
 
         if ((this.throwerName == null || this.throwerName.length() == 0) && this.thrower instanceof EntityPlayer)
         {
-            this.throwerName = this.thrower.getName();
+            this.throwerName = this.thrower.getCommandSenderName();
         }
 
         tagCompound.setString("ownerName", this.throwerName == null ? "" : this.throwerName);

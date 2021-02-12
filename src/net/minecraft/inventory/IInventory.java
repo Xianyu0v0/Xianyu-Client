@@ -13,18 +13,25 @@ public interface IInventory extends IWorldNameable
 
     /**
      * Returns the stack in the given slot.
+     *  
+     * @param index The slot to retrieve from.
      */
     ItemStack getStackInSlot(int index);
 
     /**
      * Removes up to a specified number of items from an inventory slot and returns them in a new stack.
+     *  
+     * @param index The slot to remove from.
+     * @param count The maximum amount of items to remove.
      */
     ItemStack decrStackSize(int index, int count);
 
     /**
      * Removes a stack from the given slot and returns it.
+     *  
+     * @param index The slot to remove a stack from.
      */
-    ItemStack removeStackFromSlot(int index);
+    ItemStack getStackInSlotOnClosing(int index);
 
     /**
      * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).

@@ -50,6 +50,8 @@ public class RenderPlayer extends RendererLivingEntity<AbstractClientPlayer>
      * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
      * (Render<T extends Entity>) and this method has signature public void doRender(T entity, double d, double d1,
      * double d2, float f, float f1). But JAD is pre 1.5 so doe
+     *  
+     * @param entityYaw The yaw rotation of the passed entity
      */
     public void doRender(AbstractClientPlayer entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
@@ -148,7 +150,7 @@ public class RenderPlayer extends RendererLivingEntity<AbstractClientPlayer>
 
             if (scoreobjective != null)
             {
-                Score score = scoreboard.getValueFromObjective(entityIn.getName(), scoreobjective);
+                Score score = scoreboard.getValueFromObjective(entityIn.getCommandSenderName(), scoreobjective);
                 this.renderLivingLabel(entityIn, score.getScorePoints() + " " + scoreobjective.getDisplayName(), x, y, z, 64);
                 y += (double)((float)this.getFontRendererFromRenderManager().FONT_HEIGHT * 1.15F * p_177069_9_);
             }

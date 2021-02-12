@@ -116,7 +116,7 @@ public class BlockModelShapes
             ibakedmodel = this.modelManager.getMissingModel();
         }
 
-        return ibakedmodel.getParticleTexture();
+        return ibakedmodel.getTexture();
     }
 
     public IBakedModel getModelForState(IBlockState state)

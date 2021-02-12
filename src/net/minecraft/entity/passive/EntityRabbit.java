@@ -484,7 +484,7 @@ public class EntityRabbit extends EntityAnimal
         this.carrotTicks = 100;
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 1)
         {
@@ -494,7 +494,7 @@ public class EntityRabbit extends EntityAnimal
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 
@@ -560,7 +560,7 @@ public class EntityRabbit extends EntityAnimal
         {
             if (this.runDelay <= 0)
             {
-                if (!this.field_179500_c.worldObj.getGameRules().getBoolean("mobGriefing"))
+                if (!this.field_179500_c.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"))
                 {
                     return false;
                 }

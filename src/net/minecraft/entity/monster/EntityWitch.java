@@ -184,7 +184,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
         super.onLivingUpdate();
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 15)
         {
@@ -195,12 +195,14 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 
     /**
      * Reduces damage, depending on potions
+     *  
+     * @param damage The damage to deal
      */
     protected float applyPotionDamageCalculations(DamageSource source, float damage)
     {

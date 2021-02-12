@@ -335,7 +335,7 @@ public class ContainerEnchantment extends Container
         {
             for (int i = 0; i < this.tableInventory.getSizeInventory(); ++i)
             {
-                ItemStack itemstack = this.tableInventory.removeStackFromSlot(i);
+                ItemStack itemstack = this.tableInventory.getStackInSlotOnClosing(i);
 
                 if (itemstack != null)
                 {

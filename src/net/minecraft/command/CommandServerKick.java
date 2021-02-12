@@ -25,6 +25,8 @@ public class CommandServerKick extends CommandBase
 
     /**
      * Gets the usage string for the command.
+     *  
+     * @param sender The {@link ICommandSender} who is requesting usage details.
      */
     public String getCommandUsage(ICommandSender sender)
     {
@@ -33,6 +35,9 @@ public class CommandServerKick extends CommandBase
 
     /**
      * Callback when the command is invoked
+     *  
+     * @param sender The {@link ICommandSender sender} who executed the command
+     * @param args The arguments that were passed with the command
      */
     public void processCommand(ICommandSender sender, String[] args) throws CommandException
     {
@@ -58,11 +63,11 @@ public class CommandServerKick extends CommandBase
 
                 if (flag)
                 {
-                    notifyOperators(sender, this, "commands.kick.success.reason", new Object[] {entityplayermp.getName(), s});
+                    notifyOperators(sender, this, "commands.kick.success.reason", new Object[] {entityplayermp.getCommandSenderName(), s});
                 }
                 else
                 {
-                    notifyOperators(sender, this, "commands.kick.success", new Object[] {entityplayermp.getName()});
+                    notifyOperators(sender, this, "commands.kick.success", new Object[] {entityplayermp.getCommandSenderName()});
                 }
             }
         }

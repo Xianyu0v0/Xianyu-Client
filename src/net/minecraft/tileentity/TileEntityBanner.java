@@ -111,6 +111,8 @@ public class TileEntityBanner extends TileEntity
 
     /**
      * Retrieves the amount of patterns stored on an ItemStack. If the tag does not exist this value will be 0.
+     *  
+     * @param stack The ItemStack which contains the NBTTagCompound data for banner patterns.
      */
     public static int getPatterns(ItemStack stack)
     {
@@ -183,6 +185,8 @@ public class TileEntityBanner extends TileEntity
 
     /**
      * Removes all the banner related data from a provided instance of ItemStack.
+     *  
+     * @param stack The instance of an ItemStack which will have the relevant nbt tags removed.
      */
     public static void removeBannerData(ItemStack stack)
     {

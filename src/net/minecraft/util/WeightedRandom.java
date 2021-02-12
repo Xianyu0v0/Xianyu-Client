@@ -7,6 +7,8 @@ public class WeightedRandom
 {
     /**
      * Returns the total weight of all items in a collection.
+     *  
+     * @param collection Collection to get the total weight of
      */
     public static int getTotalWeight(Collection <? extends WeightedRandom.Item > collection)
     {

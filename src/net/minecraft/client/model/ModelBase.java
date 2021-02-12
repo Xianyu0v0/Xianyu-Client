@@ -60,6 +60,9 @@ public abstract class ModelBase
     /**
      * Copies the angles from one object to another. This is used when objects should stay aligned with each other, like
      * the hair over a players head.
+     *  
+     * @param source the object that is used for reference
+     * @param dest the object that is updated with the new values
      */
     public static void copyModelAngles(ModelRenderer source, ModelRenderer dest)
     {

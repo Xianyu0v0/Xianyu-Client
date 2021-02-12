@@ -28,6 +28,8 @@ public class EntityFlameFX extends EntityFX
 
     /**
      * Renders the particle
+     *  
+     * @param worldRendererIn The WorldRenderer instance
      */
     public void renderParticle(WorldRenderer worldRendererIn, Entity entityIn, float partialTicks, float p_180434_4_, float p_180434_5_, float p_180434_6_, float p_180434_7_, float p_180434_8_)
     {

@@ -105,6 +105,9 @@ public class RegionFile
 
     /**
      * Returns an uncompressed chunk stream from the region file.
+     *  
+     * @param x Chunk X coordinate
+     * @param z Chunk Z coordinate
      */
     public synchronized DataInputStream getChunkDataInputStream(int x, int z)
     {
@@ -177,6 +180,9 @@ public class RegionFile
 
     /**
      * Returns an output stream used to write chunk data. Data is on disk when the returned stream is closed.
+     *  
+     * @param x Chunk X coordinate
+     * @param z Chunk Z coordinate
      */
     public DataOutputStream getChunkDataOutputStream(int x, int z)
     {
@@ -185,6 +191,11 @@ public class RegionFile
 
     /**
      * args: x, z, data, length - write chunk data at (x, z) to disk
+     *  
+     * @param x Chunk X coordinate
+     * @param z Chunk Z coordinate
+     * @param data The chunk data to write
+     * @param length The length of the data
      */
     protected synchronized void write(int x, int z, byte[] data, int length)
     {
@@ -292,6 +303,9 @@ public class RegionFile
 
     /**
      * args: x, z - check region bounds
+     *  
+     * @param x Chunk X coordinate
+     * @param z Chunk Z coordinate
      */
     private boolean outOfBounds(int x, int z)
     {
@@ -300,6 +314,9 @@ public class RegionFile
 
     /**
      * args: x, z - get chunk's offset in region file
+     *  
+     * @param x Chunk X coordinate
+     * @param z Chunk Z coordinate
      */
     private int getOffset(int x, int z)
     {
@@ -308,6 +325,9 @@ public class RegionFile
 
     /**
      * args: x, z, - true if chunk has been saved / converted
+     *  
+     * @param x Chunk X coordinate
+     * @param z Chunk Z coordinate
      */
     public boolean isChunkSaved(int x, int z)
     {
@@ -316,6 +336,10 @@ public class RegionFile
 
     /**
      * args: x, z, offset - sets the chunk's offset in the region file
+     *  
+     * @param x Chunk X coordinate
+     * @param z Chunk Z coordinate
+     * @param offset The chunk offset
      */
     private void setOffset(int x, int z, int offset) throws IOException
     {
@@ -326,6 +350,10 @@ public class RegionFile
 
     /**
      * args: x, z, timestamp - sets the chunk's write timestamp
+     *  
+     * @param x Chunk X coordinate
+     * @param z Chunk Z coordinate
+     * @param timestamp The chunk's write timestamp
      */
     private void setChunkTimestamp(int x, int z, int timestamp) throws IOException
     {

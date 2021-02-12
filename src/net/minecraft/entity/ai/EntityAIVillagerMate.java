@@ -42,7 +42,7 @@ public class EntityAIVillagerMate extends EntityAIBase
             {
                 return false;
             }
-            else if (this.checkSufficientDoorsPresentForNewVillager() && this.villagerObj.getIsWillingToMate(true))
+            else if (this.checkSufficientDoorsPresentForNewVillager() && this.villagerObj.getIsWillingToTrade(true))
             {
                 Entity entity = this.worldObj.findNearestEntityWithinAABB(EntityVillager.class, this.villagerObj.getEntityBoundingBox().expand(8.0D, 3.0D, 8.0D), this.villagerObj);
 
@@ -53,7 +53,7 @@ public class EntityAIVillagerMate extends EntityAIBase
                 else
                 {
                     this.mate = (EntityVillager)entity;
-                    return this.mate.getGrowingAge() == 0 && this.mate.getIsWillingToMate(true);
+                    return this.mate.getGrowingAge() == 0 && this.mate.getIsWillingToTrade(true);
                 }
             }
             else
@@ -87,7 +87,7 @@ public class EntityAIVillagerMate extends EntityAIBase
      */
     public boolean continueExecuting()
     {
-        return this.matingTimeout >= 0 && this.checkSufficientDoorsPresentForNewVillager() && this.villagerObj.getGrowingAge() == 0 && this.villagerObj.getIsWillingToMate(false);
+        return this.matingTimeout >= 0 && this.checkSufficientDoorsPresentForNewVillager() && this.villagerObj.getGrowingAge() == 0 && this.villagerObj.getIsWillingToTrade(false);
     }
 
     /**
@@ -131,8 +131,8 @@ public class EntityAIVillagerMate extends EntityAIBase
         EntityVillager entityvillager = this.villagerObj.createChild(this.mate);
         this.mate.setGrowingAge(6000);
         this.villagerObj.setGrowingAge(6000);
-        this.mate.setIsWillingToMate(false);
-        this.villagerObj.setIsWillingToMate(false);
+        this.mate.setIsWillingToTrade(false);
+        this.villagerObj.setIsWillingToTrade(false);
         entityvillager.setGrowingAge(-24000);
         entityvillager.setLocationAndAngles(this.villagerObj.posX, this.villagerObj.posY, this.villagerObj.posZ, 0.0F, 0.0F);
         this.worldObj.spawnEntityInWorld(entityvillager);

@@ -186,7 +186,7 @@ public class EntityMinecartHopper extends EntityMinecartContainer implements IHo
     {
         super.killMinecart(p_94095_1_);
 
-        if (this.worldObj.getGameRules().getBoolean("doEntityDrops"))
+        if (this.worldObj.getGameRules().getGameRuleBooleanValue("doEntityDrops"))
         {
             this.dropItemWithOffset(Item.getItemFromBlock(Blocks.hopper), 1, 0.0F);
         }

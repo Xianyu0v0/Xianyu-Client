@@ -78,7 +78,7 @@ public class GuiOptions extends GuiScreen implements GuiYesNoCallback
         }
         else
         {
-            GuiOptionButton guioptionbutton1 = new GuiOptionButton(GameSettings.Options.enumFloat.returnEnumOrdinal(), this.width / 2 - 155 + i % 2 * 160, this.height / 6 - 12 + 24 * (i >> 1), GameSettings.Options.enumFloat, this.game_settings_1.getKeyBinding(GameSettings.Options.enumFloat));
+            GuiOptionButton guioptionbutton1 = new GuiOptionButton(GameSettings.Options.REALMS_NOTIFICATIONS.returnEnumOrdinal(), this.width / 2 - 155 + i % 2 * 160, this.height / 6 - 12 + 24 * (i >> 1), GameSettings.Options.REALMS_NOTIFICATIONS, this.game_settings_1.getKeyBinding(GameSettings.Options.REALMS_NOTIFICATIONS));
             this.buttonList.add(guioptionbutton1);
         }
 

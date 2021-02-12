@@ -120,6 +120,8 @@ public class EntityGuardian extends EntityMob
 
     /**
      * Sets a flag state "on/off" on both sides (client/server) by using DataWatcher
+     *  
+     * @param flagId flag byte
      */
     private void setSyncedFlag(int flagId, boolean state)
     {
@@ -157,6 +159,8 @@ public class EntityGuardian extends EntityMob
 
     /**
      * Sets this Guardian to be an elder or not.
+     *  
+     * @param elder Whether this guardian is an elder or not
      */
     public void setElder(boolean elder)
     {

@@ -61,7 +61,7 @@ public class EntityEnderPearl extends EntityThrowable
 
                 if (entityplayermp.playerNetServerHandler.getNetworkManager().isChannelOpen() && entityplayermp.worldObj == this.worldObj && !entityplayermp.isPlayerSleeping())
                 {
-                    if (this.rand.nextFloat() < 0.05F && this.worldObj.getGameRules().getBoolean("doMobSpawning"))
+                    if (this.rand.nextFloat() < 0.05F && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobSpawning"))
                     {
                         EntityEndermite entityendermite = new EntityEndermite(this.worldObj);
                         entityendermite.setSpawnedByPlayer(true);

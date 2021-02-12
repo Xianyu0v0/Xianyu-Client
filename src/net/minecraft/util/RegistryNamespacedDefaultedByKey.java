@@ -43,6 +43,8 @@ public class RegistryNamespacedDefaultedByKey<K, V> extends RegistryNamespaced<K
 
     /**
      * Gets the object identified by the given ID.
+     *  
+     * @param id The id to fetch from the registry
      */
     public V getObjectById(int id)
     {

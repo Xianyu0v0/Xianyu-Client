@@ -31,6 +31,8 @@ public class ChatComponentScore extends ChatComponentStyle
 
     /**
      * Sets the value displayed instead of the real score.
+     *  
+     * @param valueIn The value to display instead
      */
     public void setValue(String valueIn)
     {

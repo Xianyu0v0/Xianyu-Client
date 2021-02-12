@@ -90,7 +90,7 @@ public class EntityMinecartTNT extends EntityMinecart
         super.killMinecart(p_94095_1_);
         double d0 = this.motionX * this.motionX + this.motionZ * this.motionZ;
 
-        if (!p_94095_1_.isExplosion() && this.worldObj.getGameRules().getBoolean("doEntityDrops"))
+        if (!p_94095_1_.isExplosion() && this.worldObj.getGameRules().getGameRuleBooleanValue("doEntityDrops"))
         {
             this.entityDropItem(new ItemStack(Blocks.tnt, 1), 0.0F);
         }
@@ -142,7 +142,7 @@ public class EntityMinecartTNT extends EntityMinecart
         }
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 10)
         {
@@ -150,7 +150,7 @@ public class EntityMinecartTNT extends EntityMinecart
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 

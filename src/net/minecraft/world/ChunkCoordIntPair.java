@@ -9,6 +9,7 @@ public class ChunkCoordIntPair
 
     /** The Z position of this Chunk Coordinate Pair */
     public final int chunkZPos;
+    private int cachedHashCode = 0;
 
     public ChunkCoordIntPair(int x, int z)
     {
@@ -26,9 +27,14 @@ public class ChunkCoordIntPair
 
     public int hashCode()
     {
-        int i = 1664525 * this.chunkXPos + 1013904223;
-        int j = 1664525 * (this.chunkZPos ^ -559038737) + 1013904223;
-        return i ^ j;
+        if (this.cachedHashCode == 0)
+        {
+            int i = 1664525 * this.chunkXPos + 1013904223;
+            int j = 1664525 * (this.chunkZPos ^ -559038737) + 1013904223;
+            this.cachedHashCode = i ^ j;
+        }
+
+        return this.cachedHashCode;
     }
 
     public boolean equals(Object p_equals_1_)
@@ -92,6 +98,10 @@ public class ChunkCoordIntPair
 
     /**
      * Get the World coordinates of the Block with the given Chunk coordinates relative to this chunk
+     *  
+     * @param x X coordinate of the Block in this chunk (0-15)
+     * @param y Y coordinate of the Block
+     * @param z Z coordinate of the Block in this chunk (0-15)
      */
     public BlockPos getBlock(int x, int y, int z)
     {
@@ -100,6 +110,8 @@ public class ChunkCoordIntPair
 
     /**
      * Get the coordinates of the Block in the center of this chunk with the given Y coordinate
+     *  
+     * @param y Y coordinate
      */
     public BlockPos getCenterBlock(int y)
     {

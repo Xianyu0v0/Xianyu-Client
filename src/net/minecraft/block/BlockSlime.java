@@ -24,6 +24,8 @@ public class BlockSlime extends BlockBreakable
 
     /**
      * Block's chance to react to a living entity falling on it.
+     *  
+     * @param fallDistance The distance the entity has fallen before landing
      */
     public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
     {

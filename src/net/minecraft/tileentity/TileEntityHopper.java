@@ -98,6 +98,8 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Returns the stack in the given slot.
+     *  
+     * @param index The slot to retrieve from.
      */
     public ItemStack getStackInSlot(int index)
     {
@@ -106,6 +108,9 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Removes up to a specified number of items from an inventory slot and returns them in a new stack.
+     *  
+     * @param index The slot to remove from.
+     * @param count The maximum amount of items to remove.
      */
     public ItemStack decrStackSize(int index, int count)
     {
@@ -137,8 +142,10 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Removes a stack from the given slot and returns it.
+     *  
+     * @param index The slot to remove a stack from.
      */
-    public ItemStack removeStackFromSlot(int index)
+    public ItemStack getStackInSlotOnClosing(int index)
     {
         if (this.inventory[index] != null)
         {
@@ -168,7 +175,7 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
     /**
      * Gets the name of this command sender (usually username, but possibly "Rcon")
      */
-    public String getName()
+    public String getCommandSenderName()
     {
         return this.hasCustomName() ? this.customName : "container.hopper";
     }
@@ -337,6 +344,9 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Returns false if the inventory has any room to place items in
+     *  
+     * @param inventoryIn The inventory to check
+     * @param side The side to check from
      */
     private boolean isInventoryFull(IInventory inventoryIn, EnumFacing side)
     {
@@ -375,6 +385,9 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Returns false if the specified IInventory contains any items
+     *  
+     * @param inventoryIn The inventory to check
+     * @param side The side to access the inventory from
      */
     private static boolean isInventoryEmpty(IInventory inventoryIn, EnumFacing side)
     {
@@ -463,6 +476,8 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
     /**
      * Pulls from the specified slot in the inventory and places in any available slot in the hopper. Returns true if
      * the entire stack was moved
+     *  
+     * @param index The slot to pull from
      */
     private static boolean pullItemFromSlot(IHopper hopper, IInventory inventoryIn, int index, EnumFacing direction)
     {
@@ -551,6 +566,11 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Can this hopper insert the specified item from the specified slot on the specified side?
+     *  
+     * @param inventoryIn The inventory to check if insertable
+     * @param stack The stack to check if insertable
+     * @param index The slot to check if insertable
+     * @param side The side to check if insertable
      */
     private static boolean canInsertItemInSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side)
     {
@@ -559,6 +579,11 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Can this hopper extract the specified item from the specified slot on the specified side?
+     *  
+     * @param inventoryIn The inventory to check
+     * @param stack Item to check if extractable
+     * @param index Slot to check if extractable
+     * @param side Side to check if extractable
      */
     private static boolean canExtractItemFromSlot(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side)
     {
@@ -567,6 +592,11 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Insert the specified stack to the specified inventory and return any leftover items
+     *  
+     * @param inventoryIn The inventory to insert to
+     * @param stack The stack to try and insert
+     * @param index The slot to try and put items in
+     * @param side The side to insert from
      */
     private static ItemStack insertStack(IInventory inventoryIn, ItemStack stack, int index, EnumFacing side)
     {
@@ -623,6 +653,8 @@ public class TileEntityHopper extends TileEntityLockable implements IHopper, ITi
 
     /**
      * Returns the IInventory for the specified hopper
+     *  
+     * @param hopper The hopper the return an inventory for
      */
     public static IInventory getHopperInventory(IHopper hopper)
     {

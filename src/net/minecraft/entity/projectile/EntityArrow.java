@@ -123,6 +123,8 @@ public class EntityArrow extends Entity implements IProjectile
 
     /**
      * Similar to setArrowHeading, it's point the throwable entity to a x, y, z direction.
+     *  
+     * @param inaccuracy Higher means more error.
      */
     public void setThrowableHeading(double x, double y, double z, float velocity, float inaccuracy)
     {

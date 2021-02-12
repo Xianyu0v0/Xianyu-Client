@@ -476,7 +476,7 @@ public class EntityWolf extends EntityTameable
         return super.interact(player);
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 8)
         {
@@ -486,7 +486,7 @@ public class EntityWolf extends EntityTameable
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 

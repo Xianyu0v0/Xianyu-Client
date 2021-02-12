@@ -75,6 +75,9 @@ public final class NBTUtil
 
     /**
      * Writes a GameProfile to an NBTTagCompound.
+     *  
+     * @param tagCompound The NBTTagCompound to write the GameProfile to.
+     * @param profile The game profile you are saving.
      */
     public static NBTTagCompound writeGameProfile(NBTTagCompound tagCompound, GameProfile profile)
     {

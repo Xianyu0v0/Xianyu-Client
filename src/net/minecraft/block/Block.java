@@ -483,6 +483,8 @@ public class Block
 
     /**
      * Add all collision boxes of this Block to the list that intersect with the given mask.
+     *  
+     * @param collidingEntity the Entity colliding with this Block
      */
     public void addCollisionBoxesToList(World worldIn, BlockPos pos, IBlockState state, AxisAlignedBB mask, List<AxisAlignedBB> list, Entity collidingEntity)
     {
@@ -576,6 +578,8 @@ public class Block
 
     /**
      * Get the Item that this Block should drop when harvested.
+     *  
+     * @param fortune the level of the Fortune enchantment on the player's tool
      */
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
@@ -593,6 +597,8 @@ public class Block
 
     /**
      * Spawn this Block's drops into the World as EntityItems
+     *  
+     * @param forture the level of the Fortune enchantment on the player's tool
      */
     public final void dropBlockAsItem(World worldIn, BlockPos pos, IBlockState state, int forture)
     {
@@ -601,6 +607,9 @@ public class Block
 
     /**
      * Spawns this Block's drops into the World as EntityItems.
+     *  
+     * @param chance The chance that each Item is actually spawned (1.0 = always, 0.0 = never)
+     * @param fortune The player's fortune level
      */
     public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
     {
@@ -628,7 +637,7 @@ public class Block
      */
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack)
     {
-        if (!worldIn.isRemote && worldIn.getGameRules().getBoolean("doTileDrops"))
+        if (!worldIn.isRemote && worldIn.getGameRules().getGameRuleBooleanValue("doTileDrops"))
         {
             float f = 0.5F;
             double d0 = (double)(worldIn.rand.nextFloat() * f) + (double)(1.0F - f) * 0.5D;
@@ -642,6 +651,8 @@ public class Block
 
     /**
      * Spawns the given amount of experience into the World as XP orb entities
+     *  
+     * @param amount The amount of XP to spawn
      */
     protected void dropXpOnBlockBreak(World worldIn, BlockPos pos, int amount)
     {
@@ -675,6 +686,9 @@ public class Block
 
     /**
      * Ray traces through the blocks collision from start vector to end vector returning a ray trace hit.
+     *  
+     * @param start The start vector
+     * @param end The end vector
      */
     public MovingObjectPosition collisionRayTrace(World worldIn, BlockPos pos, Vec3 start, Vec3 end)
     {
@@ -948,7 +962,7 @@ public class Block
         return this.colorMultiplier(worldIn, pos, 0);
     }
 
-    public int getWeakPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
+    public int isProvidingWeakPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
     {
         return 0;
     }
@@ -968,7 +982,7 @@ public class Block
     {
     }
 
-    public int getStrongPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
+    public int isProvidingStrongPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
     {
         return 0;
     }
@@ -1098,6 +1112,8 @@ public class Block
 
     /**
      * Block's chance to react to a living entity falling on it.
+     *  
+     * @param fallDistance The distance the entity has fallen before landing
      */
     public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
     {
@@ -1113,6 +1129,9 @@ public class Block
         entityIn.motionY = 0.0D;
     }
 
+    /**
+     * Used by pick block on the client to get a block's item form, if it exists.
+     */
     public Item getItem(World worldIn, BlockPos pos)
     {
         return Item.getItemFromBlock(this);

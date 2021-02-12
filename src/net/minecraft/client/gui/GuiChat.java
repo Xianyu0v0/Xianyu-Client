@@ -187,6 +187,9 @@ public class GuiChat extends GuiScreen
 
     /**
      * Sets the text of the chat
+     *  
+     * @param newChatText The new chat text to be set
+     * @param shouldOverwrite Determines if the text currently in the chat should be overwritten or appended
      */
     protected void setText(String newChatText, boolean shouldOverwrite)
     {
@@ -268,6 +271,8 @@ public class GuiChat extends GuiScreen
     /**
      * input is relative and is applied directly to the sentHistoryCursor so -1 is the previous message, 1 is the next
      * message from the current cursor position
+     *  
+     * @param msgPos The position of the message in the sent chat history relative to the current message.
      */
     public void getSentHistory(int msgPos)
     {

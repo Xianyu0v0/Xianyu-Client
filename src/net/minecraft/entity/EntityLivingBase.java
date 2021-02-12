@@ -401,7 +401,7 @@ public abstract class EntityLivingBase extends Entity
 
         if (this.deathTime == 20)
         {
-            if (!this.worldObj.isRemote && (this.recentlyHit > 0 || this.isPlayer()) && this.canDropLoot() && this.worldObj.getGameRules().getBoolean("doMobLoot"))
+            if (!this.worldObj.isRemote && (this.recentlyHit > 0 || this.isPlayer()) && this.canDropLoot() && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot"))
             {
                 int i = this.getExperiencePoints(this.attackingPlayer);
 
@@ -1044,7 +1044,7 @@ public abstract class EntityLivingBase extends Entity
                 i = EnchantmentHelper.getLootingModifier((EntityLivingBase)entity);
             }
 
-            if (this.canDropLoot() && this.worldObj.getGameRules().getBoolean("doMobLoot"))
+            if (this.canDropLoot() && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot"))
             {
                 this.dropFewItems(this.recentlyHit > 0, i);
                 this.dropEquipment(this.recentlyHit > 0, i);
@@ -1203,6 +1203,9 @@ public abstract class EntityLivingBase extends Entity
 
     /**
      * Reduces damage, depending on armor
+     *  
+     * @param source The damage source
+     * @param damage The damage to deal
      */
     protected float applyArmorCalculations(DamageSource source, float damage)
     {
@@ -1219,6 +1222,8 @@ public abstract class EntityLivingBase extends Entity
 
     /**
      * Reduces damage, depending on potions
+     *  
+     * @param damage The damage to deal
      */
     protected float applyPotionDamageCalculations(DamageSource source, float damage)
     {
@@ -1342,7 +1347,7 @@ public abstract class EntityLivingBase extends Entity
         }
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 2)
         {
@@ -1373,7 +1378,7 @@ public abstract class EntityLivingBase extends Entity
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 

@@ -142,6 +142,9 @@ public class BlockDragonEgg extends Block
         return true;
     }
 
+    /**
+     * Used by pick block on the client to get a block's item form, if it exists.
+     */
     public Item getItem(World worldIn, BlockPos pos)
     {
         return null;

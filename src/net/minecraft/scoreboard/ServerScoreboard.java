@@ -87,6 +87,9 @@ public class ServerScoreboard extends Scoreboard
 
     /**
      * Adds a player to the given team
+     *  
+     * @param player The name of the player to add
+     * @param newTeam The name of the team
      */
     public boolean addPlayerToTeam(String player, String newTeam)
     {

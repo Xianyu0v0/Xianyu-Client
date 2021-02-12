@@ -78,7 +78,7 @@ public class EntityMinecartFurnace extends EntityMinecart
     {
         super.killMinecart(p_94095_1_);
 
-        if (!p_94095_1_.isExplosion() && this.worldObj.getGameRules().getBoolean("doEntityDrops"))
+        if (!p_94095_1_.isExplosion() && this.worldObj.getGameRules().getGameRuleBooleanValue("doEntityDrops"))
         {
             this.entityDropItem(new ItemStack(Blocks.furnace, 1), 0.0F);
         }

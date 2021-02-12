@@ -484,7 +484,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.registerMetadataSerializers();
         this.mcResourcePackRepository = new ResourcePackRepository(this.fileResourcepacks, new File(this.mcDataDir, "server-resource-packs"), this.mcDefaultResourcePack, this.metadataSerializer_, this.gameSettings);
         this.mcResourceManager = new SimpleReloadableResourceManager(this.metadataSerializer_);
-        this.mcLanguageManager = new LanguageManager(this.metadataSerializer_, this.gameSettings.forceUnicodeFont);
+        this.mcLanguageManager = new LanguageManager(this.metadataSerializer_, this.gameSettings.language);
         this.mcResourceManager.registerReloadListener(this.mcLanguageManager);
         this.refreshResources();
         this.renderEngine = new TextureManager(this.mcResourceManager);
@@ -498,7 +498,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         this.mcMusicTicker = new MusicTicker(this);
         this.fontRendererObj = new FontRenderer(this.gameSettings, new ResourceLocation("textures/font/ascii.png"), this.renderEngine, false);
 
-        if (this.gameSettings.forceUnicodeFont != null)
+        if (this.gameSettings.language != null)
         {
             this.fontRendererObj.setUnicodeFlag(this.isUnicode());
             this.fontRendererObj.setBidiFlag(this.mcLanguageManager.isCurrentLanguageBidirectional());
@@ -515,7 +515,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             {
                 try
                 {
-                    return String.format(p_74535_1_, new Object[] {GameSettings.getKeyDisplayString(Minecraft.this.gameSettings.keyBindUseItem.getKeyCode())});
+                    return String.format(p_74535_1_, new Object[] {GameSettings.getKeyDisplayString(Minecraft.this.gameSettings.keyBindInventory.getKeyCode())});
                 }
                 catch (Exception exception)
                 {
@@ -774,7 +774,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
     public boolean isUnicode()
     {
-        return this.mcLanguageManager.isCurrentLocaleUnicode() || this.gameSettings.logger;
+        return this.mcLanguageManager.isCurrentLocaleUnicode() || this.gameSettings.forceUnicodeFont;
     }
 
     public void refreshResources()
@@ -918,11 +918,11 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
-        worldrenderer.pos(0.0D, (double)this.displayHeight, 0.0D).tex(0.0D, 0.0D).color(255, 255, 255, 255).endVertex();
-        worldrenderer.pos((double)this.displayWidth, (double)this.displayHeight, 0.0D).tex(0.0D, 0.0D).color(255, 255, 255, 255).endVertex();
-        worldrenderer.pos((double)this.displayWidth, 0.0D, 0.0D).tex(0.0D, 0.0D).color(255, 255, 255, 255).endVertex();
-        worldrenderer.pos(0.0D, 0.0D, 0.0D).tex(0.0D, 0.0D).color(255, 255, 255, 255).endVertex();
+        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181709_i);
+        worldrenderer.func_181662_b(0.0D, (double)this.displayHeight, 0.0D).func_181673_a(0.0D, 0.0D).func_181669_b(255, 255, 255, 255).func_181675_d();
+        worldrenderer.func_181662_b((double)this.displayWidth, (double)this.displayHeight, 0.0D).func_181673_a(0.0D, 0.0D).func_181669_b(255, 255, 255, 255).func_181675_d();
+        worldrenderer.func_181662_b((double)this.displayWidth, 0.0D, 0.0D).func_181673_a(0.0D, 0.0D).func_181669_b(255, 255, 255, 255).func_181675_d();
+        worldrenderer.func_181662_b(0.0D, 0.0D, 0.0D).func_181673_a(0.0D, 0.0D).func_181669_b(255, 255, 255, 255).func_181675_d();
         tessellator.draw();
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         int j = 256;
@@ -942,11 +942,11 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         float f = 0.00390625F;
         float f1 = 0.00390625F;
         WorldRenderer worldrenderer = Tessellator.getInstance().getWorldRenderer();
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
-        worldrenderer.pos((double)p_181536_1_, (double)(p_181536_2_ + p_181536_6_), 0.0D).tex((double)((float)p_181536_3_ * f), (double)((float)(p_181536_4_ + p_181536_6_) * f1)).color(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).endVertex();
-        worldrenderer.pos((double)(p_181536_1_ + p_181536_5_), (double)(p_181536_2_ + p_181536_6_), 0.0D).tex((double)((float)(p_181536_3_ + p_181536_5_) * f), (double)((float)(p_181536_4_ + p_181536_6_) * f1)).color(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).endVertex();
-        worldrenderer.pos((double)(p_181536_1_ + p_181536_5_), (double)p_181536_2_, 0.0D).tex((double)((float)(p_181536_3_ + p_181536_5_) * f), (double)((float)p_181536_4_ * f1)).color(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).endVertex();
-        worldrenderer.pos((double)p_181536_1_, (double)p_181536_2_, 0.0D).tex((double)((float)p_181536_3_ * f), (double)((float)p_181536_4_ * f1)).color(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).endVertex();
+        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181709_i);
+        worldrenderer.func_181662_b((double)p_181536_1_, (double)(p_181536_2_ + p_181536_6_), 0.0D).func_181673_a((double)((float)p_181536_3_ * f), (double)((float)(p_181536_4_ + p_181536_6_) * f1)).func_181669_b(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).func_181675_d();
+        worldrenderer.func_181662_b((double)(p_181536_1_ + p_181536_5_), (double)(p_181536_2_ + p_181536_6_), 0.0D).func_181673_a((double)((float)(p_181536_3_ + p_181536_5_) * f), (double)((float)(p_181536_4_ + p_181536_6_) * f1)).func_181669_b(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).func_181675_d();
+        worldrenderer.func_181662_b((double)(p_181536_1_ + p_181536_5_), (double)p_181536_2_, 0.0D).func_181673_a((double)((float)(p_181536_3_ + p_181536_5_) * f), (double)((float)p_181536_4_ * f1)).func_181669_b(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).func_181675_d();
+        worldrenderer.func_181662_b((double)p_181536_1_, (double)p_181536_2_, 0.0D).func_181673_a((double)((float)p_181536_3_ * f), (double)((float)p_181536_4_ * f1)).func_181669_b(p_181536_7_, p_181536_8_, p_181536_9_, p_181536_10_).func_181675_d();
         Tessellator.getInstance().draw();
     }
 
@@ -979,7 +979,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         if (guiScreenIn instanceof GuiMainMenu)
         {
-            this.gameSettings.showDebugProfilerChart = false;
+            this.gameSettings.showDebugInfo = false;
             this.ingameGUI.getChatGUI().clearChatMessages();
         }
 
@@ -1113,7 +1113,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         if (this.thePlayer != null && this.thePlayer.isEntityInsideOpaqueBlock())
         {
-            this.gameSettings.showDebugInfo = 0;
+            this.gameSettings.thirdPersonView = 0;
         }
 
         this.mcProfiler.endSection();
@@ -1127,7 +1127,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         this.mcProfiler.endSection();
 
-        if (this.gameSettings.showDebugProfilerChart && this.gameSettings.field_181657_aC && !this.gameSettings.thirdPersonView)
+        if (this.gameSettings.showDebugInfo && this.gameSettings.showDebugProfilerChart && !this.gameSettings.hideGUI)
         {
             if (!this.mcProfiler.profilingEnabled)
             {
@@ -1328,11 +1328,11 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             int j = this.displayWidth - i - 10;
             int k = this.displayHeight - i * 2;
             GlStateManager.enableBlend();
-            worldrenderer.begin(7, DefaultVertexFormats.POSITION_COLOR);
-            worldrenderer.pos((double)((float)j - (float)i * 1.1F), (double)((float)k - (float)i * 0.6F - 16.0F), 0.0D).color(200, 0, 0, 0).endVertex();
-            worldrenderer.pos((double)((float)j - (float)i * 1.1F), (double)(k + i * 2), 0.0D).color(200, 0, 0, 0).endVertex();
-            worldrenderer.pos((double)((float)j + (float)i * 1.1F), (double)(k + i * 2), 0.0D).color(200, 0, 0, 0).endVertex();
-            worldrenderer.pos((double)((float)j + (float)i * 1.1F), (double)((float)k - (float)i * 0.6F - 16.0F), 0.0D).color(200, 0, 0, 0).endVertex();
+            worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181706_f);
+            worldrenderer.func_181662_b((double)((float)j - (float)i * 1.1F), (double)((float)k - (float)i * 0.6F - 16.0F), 0.0D).func_181669_b(200, 0, 0, 0).func_181675_d();
+            worldrenderer.func_181662_b((double)((float)j - (float)i * 1.1F), (double)(k + i * 2), 0.0D).func_181669_b(200, 0, 0, 0).func_181675_d();
+            worldrenderer.func_181662_b((double)((float)j + (float)i * 1.1F), (double)(k + i * 2), 0.0D).func_181669_b(200, 0, 0, 0).func_181675_d();
+            worldrenderer.func_181662_b((double)((float)j + (float)i * 1.1F), (double)((float)k - (float)i * 0.6F - 16.0F), 0.0D).func_181669_b(200, 0, 0, 0).func_181675_d();
             tessellator.draw();
             GlStateManager.disableBlend();
             double d0 = 0.0D;
@@ -1341,31 +1341,31 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             {
                 Profiler.Result profiler$result1 = (Profiler.Result)list.get(l);
                 int i1 = MathHelper.floor_double(profiler$result1.field_76332_a / 4.0D) + 1;
-                worldrenderer.begin(6, DefaultVertexFormats.POSITION_COLOR);
+                worldrenderer.func_181668_a(6, DefaultVertexFormats.field_181706_f);
                 int j1 = profiler$result1.func_76329_a();
                 int k1 = j1 >> 16 & 255;
                 int l1 = j1 >> 8 & 255;
                 int i2 = j1 & 255;
-                worldrenderer.pos((double)j, (double)k, 0.0D).color(k1, l1, i2, 255).endVertex();
+                worldrenderer.func_181662_b((double)j, (double)k, 0.0D).func_181669_b(k1, l1, i2, 255).func_181675_d();
 
                 for (int j2 = i1; j2 >= 0; --j2)
                 {
                     float f = (float)((d0 + profiler$result1.field_76332_a * (double)j2 / (double)i1) * Math.PI * 2.0D / 100.0D);
                     float f1 = MathHelper.sin(f) * (float)i;
                     float f2 = MathHelper.cos(f) * (float)i * 0.5F;
-                    worldrenderer.pos((double)((float)j + f1), (double)((float)k - f2), 0.0D).color(k1, l1, i2, 255).endVertex();
+                    worldrenderer.func_181662_b((double)((float)j + f1), (double)((float)k - f2), 0.0D).func_181669_b(k1, l1, i2, 255).func_181675_d();
                 }
 
                 tessellator.draw();
-                worldrenderer.begin(5, DefaultVertexFormats.POSITION_COLOR);
+                worldrenderer.func_181668_a(5, DefaultVertexFormats.field_181706_f);
 
                 for (int i3 = i1; i3 >= 0; --i3)
                 {
                     float f3 = (float)((d0 + profiler$result1.field_76332_a * (double)i3 / (double)i1) * Math.PI * 2.0D / 100.0D);
                     float f4 = MathHelper.sin(f3) * (float)i;
                     float f5 = MathHelper.cos(f3) * (float)i * 0.5F;
-                    worldrenderer.pos((double)((float)j + f4), (double)((float)k - f5), 0.0D).color(k1 >> 1, l1 >> 1, i2 >> 1, 255).endVertex();
-                    worldrenderer.pos((double)((float)j + f4), (double)((float)k - f5 + 10.0F), 0.0D).color(k1 >> 1, l1 >> 1, i2 >> 1, 255).endVertex();
+                    worldrenderer.func_181662_b((double)((float)j + f4), (double)((float)k - f5), 0.0D).func_181669_b(k1 >> 1, l1 >> 1, i2 >> 1, 255).func_181675_d();
+                    worldrenderer.func_181662_b((double)((float)j + f4), (double)((float)k - f5 + 10.0F), 0.0D).func_181669_b(k1 >> 1, l1 >> 1, i2 >> 1, 255).func_181675_d();
                 }
 
                 tessellator.draw();
@@ -1992,30 +1992,30 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
                         if (k == 59)
                         {
-                            this.gameSettings.thirdPersonView = !this.gameSettings.thirdPersonView;
+                            this.gameSettings.hideGUI = !this.gameSettings.hideGUI;
                         }
 
                         if (k == 61)
                         {
-                            this.gameSettings.showDebugProfilerChart = !this.gameSettings.showDebugProfilerChart;
-                            this.gameSettings.field_181657_aC = GuiScreen.isShiftKeyDown();
-                            this.gameSettings.lastServer = GuiScreen.isAltKeyDown();
+                            this.gameSettings.showDebugInfo = !this.gameSettings.showDebugInfo;
+                            this.gameSettings.showDebugProfilerChart = GuiScreen.isShiftKeyDown();
+                            this.gameSettings.field_181657_aC = GuiScreen.isAltKeyDown();
                         }
 
-                        if (this.gameSettings.keyBindSmoothCamera.isPressed())
+                        if (this.gameSettings.keyBindTogglePerspective.isPressed())
                         {
-                            ++this.gameSettings.showDebugInfo;
+                            ++this.gameSettings.thirdPersonView;
 
-                            if (this.gameSettings.showDebugInfo > 2)
+                            if (this.gameSettings.thirdPersonView > 2)
                             {
-                                this.gameSettings.showDebugInfo = 0;
+                                this.gameSettings.thirdPersonView = 0;
                             }
 
-                            if (this.gameSettings.showDebugInfo == 0)
+                            if (this.gameSettings.thirdPersonView == 0)
                             {
                                 this.entityRenderer.loadEntityShader(this.getRenderViewEntity());
                             }
-                            else if (this.gameSettings.showDebugInfo == 1)
+                            else if (this.gameSettings.thirdPersonView == 1)
                             {
                                 this.entityRenderer.loadEntityShader((Entity)null);
                             }
@@ -2023,13 +2023,13 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                             this.renderGlobal.setDisplayListEntitiesDirty();
                         }
 
-                        if (this.gameSettings.keyBindFullscreen.isPressed())
+                        if (this.gameSettings.keyBindSmoothCamera.isPressed())
                         {
-                            this.gameSettings.debugCamEnable = !this.gameSettings.debugCamEnable;
+                            this.gameSettings.smoothCamera = !this.gameSettings.smoothCamera;
                         }
                     }
 
-                    if (this.gameSettings.showDebugProfilerChart && this.gameSettings.field_181657_aC)
+                    if (this.gameSettings.showDebugInfo && this.gameSettings.showDebugProfilerChart)
                     {
                         if (k == 11)
                         {
@@ -2049,7 +2049,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
             for (int l = 0; l < 9; ++l)
             {
-                if (this.gameSettings.keyBindings[l].isPressed())
+                if (this.gameSettings.keyBindsHotbar[l].isPressed())
                 {
                     if (this.thePlayer.isSpectator())
                     {
@@ -2064,7 +2064,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
             boolean flag = this.gameSettings.chatVisibility != EntityPlayer.EnumChatVisibility.HIDDEN;
 
-            while (this.gameSettings.keyBindUseItem.isPressed())
+            while (this.gameSettings.keyBindInventory.isPressed())
             {
                 if (this.playerController.isRidingHorse())
                 {
@@ -2077,7 +2077,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 }
             }
 
-            while (this.gameSettings.keyBindAttack.isPressed())
+            while (this.gameSettings.keyBindDrop.isPressed())
             {
                 if (!this.thePlayer.isSpectator())
                 {
@@ -2085,62 +2085,62 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                 }
             }
 
-            while (this.gameSettings.keyBindPlayerList.isPressed() && flag)
+            while (this.gameSettings.keyBindChat.isPressed() && flag)
             {
                 this.displayGuiScreen(new GuiChat());
             }
 
-            if (this.currentScreen == null && this.gameSettings.keyBindScreenshot.isPressed() && flag)
+            if (this.currentScreen == null && this.gameSettings.keyBindCommand.isPressed() && flag)
             {
                 this.displayGuiScreen(new GuiChat("/"));
             }
 
             if (this.thePlayer.isUsingItem())
             {
-                if (!this.gameSettings.keyBindDrop.isKeyDown())
+                if (!this.gameSettings.keyBindUseItem.isKeyDown())
                 {
                     this.playerController.onStoppedUsingItem(this.thePlayer);
                 }
 
+                while (this.gameSettings.keyBindAttack.isPressed())
+                {
+                    ;
+                }
+
+                while (this.gameSettings.keyBindUseItem.isPressed())
+                {
+                    ;
+                }
+
                 while (this.gameSettings.keyBindPickBlock.isPressed())
-                {
-                    ;
-                }
-
-                while (this.gameSettings.keyBindDrop.isPressed())
-                {
-                    ;
-                }
-
-                while (this.gameSettings.keyBindChat.isPressed())
                 {
                     ;
                 }
             }
             else
             {
-                while (this.gameSettings.keyBindPickBlock.isPressed())
+                while (this.gameSettings.keyBindAttack.isPressed())
                 {
                     this.clickMouse();
                 }
 
-                while (this.gameSettings.keyBindDrop.isPressed())
+                while (this.gameSettings.keyBindUseItem.isPressed())
                 {
                     this.rightClickMouse();
                 }
 
-                while (this.gameSettings.keyBindChat.isPressed())
+                while (this.gameSettings.keyBindPickBlock.isPressed())
                 {
                     this.middleClickMouse();
                 }
             }
 
-            if (this.gameSettings.keyBindDrop.isKeyDown() && this.rightClickDelayTimer == 0 && !this.thePlayer.isUsingItem())
+            if (this.gameSettings.keyBindUseItem.isKeyDown() && this.rightClickDelayTimer == 0 && !this.thePlayer.isUsingItem())
             {
                 this.rightClickMouse();
             }
 
-            this.sendClickBlockToController(this.currentScreen == null && this.gameSettings.keyBindPickBlock.isKeyDown() && this.inGameHasFocus);
+            this.sendClickBlockToController(this.currentScreen == null && this.gameSettings.keyBindAttack.isKeyDown() && this.inGameHasFocus);
         }
 
         if (this.theWorld != null)
@@ -2452,7 +2452,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
     public static boolean isGuiEnabled()
     {
-        return theMinecraft == null || !theMinecraft.gameSettings.thirdPersonView;
+        return theMinecraft == null || !theMinecraft.gameSettings.hideGUI;
     }
 
     public static boolean isFancyGraphicsEnabled()
@@ -3089,7 +3089,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             {
                 if (Keyboard.getEventKeyState())
                 {
-                    if (i == this.gameSettings.keyBindStreamPauseUnpause.getKeyCode())
+                    if (i == this.gameSettings.keyBindStreamStartStop.getKeyCode())
                     {
                         if (this.getTwitchStream().isBroadcasting())
                         {
@@ -3122,7 +3122,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                             GuiStreamUnavailable.func_152321_a(this.currentScreen);
                         }
                     }
-                    else if (i == this.gameSettings.keyBindStreamCommercials.getKeyCode())
+                    else if (i == this.gameSettings.keyBindStreamPauseUnpause.getKeyCode())
                     {
                         if (this.getTwitchStream().isBroadcasting())
                         {
@@ -3136,27 +3136,27 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                             }
                         }
                     }
-                    else if (i == this.gameSettings.keyBindStreamToggleMic.getKeyCode())
+                    else if (i == this.gameSettings.keyBindStreamCommercials.getKeyCode())
                     {
                         if (this.getTwitchStream().isBroadcasting())
                         {
                             this.getTwitchStream().requestCommercial();
                         }
                     }
-                    else if (i == this.gameSettings.keyBindsHotbar.getKeyCode())
+                    else if (i == this.gameSettings.keyBindStreamToggleMic.getKeyCode())
                     {
                         this.stream.muteMicrophone(true);
                     }
-                    else if (i == this.gameSettings.keyBindSpectatorOutlines.getKeyCode())
+                    else if (i == this.gameSettings.keyBindFullscreen.getKeyCode())
                     {
                         this.toggleFullscreen();
                     }
-                    else if (i == this.gameSettings.keyBindTogglePerspective.getKeyCode())
+                    else if (i == this.gameSettings.keyBindScreenshot.getKeyCode())
                     {
                         this.ingameGUI.getChatGUI().printChatMessage(ScreenShotHelper.saveScreenshot(this.mcDataDir, this.displayWidth, this.displayHeight, this.framebufferMc));
                     }
                 }
-                else if (i == this.gameSettings.keyBindsHotbar.getKeyCode())
+                else if (i == this.gameSettings.keyBindStreamToggleMic.getKeyCode())
                 {
                     this.stream.muteMicrophone(false);
                 }

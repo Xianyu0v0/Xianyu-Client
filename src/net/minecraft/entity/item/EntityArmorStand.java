@@ -228,6 +228,8 @@ public class EntityArmorStand extends EntityLivingBase
 
     /**
      * Saves the pose to an NBTTagCompound.
+     *  
+     * @param tagCompound The tag to save the Pose information to.
      */
     private void writePoseToNBT(NBTTagCompound tagCompound)
     {

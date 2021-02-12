@@ -298,6 +298,8 @@ public class TileEntityBeacon extends TileEntityLockable implements ITickable, I
 
     /**
      * Returns the stack in the given slot.
+     *  
+     * @param index The slot to retrieve from.
      */
     public ItemStack getStackInSlot(int index)
     {
@@ -306,6 +308,9 @@ public class TileEntityBeacon extends TileEntityLockable implements ITickable, I
 
     /**
      * Removes up to a specified number of items from an inventory slot and returns them in a new stack.
+     *  
+     * @param index The slot to remove from.
+     * @param count The maximum amount of items to remove.
      */
     public ItemStack decrStackSize(int index, int count)
     {
@@ -331,8 +336,10 @@ public class TileEntityBeacon extends TileEntityLockable implements ITickable, I
 
     /**
      * Removes a stack from the given slot and returns it.
+     *  
+     * @param index The slot to remove a stack from.
      */
-    public ItemStack removeStackFromSlot(int index)
+    public ItemStack getStackInSlotOnClosing(int index)
     {
         if (index == 0 && this.payment != null)
         {
@@ -360,7 +367,7 @@ public class TileEntityBeacon extends TileEntityLockable implements ITickable, I
     /**
      * Gets the name of this command sender (usually username, but possibly "Rcon")
      */
-    public String getName()
+    public String getCommandSenderName()
     {
         return this.hasCustomName() ? this.customName : "container.beacon";
     }

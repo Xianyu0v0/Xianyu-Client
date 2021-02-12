@@ -28,6 +28,8 @@ public class CommandEffect extends CommandBase
 
     /**
      * Gets the usage string for the command.
+     *  
+     * @param sender The {@link ICommandSender} who is requesting usage details.
      */
     public String getCommandUsage(ICommandSender sender)
     {
@@ -36,6 +38,9 @@ public class CommandEffect extends CommandBase
 
     /**
      * Callback when the command is invoked
+     *  
+     * @param sender The {@link ICommandSender sender} who executed the command
+     * @param args The arguments that were passed with the command
      */
     public void processCommand(ICommandSender sender, String[] args) throws CommandException
     {
@@ -51,12 +56,12 @@ public class CommandEffect extends CommandBase
             {
                 if (entitylivingbase.getActivePotionEffects().isEmpty())
                 {
-                    throw new CommandException("commands.effect.failure.notActive.all", new Object[] {entitylivingbase.getName()});
+                    throw new CommandException("commands.effect.failure.notActive.all", new Object[] {entitylivingbase.getCommandSenderName()});
                 }
                 else
                 {
                     entitylivingbase.clearActivePotions();
-                    notifyOperators(sender, this, "commands.effect.success.removed.all", new Object[] {entitylivingbase.getName()});
+                    notifyOperators(sender, this, "commands.effect.success.removed.all", new Object[] {entitylivingbase.getCommandSenderName()});
                 }
             }
             else
@@ -121,16 +126,16 @@ public class CommandEffect extends CommandBase
                     {
                         PotionEffect potioneffect = new PotionEffect(i, j, k, false, flag);
                         entitylivingbase.addPotionEffect(potioneffect);
-                        notifyOperators(sender, this, "commands.effect.success", new Object[] {new ChatComponentTranslation(potioneffect.getEffectName(), new Object[0]), Integer.valueOf(i), Integer.valueOf(k), entitylivingbase.getName(), Integer.valueOf(l)});
+                        notifyOperators(sender, this, "commands.effect.success", new Object[] {new ChatComponentTranslation(potioneffect.getEffectName(), new Object[0]), Integer.valueOf(i), Integer.valueOf(k), entitylivingbase.getCommandSenderName(), Integer.valueOf(l)});
                     }
                     else if (entitylivingbase.isPotionActive(i))
                     {
                         entitylivingbase.removePotionEffect(i);
-                        notifyOperators(sender, this, "commands.effect.success.removed", new Object[] {new ChatComponentTranslation(potion1.getName(), new Object[0]), entitylivingbase.getName()});
+                        notifyOperators(sender, this, "commands.effect.success.removed", new Object[] {new ChatComponentTranslation(potion1.getName(), new Object[0]), entitylivingbase.getCommandSenderName()});
                     }
                     else
                     {
-                        throw new CommandException("commands.effect.failure.notActive", new Object[] {new ChatComponentTranslation(potion1.getName(), new Object[0]), entitylivingbase.getName()});
+                        throw new CommandException("commands.effect.failure.notActive", new Object[] {new ChatComponentTranslation(potion1.getName(), new Object[0]), entitylivingbase.getCommandSenderName()});
                     }
                 }
                 else
@@ -153,6 +158,9 @@ public class CommandEffect extends CommandBase
 
     /**
      * Return whether the specified command parameter index is a username parameter.
+     *  
+     * @param args The arguments that were given
+     * @param index The argument index that we are checking
      */
     public boolean isUsernameIndex(String[] args, int index)
     {

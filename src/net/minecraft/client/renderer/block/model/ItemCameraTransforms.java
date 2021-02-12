@@ -24,8 +24,8 @@ public class ItemCameraTransforms
     public final ItemTransformVec3f firstPerson;
     public final ItemTransformVec3f head;
     public final ItemTransformVec3f gui;
-    public final ItemTransformVec3f ground;
-    public final ItemTransformVec3f fixed;
+    public final ItemTransformVec3f field_181699_o;
+    public final ItemTransformVec3f field_181700_p;
 
     private ItemCameraTransforms()
     {
@@ -38,8 +38,8 @@ public class ItemCameraTransforms
         this.firstPerson = p_i46443_1_.firstPerson;
         this.head = p_i46443_1_.head;
         this.gui = p_i46443_1_.gui;
-        this.ground = p_i46443_1_.ground;
-        this.fixed = p_i46443_1_.fixed;
+        this.field_181699_o = p_i46443_1_.field_181699_o;
+        this.field_181700_p = p_i46443_1_.field_181700_p;
     }
 
     public ItemCameraTransforms(ItemTransformVec3f p_i46444_1_, ItemTransformVec3f p_i46444_2_, ItemTransformVec3f p_i46444_3_, ItemTransformVec3f p_i46444_4_, ItemTransformVec3f p_i46444_5_, ItemTransformVec3f p_i46444_6_)
@@ -48,13 +48,13 @@ public class ItemCameraTransforms
         this.firstPerson = p_i46444_2_;
         this.head = p_i46444_3_;
         this.gui = p_i46444_4_;
-        this.ground = p_i46444_5_;
-        this.fixed = p_i46444_6_;
+        this.field_181699_o = p_i46444_5_;
+        this.field_181700_p = p_i46444_6_;
     }
 
-    public void applyTransform(ItemCameraTransforms.TransformType p_181689_1_)
+    public void func_181689_a(ItemCameraTransforms.TransformType p_181689_1_)
     {
-        ItemTransformVec3f itemtransformvec3f = this.getTransform(p_181689_1_);
+        ItemTransformVec3f itemtransformvec3f = this.func_181688_b(p_181689_1_);
 
         if (itemtransformvec3f != ItemTransformVec3f.DEFAULT)
         {
@@ -66,7 +66,7 @@ public class ItemCameraTransforms
         }
     }
 
-    public ItemTransformVec3f getTransform(ItemCameraTransforms.TransformType p_181688_1_)
+    public ItemTransformVec3f func_181688_b(ItemCameraTransforms.TransformType p_181688_1_)
     {
         switch (p_181688_1_)
         {
@@ -83,10 +83,10 @@ public class ItemCameraTransforms
                 return this.gui;
 
             case GROUND:
-                return this.ground;
+                return this.field_181699_o;
 
             case FIXED:
-                return this.fixed;
+                return this.field_181700_p;
 
             default:
                 return ItemTransformVec3f.DEFAULT;
@@ -95,7 +95,7 @@ public class ItemCameraTransforms
 
     public boolean func_181687_c(ItemCameraTransforms.TransformType p_181687_1_)
     {
-        return !this.getTransform(p_181687_1_).equals(ItemTransformVec3f.DEFAULT);
+        return !this.func_181688_b(p_181687_1_).equals(ItemTransformVec3f.DEFAULT);
     }
 
     static class Deserializer implements JsonDeserializer<ItemCameraTransforms>

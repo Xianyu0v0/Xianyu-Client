@@ -65,7 +65,7 @@ public class EntityMinecartMobSpawner extends EntityMinecart
         this.mobSpawnerLogic.writeToNBT(tagCompound);
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         this.mobSpawnerLogic.setDelayToMin(id);
     }

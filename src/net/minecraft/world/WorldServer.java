@@ -176,7 +176,7 @@ public class WorldServer extends World implements IThreadListener
 
         if (this.areAllPlayersAsleep())
         {
-            if (this.getGameRules().getBoolean("doDaylightCycle"))
+            if (this.getGameRules().getGameRuleBooleanValue("doDaylightCycle"))
             {
                 long i = this.worldInfo.getWorldTime() + 24000L;
                 this.worldInfo.setWorldTime(i - i % 24000L);
@@ -187,7 +187,7 @@ public class WorldServer extends World implements IThreadListener
 
         this.theProfiler.startSection("mobSpawner");
 
-        if (this.getGameRules().getBoolean("doMobSpawning") && this.worldInfo.getTerrainType() != WorldType.DEBUG_WORLD)
+        if (this.getGameRules().getGameRuleBooleanValue("doMobSpawning") && this.worldInfo.getTerrainType() != WorldType.DEBUG_WORLD)
         {
             this.mobSpawner.findChunksForSpawning(this, this.spawnHostileMobs, this.spawnPeacefulMobs, this.worldInfo.getWorldTotalTime() % 400L == 0L);
         }
@@ -203,7 +203,7 @@ public class WorldServer extends World implements IThreadListener
 
         this.worldInfo.setWorldTotalTime(this.worldInfo.getWorldTotalTime() + 1L);
 
-        if (this.getGameRules().getBoolean("doDaylightCycle"))
+        if (this.getGameRules().getGameRuleBooleanValue("doDaylightCycle"))
         {
             this.worldInfo.setWorldTime(this.worldInfo.getWorldTime() + 1L);
         }
@@ -1143,6 +1143,10 @@ public class WorldServer extends World implements IThreadListener
 
     /**
      * Spawns the desired particle and sends the necessary packets to the relevant connected players.
+     *  
+     * @param xOffset The offset along the x axis to spread the particle across
+     * @param yOffset The offset along the y axis to spread the particle across
+     * @param zOffset The offset along the z axis to spread the particle across
      */
     public void spawnParticle(EnumParticleTypes particleType, boolean longDistance, double xCoord, double yCoord, double zCoord, int numberOfParticles, double xOffset, double yOffset, double zOffset, double particleSpeed, int... p_180505_18_)
     {

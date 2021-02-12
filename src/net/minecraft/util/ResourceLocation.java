@@ -27,6 +27,8 @@ public class ResourceLocation
     /**
      * Splits an object name (such as minecraft:apple) into the domain and path parts and returns these as an array of
      * length 2. If no colon is present in the passed value the returned array will contain {null, toSplit}.
+     *  
+     * @param toSplit The object name to split into its domain and path Strings.
      */
     protected static String[] splitObjectName(String toSplit)
     {

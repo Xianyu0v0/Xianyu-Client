@@ -236,7 +236,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
 
             if (j1 <= 0)
             {
-                this.worldObj.newExplosion(this, this.posX, this.posY + (double)this.getEyeHeight(), this.posZ, 7.0F, false, this.worldObj.getGameRules().getBoolean("mobGriefing"));
+                this.worldObj.newExplosion(this, this.posX, this.posY + (double)this.getEyeHeight(), this.posZ, 7.0F, false, this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"));
                 this.worldObj.playBroadcastSound(1013, new BlockPos(this), 0);
             }
 
@@ -343,7 +343,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
             {
                 --this.blockBreakCounter;
 
-                if (this.blockBreakCounter == 0 && this.worldObj.getGameRules().getBoolean("mobGriefing"))
+                if (this.blockBreakCounter == 0 && this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"))
                 {
                     int i1 = MathHelper.floor_double(this.posY);
                     int l1 = MathHelper.floor_double(this.posX);
@@ -636,6 +636,8 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
 
     /**
      * Updates the target entity ID
+     *  
+     * @param targetOffset should be from 0-2
      */
     public void updateWatchedTargetId(int targetOffset, int newId)
     {

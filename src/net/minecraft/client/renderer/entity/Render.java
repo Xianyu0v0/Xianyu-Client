@@ -3,6 +3,7 @@ package net.minecraft.client.renderer.entity;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
@@ -13,23 +14,29 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.src.Config;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.optifine.entity.model.IEntityRenderer;
+import net.optifine.shaders.Shaders;
 import org.lwjgl.opengl.GL11;
 
-public abstract class Render<T extends Entity>
+public abstract class Render<T extends Entity> implements IEntityRenderer
 {
     private static final ResourceLocation shadowTextures = new ResourceLocation("textures/misc/shadow.png");
     protected final RenderManager renderManager;
-    protected float shadowSize;
+    public float shadowSize;
 
     /**
      * Determines the darkness of the object's shadow. Higher value makes a darker shadow.
      */
     protected float shadowOpaque = 1.0F;
+    private Class entityClass = null;
+    private ResourceLocation locationTextureCustom = null;
 
     protected Render(RenderManager renderManager)
     {
@@ -53,6 +60,8 @@ public abstract class Render<T extends Entity>
      * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
      * (Render<T extends Entity>) and this method has signature public void doRender(T entity, double d, double d1,
      * double d2, float f, float f1). But JAD is pre 1.5 so doe
+     *  
+     * @param entityYaw The yaw rotation of the passed entity
      */
     public void doRender(T entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
@@ -85,6 +94,11 @@ public abstract class Render<T extends Entity>
     protected boolean bindEntityTexture(T entity)
     {
         ResourceLocation resourcelocation = this.getEntityTexture(entity);
+
+        if (this.locationTextureCustom != null)
+        {
+            resourcelocation = this.locationTextureCustom;
+        }
 
         if (resourcelocation == null)
         {
@@ -126,11 +140,19 @@ public abstract class Render<T extends Entity>
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         float f5 = 0.0F;
         int i = 0;
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+        boolean flag = Config.isMultiTexture();
+
+        if (flag)
+        {
+            worldrenderer.setBlockLayer(EnumWorldBlockLayer.SOLID);
+        }
+
+        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181707_g);
 
         while (f3 > 0.0F)
         {
             TextureAtlasSprite textureatlassprite2 = i % 2 == 0 ? textureatlassprite : textureatlassprite1;
+            worldrenderer.setSprite(textureatlassprite2);
             this.bindTexture(TextureMap.locationBlocksTexture);
             float f6 = textureatlassprite2.getMinU();
             float f7 = textureatlassprite2.getMinV();
@@ -144,10 +166,10 @@ public abstract class Render<T extends Entity>
                 f6 = f10;
             }
 
-            worldrenderer.pos((double)(f1 - f2), (double)(0.0F - f4), (double)f5).tex((double)f8, (double)f9).endVertex();
-            worldrenderer.pos((double)(-f1 - f2), (double)(0.0F - f4), (double)f5).tex((double)f6, (double)f9).endVertex();
-            worldrenderer.pos((double)(-f1 - f2), (double)(1.4F - f4), (double)f5).tex((double)f6, (double)f7).endVertex();
-            worldrenderer.pos((double)(f1 - f2), (double)(1.4F - f4), (double)f5).tex((double)f8, (double)f7).endVertex();
+            worldrenderer.func_181662_b((double)(f1 - f2), (double)(0.0F - f4), (double)f5).func_181673_a((double)f8, (double)f9).func_181675_d();
+            worldrenderer.func_181662_b((double)(-f1 - f2), (double)(0.0F - f4), (double)f5).func_181673_a((double)f6, (double)f9).func_181675_d();
+            worldrenderer.func_181662_b((double)(-f1 - f2), (double)(1.4F - f4), (double)f5).func_181673_a((double)f6, (double)f7).func_181675_d();
+            worldrenderer.func_181662_b((double)(f1 - f2), (double)(1.4F - f4), (double)f5).func_181673_a((double)f8, (double)f7).func_181675_d();
             f3 -= 0.45F;
             f4 -= 0.45F;
             f1 *= 0.9F;
@@ -156,6 +178,13 @@ public abstract class Render<T extends Entity>
         }
 
         tessellator.draw();
+
+        if (flag)
+        {
+            worldrenderer.setBlockLayer((EnumWorldBlockLayer)null);
+            GlStateManager.bindCurrentTexture();
+        }
+
         GlStateManager.popMatrix();
         GlStateManager.enableLighting();
     }
@@ -166,54 +195,57 @@ public abstract class Render<T extends Entity>
      */
     private void renderShadow(Entity entityIn, double x, double y, double z, float shadowAlpha, float partialTicks)
     {
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(770, 771);
-        this.renderManager.renderEngine.bindTexture(shadowTextures);
-        World world = this.getWorldFromRenderManager();
-        GlStateManager.depthMask(false);
-        float f = this.shadowSize;
-
-        if (entityIn instanceof EntityLiving)
+        if (!Config.isShaders() || !Shaders.shouldSkipDefaultShadow)
         {
-            EntityLiving entityliving = (EntityLiving)entityIn;
-            f *= entityliving.getRenderSizeModifier();
+            GlStateManager.enableBlend();
+            GlStateManager.blendFunc(770, 771);
+            this.renderManager.renderEngine.bindTexture(shadowTextures);
+            World world = this.getWorldFromRenderManager();
+            GlStateManager.depthMask(false);
+            float f = this.shadowSize;
 
-            if (entityliving.isChild())
+            if (entityIn instanceof EntityLiving)
             {
-                f *= 0.5F;
+                EntityLiving entityliving = (EntityLiving)entityIn;
+                f *= entityliving.getRenderSizeModifier();
+
+                if (entityliving.isChild())
+                {
+                    f *= 0.5F;
+                }
             }
-        }
 
-        double d5 = entityIn.lastTickPosX + (entityIn.posX - entityIn.lastTickPosX) * (double)partialTicks;
-        double d0 = entityIn.lastTickPosY + (entityIn.posY - entityIn.lastTickPosY) * (double)partialTicks;
-        double d1 = entityIn.lastTickPosZ + (entityIn.posZ - entityIn.lastTickPosZ) * (double)partialTicks;
-        int i = MathHelper.floor_double(d5 - (double)f);
-        int j = MathHelper.floor_double(d5 + (double)f);
-        int k = MathHelper.floor_double(d0 - (double)f);
-        int l = MathHelper.floor_double(d0);
-        int i1 = MathHelper.floor_double(d1 - (double)f);
-        int j1 = MathHelper.floor_double(d1 + (double)f);
-        double d2 = x - d5;
-        double d3 = y - d0;
-        double d4 = z - d1;
-        Tessellator tessellator = Tessellator.getInstance();
-        WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
+            double d5 = entityIn.lastTickPosX + (entityIn.posX - entityIn.lastTickPosX) * (double)partialTicks;
+            double d0 = entityIn.lastTickPosY + (entityIn.posY - entityIn.lastTickPosY) * (double)partialTicks;
+            double d1 = entityIn.lastTickPosZ + (entityIn.posZ - entityIn.lastTickPosZ) * (double)partialTicks;
+            int i = MathHelper.floor_double(d5 - (double)f);
+            int j = MathHelper.floor_double(d5 + (double)f);
+            int k = MathHelper.floor_double(d0 - (double)f);
+            int l = MathHelper.floor_double(d0);
+            int i1 = MathHelper.floor_double(d1 - (double)f);
+            int j1 = MathHelper.floor_double(d1 + (double)f);
+            double d2 = x - d5;
+            double d3 = y - d0;
+            double d4 = z - d1;
+            Tessellator tessellator = Tessellator.getInstance();
+            WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+            worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181709_i);
 
-        for (BlockPos blockpos : BlockPos.getAllInBoxMutable(new BlockPos(i, k, i1), new BlockPos(j, l, j1)))
-        {
-            Block block = world.getBlockState(blockpos.down()).getBlock();
-
-            if (block.getRenderType() != -1 && world.getLightFromNeighbors(blockpos) > 3)
+            for (BlockPos blockpos : BlockPos.getAllInBoxMutable(new BlockPos(i, k, i1), new BlockPos(j, l, j1)))
             {
-                this.func_180549_a(block, x, y, z, blockpos, shadowAlpha, f, d2, d3, d4);
-            }
-        }
+                Block block = world.getBlockState(blockpos.down()).getBlock();
 
-        tessellator.draw();
-        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        GlStateManager.disableBlend();
-        GlStateManager.depthMask(true);
+                if (block.getRenderType() != -1 && world.getLightFromNeighbors(blockpos) > 3)
+                {
+                    this.func_180549_a(block, x, y, z, blockpos, shadowAlpha, f, d2, d3, d4);
+                }
+            }
+
+            tessellator.draw();
+            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+            GlStateManager.disableBlend();
+            GlStateManager.depthMask(true);
+        }
     }
 
     /**
@@ -248,10 +280,10 @@ public abstract class Render<T extends Entity>
                 float f1 = (float)((p_180549_2_ - d2) / 2.0D / (double)p_180549_10_ + 0.5D);
                 float f2 = (float)((p_180549_6_ - d4) / 2.0D / (double)p_180549_10_ + 0.5D);
                 float f3 = (float)((p_180549_6_ - d5) / 2.0D / (double)p_180549_10_ + 0.5D);
-                worldrenderer.pos(d1, d3, d4).tex((double)f, (double)f2).color(1.0F, 1.0F, 1.0F, (float)d0).endVertex();
-                worldrenderer.pos(d1, d3, d5).tex((double)f, (double)f3).color(1.0F, 1.0F, 1.0F, (float)d0).endVertex();
-                worldrenderer.pos(d2, d3, d5).tex((double)f1, (double)f3).color(1.0F, 1.0F, 1.0F, (float)d0).endVertex();
-                worldrenderer.pos(d2, d3, d4).tex((double)f1, (double)f2).color(1.0F, 1.0F, 1.0F, (float)d0).endVertex();
+                worldrenderer.func_181662_b(d1, d3, d4).func_181673_a((double)f, (double)f2).func_181666_a(1.0F, 1.0F, 1.0F, (float)d0).func_181675_d();
+                worldrenderer.func_181662_b(d1, d3, d5).func_181673_a((double)f, (double)f3).func_181666_a(1.0F, 1.0F, 1.0F, (float)d0).func_181675_d();
+                worldrenderer.func_181662_b(d2, d3, d5).func_181673_a((double)f1, (double)f3).func_181666_a(1.0F, 1.0F, 1.0F, (float)d0).func_181675_d();
+                worldrenderer.func_181662_b(d2, d3, d4).func_181673_a((double)f1, (double)f2).func_181666_a(1.0F, 1.0F, 1.0F, (float)d0).func_181675_d();
             }
         }
     }
@@ -266,31 +298,31 @@ public abstract class Render<T extends Entity>
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         worldrenderer.setTranslation(x, y, z);
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_NORMAL);
-        worldrenderer.pos(boundingBox.minX, boundingBox.maxY, boundingBox.minZ).normal(0.0F, 0.0F, -1.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.maxY, boundingBox.minZ).normal(0.0F, 0.0F, -1.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.minY, boundingBox.minZ).normal(0.0F, 0.0F, -1.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.minY, boundingBox.minZ).normal(0.0F, 0.0F, -1.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.minY, boundingBox.maxZ).normal(0.0F, 0.0F, 1.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.minY, boundingBox.maxZ).normal(0.0F, 0.0F, 1.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.maxY, boundingBox.maxZ).normal(0.0F, 0.0F, 1.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.maxY, boundingBox.maxZ).normal(0.0F, 0.0F, 1.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.minY, boundingBox.minZ).normal(0.0F, -1.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.minY, boundingBox.minZ).normal(0.0F, -1.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.minY, boundingBox.maxZ).normal(0.0F, -1.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.minY, boundingBox.maxZ).normal(0.0F, -1.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.maxY, boundingBox.maxZ).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.maxY, boundingBox.maxZ).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.maxY, boundingBox.minZ).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.maxY, boundingBox.minZ).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.minY, boundingBox.maxZ).normal(-1.0F, 0.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.maxY, boundingBox.maxZ).normal(-1.0F, 0.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.maxY, boundingBox.minZ).normal(-1.0F, 0.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.minX, boundingBox.minY, boundingBox.minZ).normal(-1.0F, 0.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.minY, boundingBox.minZ).normal(1.0F, 0.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.maxY, boundingBox.minZ).normal(1.0F, 0.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.maxY, boundingBox.maxZ).normal(1.0F, 0.0F, 0.0F).endVertex();
-        worldrenderer.pos(boundingBox.maxX, boundingBox.minY, boundingBox.maxZ).normal(1.0F, 0.0F, 0.0F).endVertex();
+        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181708_h);
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.maxY, boundingBox.minZ).func_181663_c(0.0F, 0.0F, -1.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.maxY, boundingBox.minZ).func_181663_c(0.0F, 0.0F, -1.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.minY, boundingBox.minZ).func_181663_c(0.0F, 0.0F, -1.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.minY, boundingBox.minZ).func_181663_c(0.0F, 0.0F, -1.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.minY, boundingBox.maxZ).func_181663_c(0.0F, 0.0F, 1.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.minY, boundingBox.maxZ).func_181663_c(0.0F, 0.0F, 1.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.maxY, boundingBox.maxZ).func_181663_c(0.0F, 0.0F, 1.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.maxY, boundingBox.maxZ).func_181663_c(0.0F, 0.0F, 1.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.minY, boundingBox.minZ).func_181663_c(0.0F, -1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.minY, boundingBox.minZ).func_181663_c(0.0F, -1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.minY, boundingBox.maxZ).func_181663_c(0.0F, -1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.minY, boundingBox.maxZ).func_181663_c(0.0F, -1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.maxY, boundingBox.maxZ).func_181663_c(0.0F, 1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.maxY, boundingBox.maxZ).func_181663_c(0.0F, 1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.maxY, boundingBox.minZ).func_181663_c(0.0F, 1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.maxY, boundingBox.minZ).func_181663_c(0.0F, 1.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.minY, boundingBox.maxZ).func_181663_c(-1.0F, 0.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.maxY, boundingBox.maxZ).func_181663_c(-1.0F, 0.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.maxY, boundingBox.minZ).func_181663_c(-1.0F, 0.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.minX, boundingBox.minY, boundingBox.minZ).func_181663_c(-1.0F, 0.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.minY, boundingBox.minZ).func_181663_c(1.0F, 0.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.maxY, boundingBox.minZ).func_181663_c(1.0F, 0.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.maxY, boundingBox.maxZ).func_181663_c(1.0F, 0.0F, 0.0F).func_181675_d();
+        worldrenderer.func_181662_b(boundingBox.maxX, boundingBox.minY, boundingBox.maxZ).func_181663_c(1.0F, 0.0F, 0.0F).func_181675_d();
         tessellator.draw();
         worldrenderer.setTranslation(0.0D, 0.0D, 0.0D);
         GlStateManager.enableTexture2D();
@@ -363,11 +395,11 @@ public abstract class Render<T extends Entity>
 
             int j = fontrenderer.getStringWidth(str) / 2;
             GlStateManager.disableTexture2D();
-            worldrenderer.begin(7, DefaultVertexFormats.POSITION_COLOR);
-            worldrenderer.pos((double)(-j - 1), (double)(-1 + i), 0.0D).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
-            worldrenderer.pos((double)(-j - 1), (double)(8 + i), 0.0D).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
-            worldrenderer.pos((double)(j + 1), (double)(8 + i), 0.0D).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
-            worldrenderer.pos((double)(j + 1), (double)(-1 + i), 0.0D).color(0.0F, 0.0F, 0.0F, 0.25F).endVertex();
+            worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181706_f);
+            worldrenderer.func_181662_b((double)(-j - 1), (double)(-1 + i), 0.0D).func_181666_a(0.0F, 0.0F, 0.0F, 0.25F).func_181675_d();
+            worldrenderer.func_181662_b((double)(-j - 1), (double)(8 + i), 0.0D).func_181666_a(0.0F, 0.0F, 0.0F, 0.25F).func_181675_d();
+            worldrenderer.func_181662_b((double)(j + 1), (double)(8 + i), 0.0D).func_181666_a(0.0F, 0.0F, 0.0F, 0.25F).func_181675_d();
+            worldrenderer.func_181662_b((double)(j + 1), (double)(-1 + i), 0.0D).func_181666_a(0.0F, 0.0F, 0.0F, 0.25F).func_181675_d();
             tessellator.draw();
             GlStateManager.enableTexture2D();
             fontrenderer.drawString(str, -fontrenderer.getStringWidth(str) / 2, i, 553648127);
@@ -384,5 +416,39 @@ public abstract class Render<T extends Entity>
     public RenderManager getRenderManager()
     {
         return this.renderManager;
+    }
+
+    public boolean isMultipass()
+    {
+        return false;
+    }
+
+    public void renderMultipass(T p_renderMultipass_1_, double p_renderMultipass_2_, double p_renderMultipass_4_, double p_renderMultipass_6_, float p_renderMultipass_8_, float p_renderMultipass_9_)
+    {
+    }
+
+    public Class getEntityClass()
+    {
+        return this.entityClass;
+    }
+
+    public void setEntityClass(Class p_setEntityClass_1_)
+    {
+        this.entityClass = p_setEntityClass_1_;
+    }
+
+    public ResourceLocation getLocationTextureCustom()
+    {
+        return this.locationTextureCustom;
+    }
+
+    public void setLocationTextureCustom(ResourceLocation p_setLocationTextureCustom_1_)
+    {
+        this.locationTextureCustom = p_setLocationTextureCustom_1_;
+    }
+
+    public static void setModelBipedMain(RenderBiped p_setModelBipedMain_0_, ModelBiped p_setModelBipedMain_1_)
+    {
+        p_setModelBipedMain_0_.modelBipedMain = p_setModelBipedMain_1_;
     }
 }

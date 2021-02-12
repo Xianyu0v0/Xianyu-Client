@@ -23,6 +23,8 @@ public class RenderArrow extends Render<EntityArrow>
      * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
      * (Render<T extends Entity>) and this method has signature public void doRender(T entity, double d, double d1,
      * double d2, float f, float f1). But JAD is pre 1.5 so doe
+     *  
+     * @param entityYaw The yaw rotation of the passed entity
      */
     public void doRender(EntityArrow entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
@@ -57,29 +59,29 @@ public class RenderArrow extends Render<EntityArrow>
         GlStateManager.scale(f8, f8, f8);
         GlStateManager.translate(-4.0F, 0.0F, 0.0F);
         GL11.glNormal3f(f8, 0.0F, 0.0F);
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
-        worldrenderer.pos(-7.0D, -2.0D, -2.0D).tex((double)f4, (double)f6).endVertex();
-        worldrenderer.pos(-7.0D, -2.0D, 2.0D).tex((double)f5, (double)f6).endVertex();
-        worldrenderer.pos(-7.0D, 2.0D, 2.0D).tex((double)f5, (double)f7).endVertex();
-        worldrenderer.pos(-7.0D, 2.0D, -2.0D).tex((double)f4, (double)f7).endVertex();
+        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181707_g);
+        worldrenderer.func_181662_b(-7.0D, -2.0D, -2.0D).func_181673_a((double)f4, (double)f6).func_181675_d();
+        worldrenderer.func_181662_b(-7.0D, -2.0D, 2.0D).func_181673_a((double)f5, (double)f6).func_181675_d();
+        worldrenderer.func_181662_b(-7.0D, 2.0D, 2.0D).func_181673_a((double)f5, (double)f7).func_181675_d();
+        worldrenderer.func_181662_b(-7.0D, 2.0D, -2.0D).func_181673_a((double)f4, (double)f7).func_181675_d();
         tessellator.draw();
         GL11.glNormal3f(-f8, 0.0F, 0.0F);
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
-        worldrenderer.pos(-7.0D, 2.0D, -2.0D).tex((double)f4, (double)f6).endVertex();
-        worldrenderer.pos(-7.0D, 2.0D, 2.0D).tex((double)f5, (double)f6).endVertex();
-        worldrenderer.pos(-7.0D, -2.0D, 2.0D).tex((double)f5, (double)f7).endVertex();
-        worldrenderer.pos(-7.0D, -2.0D, -2.0D).tex((double)f4, (double)f7).endVertex();
+        worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181707_g);
+        worldrenderer.func_181662_b(-7.0D, 2.0D, -2.0D).func_181673_a((double)f4, (double)f6).func_181675_d();
+        worldrenderer.func_181662_b(-7.0D, 2.0D, 2.0D).func_181673_a((double)f5, (double)f6).func_181675_d();
+        worldrenderer.func_181662_b(-7.0D, -2.0D, 2.0D).func_181673_a((double)f5, (double)f7).func_181675_d();
+        worldrenderer.func_181662_b(-7.0D, -2.0D, -2.0D).func_181673_a((double)f4, (double)f7).func_181675_d();
         tessellator.draw();
 
         for (int j = 0; j < 4; ++j)
         {
             GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
             GL11.glNormal3f(0.0F, 0.0F, f8);
-            worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
-            worldrenderer.pos(-8.0D, -2.0D, 0.0D).tex((double)f, (double)f2).endVertex();
-            worldrenderer.pos(8.0D, -2.0D, 0.0D).tex((double)f1, (double)f2).endVertex();
-            worldrenderer.pos(8.0D, 2.0D, 0.0D).tex((double)f1, (double)f3).endVertex();
-            worldrenderer.pos(-8.0D, 2.0D, 0.0D).tex((double)f, (double)f3).endVertex();
+            worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181707_g);
+            worldrenderer.func_181662_b(-8.0D, -2.0D, 0.0D).func_181673_a((double)f, (double)f2).func_181675_d();
+            worldrenderer.func_181662_b(8.0D, -2.0D, 0.0D).func_181673_a((double)f1, (double)f2).func_181675_d();
+            worldrenderer.func_181662_b(8.0D, 2.0D, 0.0D).func_181673_a((double)f1, (double)f3).func_181675_d();
+            worldrenderer.func_181662_b(-8.0D, 2.0D, 0.0D).func_181673_a((double)f, (double)f3).func_181675_d();
             tessellator.draw();
         }
 

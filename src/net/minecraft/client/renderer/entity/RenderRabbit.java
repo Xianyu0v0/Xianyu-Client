@@ -26,7 +26,7 @@ public class RenderRabbit extends RenderLiving<EntityRabbit>
      */
     protected ResourceLocation getEntityTexture(EntityRabbit entity)
     {
-        String s = EnumChatFormatting.getTextWithoutFormattingCodes(entity.getName());
+        String s = EnumChatFormatting.getTextWithoutFormattingCodes(entity.getCommandSenderName());
 
         if (s != null && s.equals("Toast"))
         {

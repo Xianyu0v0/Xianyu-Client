@@ -18,7 +18,7 @@ public interface IBakedModel
 
     boolean isBuiltInRenderer();
 
-    TextureAtlasSprite getParticleTexture();
+    TextureAtlasSprite getTexture();
 
     ItemCameraTransforms getItemCameraTransforms();
 }

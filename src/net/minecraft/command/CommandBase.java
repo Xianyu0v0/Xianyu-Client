@@ -38,6 +38,8 @@ public abstract class CommandBase implements ICommand
 
     /**
      * Returns true if the given command sender is allowed to use this command.
+     *  
+     * @param sender The CommandSender
      */
     public boolean canCommandSenderUseCommand(ICommandSender sender)
     {
@@ -281,7 +283,7 @@ public abstract class CommandBase implements ICommand
     {
         try
         {
-            return getPlayer(sender, query).getName();
+            return getPlayer(sender, query).getCommandSenderName();
         }
         catch (PlayerNotFoundException playernotfoundexception)
         {
@@ -304,7 +306,7 @@ public abstract class CommandBase implements ICommand
     {
         try
         {
-            return getPlayer(p_175758_0_, p_175758_1_).getName();
+            return getPlayer(p_175758_0_, p_175758_1_).getCommandSenderName();
         }
         catch (PlayerNotFoundException var5)
         {
@@ -709,6 +711,9 @@ public abstract class CommandBase implements ICommand
 
     /**
      * Return whether the specified command parameter index is a username parameter.
+     *  
+     * @param args The arguments that were given
+     * @param index The argument index that we are checking
      */
     public boolean isUsernameIndex(String[] args, int index)
     {

@@ -141,7 +141,7 @@ public class EntitySheep extends EntityAnimal
         return Item.getItemFromBlock(Blocks.wool);
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 10)
         {
@@ -149,7 +149,7 @@ public class EntitySheep extends EntityAnimal
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 
@@ -260,6 +260,8 @@ public class EntitySheep extends EntityAnimal
 
     /**
      * Sets the wool color of this sheep
+     *  
+     * @param color The color to make the wool
      */
     public void setFleeceColor(EnumDyeColor color)
     {
@@ -336,6 +338,9 @@ public class EntitySheep extends EntityAnimal
 
     /**
      * Attempts to mix both parent sheep to come up with a mixed dye color.
+     *  
+     * @param father The father sheep
+     * @param mother The mother sheep
      */
     private EnumDyeColor getDyeColorMixFromParents(EntityAnimal father, EntityAnimal mother)
     {

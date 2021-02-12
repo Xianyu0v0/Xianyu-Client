@@ -200,12 +200,12 @@ public abstract class BlockBasePressurePlate extends Block
         worldIn.notifyNeighborsOfStateChange(pos.down(), this);
     }
 
-    public int getWeakPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
+    public int isProvidingWeakPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
     {
         return this.getRedstoneStrength(state);
     }
 
-    public int getStrongPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
+    public int isProvidingStrongPower(IBlockAccess worldIn, BlockPos pos, IBlockState state, EnumFacing side)
     {
         return side == EnumFacing.UP ? this.getRedstoneStrength(state) : 0;
     }

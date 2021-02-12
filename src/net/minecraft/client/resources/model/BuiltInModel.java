@@ -40,7 +40,7 @@ public class BuiltInModel implements IBakedModel
         return true;
     }
 
-    public TextureAtlasSprite getParticleTexture()
+    public TextureAtlasSprite getTexture()
     {
         return null;
     }

@@ -272,6 +272,8 @@ public class CraftingManager
 
     /**
      * Adds a shapeless crafting recipe to the the game.
+     *  
+     * @param recipeComponents An array of ItemStack's Item's and Block's that make up the recipe.
      */
     public void addShapelessRecipe(ItemStack stack, Object... recipeComponents)
     {
@@ -303,6 +305,8 @@ public class CraftingManager
 
     /**
      * Adds an IRecipe to the list of crafting recipes.
+     *  
+     * @param recipe A recipe that will be added to the recipe list.
      */
     public void addRecipe(IRecipe recipe)
     {

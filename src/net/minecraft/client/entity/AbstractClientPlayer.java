@@ -13,18 +13,37 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.src.Config;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldSettings;
+import net.optifine.player.CapeUtils;
+import net.optifine.player.PlayerConfigurations;
+import net.optifine.reflect.Reflector;
 
 public abstract class AbstractClientPlayer extends EntityPlayer
 {
     private NetworkPlayerInfo playerInfo;
+    private ResourceLocation locationOfCape = null;
+    private long reloadCapeTimeMs = 0L;
+    private boolean elytraOfCape = false;
+    private String nameClear = null;
+    private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation("textures/entity/elytra.png");
 
     public AbstractClientPlayer(World worldIn, GameProfile playerProfile)
     {
         super(worldIn, playerProfile);
+        this.nameClear = playerProfile.getName();
+
+        if (this.nameClear != null && !this.nameClear.isEmpty())
+        {
+            this.nameClear = StringUtils.stripControlCodes(this.nameClear);
+        }
+
+        CapeUtils.downloadCape(this);
+        PlayerConfigurations.getPlayerConfiguration(this);
     }
 
     /**
@@ -74,8 +93,28 @@ public abstract class AbstractClientPlayer extends EntityPlayer
 
     public ResourceLocation getLocationCape()
     {
-        NetworkPlayerInfo networkplayerinfo = this.getPlayerInfo();
-        return networkplayerinfo == null ? null : networkplayerinfo.getLocationCape();
+        if (!Config.isShowCapes())
+        {
+            return null;
+        }
+        else
+        {
+            if (this.reloadCapeTimeMs != 0L && System.currentTimeMillis() > this.reloadCapeTimeMs)
+            {
+                CapeUtils.reloadCape(this);
+                this.reloadCapeTimeMs = 0L;
+            }
+
+            if (this.locationOfCape != null)
+            {
+                return this.locationOfCape;
+            }
+            else
+            {
+                NetworkPlayerInfo networkplayerinfo = this.getPlayerInfo();
+                return networkplayerinfo == null ? null : networkplayerinfo.getLocationCape();
+            }
+        }
     }
 
     public static ThreadDownloadImageData getDownloadImageSkin(ResourceLocation resourceLocationIn, String username)
@@ -94,6 +133,8 @@ public abstract class AbstractClientPlayer extends EntityPlayer
 
     /**
      * Returns true if the username has an associated skin.
+     *  
+     * @param username The username of the player being checked.
      */
     public static ResourceLocation getLocationSkin(String username)
     {
@@ -140,6 +181,55 @@ public abstract class AbstractClientPlayer extends EntityPlayer
             f *= 1.0F - f1 * 0.15F;
         }
 
-        return f;
+        return Reflector.ForgeHooksClient_getOffsetFOV.exists() ? Reflector.callFloat(Reflector.ForgeHooksClient_getOffsetFOV, new Object[] {this, Float.valueOf(f)}): f;
+    }
+
+    public String getNameClear()
+    {
+        return this.nameClear;
+    }
+
+    public ResourceLocation getLocationOfCape()
+    {
+        return this.locationOfCape;
+    }
+
+    public void setLocationOfCape(ResourceLocation p_setLocationOfCape_1_)
+    {
+        this.locationOfCape = p_setLocationOfCape_1_;
+    }
+
+    public boolean hasElytraCape()
+    {
+        ResourceLocation resourcelocation = this.getLocationCape();
+        return resourcelocation == null ? false : (resourcelocation == this.locationOfCape ? this.elytraOfCape : true);
+    }
+
+    public void setElytraOfCape(boolean p_setElytraOfCape_1_)
+    {
+        this.elytraOfCape = p_setElytraOfCape_1_;
+    }
+
+    public boolean isElytraOfCape()
+    {
+        return this.elytraOfCape;
+    }
+
+    public long getReloadCapeTimeMs()
+    {
+        return this.reloadCapeTimeMs;
+    }
+
+    public void setReloadCapeTimeMs(long p_setReloadCapeTimeMs_1_)
+    {
+        this.reloadCapeTimeMs = p_setReloadCapeTimeMs_1_;
+    }
+
+    /**
+     * interpolated look vector
+     */
+    public Vec3 getLook(float partialTicks)
+    {
+        return this.getVectorForRotation(this.rotationPitch, this.rotationYaw);
     }
 }

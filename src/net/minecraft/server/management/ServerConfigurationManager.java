@@ -134,13 +134,13 @@ public abstract class ServerConfigurationManager
             s1 = netManager.getRemoteAddress().toString();
         }
 
-        logger.info(playerIn.getName() + "[" + s1 + "] logged in with entity id " + playerIn.getEntityId() + " at (" + playerIn.posX + ", " + playerIn.posY + ", " + playerIn.posZ + ")");
+        logger.info(playerIn.getCommandSenderName() + "[" + s1 + "] logged in with entity id " + playerIn.getEntityId() + " at (" + playerIn.posX + ", " + playerIn.posY + ", " + playerIn.posZ + ")");
         WorldServer worldserver = this.mcServer.worldServerForDimension(playerIn.dimension);
         WorldInfo worldinfo = worldserver.getWorldInfo();
         BlockPos blockpos = worldserver.getSpawnPoint();
         this.setPlayerGameTypeBasedOnOther(playerIn, (EntityPlayerMP)null, worldserver);
         NetHandlerPlayServer nethandlerplayserver = new NetHandlerPlayServer(this.mcServer, netManager, playerIn);
-        nethandlerplayserver.sendPacket(new S01PacketJoinGame(playerIn.getEntityId(), playerIn.theItemInWorldManager.getGameType(), worldinfo.isHardcoreModeEnabled(), worldserver.provider.getDimensionId(), worldserver.getDifficulty(), this.getMaxPlayers(), worldinfo.getTerrainType(), worldserver.getGameRules().getBoolean("reducedDebugInfo")));
+        nethandlerplayserver.sendPacket(new S01PacketJoinGame(playerIn.getEntityId(), playerIn.theItemInWorldManager.getGameType(), worldinfo.isHardcoreModeEnabled(), worldserver.provider.getDimensionId(), worldserver.getDifficulty(), this.getMaxPlayers(), worldinfo.getTerrainType(), worldserver.getGameRules().getGameRuleBooleanValue("reducedDebugInfo")));
         nethandlerplayserver.sendPacket(new S3FPacketCustomPayload("MC|Brand", (new PacketBuffer(Unpooled.buffer())).writeString(this.getServerInstance().getServerModName())));
         nethandlerplayserver.sendPacket(new S41PacketServerDifficulty(worldinfo.getDifficulty(), worldinfo.isDifficultyLocked()));
         nethandlerplayserver.sendPacket(new S05PacketSpawnPosition(blockpos));
@@ -152,7 +152,7 @@ public abstract class ServerConfigurationManager
         this.mcServer.refreshStatusNextTick();
         ChatComponentTranslation chatcomponenttranslation;
 
-        if (!playerIn.getName().equalsIgnoreCase(s))
+        if (!playerIn.getCommandSenderName().equalsIgnoreCase(s))
         {
             chatcomponenttranslation = new ChatComponentTranslation("multiplayer.player.joined.renamed", new Object[] {playerIn.getDisplayName(), s});
         }
@@ -281,7 +281,7 @@ public abstract class ServerConfigurationManager
         NBTTagCompound nbttagcompound = this.mcServer.worldServers[0].getWorldInfo().getPlayerNBTTagCompound();
         NBTTagCompound nbttagcompound1;
 
-        if (playerIn.getName().equals(this.mcServer.getServerOwner()) && nbttagcompound != null)
+        if (playerIn.getCommandSenderName().equals(this.mcServer.getServerOwner()) && nbttagcompound != null)
         {
             playerIn.readFromNBT(nbttagcompound);
             nbttagcompound1 = nbttagcompound;
@@ -707,7 +707,7 @@ public abstract class ServerConfigurationManager
                 s = s + ", ";
             }
 
-            s = s + ((EntityPlayerMP)list.get(i)).getName();
+            s = s + ((EntityPlayerMP)list.get(i)).getCommandSenderName();
 
             if (p_181058_1_)
             {
@@ -727,7 +727,7 @@ public abstract class ServerConfigurationManager
 
         for (int i = 0; i < this.playerEntityList.size(); ++i)
         {
-            astring[i] = ((EntityPlayerMP)this.playerEntityList.get(i)).getName();
+            astring[i] = ((EntityPlayerMP)this.playerEntityList.get(i)).getCommandSenderName();
         }
 
         return astring;
@@ -779,7 +779,7 @@ public abstract class ServerConfigurationManager
     {
         for (EntityPlayerMP entityplayermp : this.playerEntityList)
         {
-            if (entityplayermp.getName().equalsIgnoreCase(username))
+            if (entityplayermp.getCommandSenderName().equalsIgnoreCase(username))
             {
                 return entityplayermp;
             }
@@ -875,7 +875,7 @@ public abstract class ServerConfigurationManager
     {
         WorldBorder worldborder = this.mcServer.worldServers[0].getWorldBorder();
         playerIn.playerNetServerHandler.sendPacket(new S44PacketWorldBorder(worldborder, S44PacketWorldBorder.Action.INITIALIZE));
-        playerIn.playerNetServerHandler.sendPacket(new S03PacketTimeUpdate(worldIn.getTotalWorldTime(), worldIn.getWorldTime(), worldIn.getGameRules().getBoolean("doDaylightCycle")));
+        playerIn.playerNetServerHandler.sendPacket(new S03PacketTimeUpdate(worldIn.getTotalWorldTime(), worldIn.getWorldTime(), worldIn.getGameRules().getGameRuleBooleanValue("doDaylightCycle")));
 
         if (worldIn.isRaining())
         {
@@ -1025,7 +1025,7 @@ public abstract class ServerConfigurationManager
 
             if (!file2.exists())
             {
-                File file3 = new File(file1, playerIn.getName() + ".json");
+                File file3 = new File(file1, playerIn.getCommandSenderName() + ".json");
 
                 if (file3.exists() && file3.isFile())
                 {
@@ -1064,6 +1064,8 @@ public abstract class ServerConfigurationManager
 
     /**
      * Get's the EntityPlayerMP object representing the player with the UUID.
+     *  
+     * @param playerUUID The UUID of the player being retrieved.
      */
     public EntityPlayerMP getPlayerByUUID(UUID playerUUID)
     {

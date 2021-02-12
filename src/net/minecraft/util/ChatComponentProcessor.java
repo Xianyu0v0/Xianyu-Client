@@ -27,10 +27,10 @@ public class ChatComponentProcessor
                     throw new EntityNotFoundException();
                 }
 
-                s = ((Entity)list.get(0)).getName();
+                s = ((Entity)list.get(0)).getCommandSenderName();
             }
 
-            ichatcomponent = entityIn != null && s.equals("*") ? new ChatComponentScore(entityIn.getName(), chatcomponentscore.getObjective()) : new ChatComponentScore(s, chatcomponentscore.getObjective());
+            ichatcomponent = entityIn != null && s.equals("*") ? new ChatComponentScore(entityIn.getCommandSenderName(), chatcomponentscore.getObjective()) : new ChatComponentScore(s, chatcomponentscore.getObjective());
             ((ChatComponentScore)ichatcomponent).setValue(chatcomponentscore.getUnformattedTextForChat());
         }
         else if (component instanceof ChatComponentSelector)

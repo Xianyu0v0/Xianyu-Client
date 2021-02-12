@@ -63,6 +63,8 @@ public class SaveFormatOld implements ISaveFormat
 
     /**
      * Returns the world's WorldInfo object
+     *  
+     * @param saveName The name of the directory containing the world
      */
     public WorldInfo getWorldInfo(String saveName)
     {
@@ -113,6 +115,9 @@ public class SaveFormatOld implements ISaveFormat
     /**
      * Renames the world by storing the new name in level.dat. It does *not* rename the directory containing the world
      * data.
+     *  
+     * @param dirName The name of the directory containing the world.
+     * @param newName The new name for the world.
      */
     public void renameWorld(String dirName, String newName)
     {
@@ -249,6 +254,8 @@ public class SaveFormatOld implements ISaveFormat
 
     /**
      * gets if the map is old chunk saving (true) or McRegion (false)
+     *  
+     * @param saveName The name of the directory containing the world
      */
     public boolean isOldMapFormat(String saveName)
     {
@@ -257,6 +264,8 @@ public class SaveFormatOld implements ISaveFormat
 
     /**
      * converts the map to mcRegion
+     *  
+     * @param filename Filename for the level.dat_mcr backup
      */
     public boolean convertMapFormat(String filename, IProgressUpdate progressCallback)
     {

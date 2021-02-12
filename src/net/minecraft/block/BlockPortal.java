@@ -36,7 +36,7 @@ public class BlockPortal extends BlockBreakable
     {
         super.updateTick(worldIn, pos, state, rand);
 
-        if (worldIn.provider.isSurfaceWorld() && worldIn.getGameRules().getBoolean("doMobSpawning") && rand.nextInt(2000) < worldIn.getDifficulty().getDifficultyId())
+        if (worldIn.provider.isSurfaceWorld() && worldIn.getGameRules().getGameRuleBooleanValue("doMobSpawning") && rand.nextInt(2000) < worldIn.getDifficulty().getDifficultyId())
         {
             int i = pos.getY();
             BlockPos blockpos;
@@ -234,6 +234,9 @@ public class BlockPortal extends BlockBreakable
         }
     }
 
+    /**
+     * Used by pick block on the client to get a block's item form, if it exists.
+     */
     public Item getItem(World worldIn, BlockPos pos)
     {
         return null;

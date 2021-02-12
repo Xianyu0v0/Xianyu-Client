@@ -71,6 +71,8 @@ public class BlockFarmland extends Block
 
     /**
      * Block's chance to react to a living entity falling on it.
+     *  
+     * @param fallDistance The distance the entity has fallen before landing
      */
     public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
     {
@@ -78,7 +80,7 @@ public class BlockFarmland extends Block
         {
             if (!worldIn.isRemote && worldIn.rand.nextFloat() < fallDistance - 0.5F)
             {
-                if (!(entityIn instanceof EntityPlayer) && !worldIn.getGameRules().getBoolean("mobGriefing"))
+                if (!(entityIn instanceof EntityPlayer) && !worldIn.getGameRules().getGameRuleBooleanValue("mobGriefing"))
                 {
                     return;
                 }
@@ -143,12 +145,17 @@ public class BlockFarmland extends Block
 
     /**
      * Get the Item that this Block should drop when harvested.
+     *  
+     * @param fortune the level of the Fortune enchantment on the player's tool
      */
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
         return Blocks.dirt.getItemDropped(Blocks.dirt.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT), rand, fortune);
     }
 
+    /**
+     * Used by pick block on the client to get a block's item form, if it exists.
+     */
     public Item getItem(World worldIn, BlockPos pos)
     {
         return Item.getItemFromBlock(Blocks.dirt);

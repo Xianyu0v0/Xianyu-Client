@@ -535,7 +535,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
 
                     if (block.getMaterial() != Material.air)
                     {
-                        if (block != Blocks.barrier && block != Blocks.obsidian && block != Blocks.end_stone && block != Blocks.bedrock && block != Blocks.command_block && this.worldObj.getGameRules().getBoolean("mobGriefing"))
+                        if (block != Blocks.barrier && block != Blocks.obsidian && block != Blocks.end_stone && block != Blocks.bedrock && block != Blocks.command_block && this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"))
                         {
                             flag1 = this.worldObj.setBlockToAir(blockpos) || flag1;
                         }
@@ -626,7 +626,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             this.worldObj.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D, new int[0]);
         }
 
-        boolean flag = this.worldObj.getGameRules().getBoolean("doMobLoot");
+        boolean flag = this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot");
 
         if (!this.worldObj.isRemote)
         {
@@ -672,6 +672,8 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
 
     /**
      * Generate the portal when the dragon dies
+     *  
+     * @param pos Position to generate the portal at
      */
     private void generatePortal(BlockPos pos)
     {

@@ -116,18 +116,18 @@ public class MapItemRenderer
             GlStateManager.enableBlend();
             GlStateManager.tryBlendFuncSeparate(1, 771, 0, 1);
             GlStateManager.disableAlpha();
-            worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
-            worldrenderer.pos((double)((float)(i + 0) + f), (double)((float)(j + 128) - f), -0.009999999776482582D).tex(0.0D, 1.0D).endVertex();
-            worldrenderer.pos((double)((float)(i + 128) - f), (double)((float)(j + 128) - f), -0.009999999776482582D).tex(1.0D, 1.0D).endVertex();
-            worldrenderer.pos((double)((float)(i + 128) - f), (double)((float)(j + 0) + f), -0.009999999776482582D).tex(1.0D, 0.0D).endVertex();
-            worldrenderer.pos((double)((float)(i + 0) + f), (double)((float)(j + 0) + f), -0.009999999776482582D).tex(0.0D, 0.0D).endVertex();
+            worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181707_g);
+            worldrenderer.func_181662_b((double)((float)(i + 0) + f), (double)((float)(j + 128) - f), -0.009999999776482582D).func_181673_a(0.0D, 1.0D).func_181675_d();
+            worldrenderer.func_181662_b((double)((float)(i + 128) - f), (double)((float)(j + 128) - f), -0.009999999776482582D).func_181673_a(1.0D, 1.0D).func_181675_d();
+            worldrenderer.func_181662_b((double)((float)(i + 128) - f), (double)((float)(j + 0) + f), -0.009999999776482582D).func_181673_a(1.0D, 0.0D).func_181675_d();
+            worldrenderer.func_181662_b((double)((float)(i + 0) + f), (double)((float)(j + 0) + f), -0.009999999776482582D).func_181673_a(0.0D, 0.0D).func_181675_d();
             tessellator.draw();
             GlStateManager.enableAlpha();
             GlStateManager.disableBlend();
             MapItemRenderer.this.textureManager.bindTexture(MapItemRenderer.mapIcons);
             int k = 0;
 
-            for (Vec4b vec4b : this.mapData.mapDecorations.values())
+            for (Vec4b vec4b : this.mapData.playersVisibleOnMap.values())
             {
                 if (!noOverlayRendering || vec4b.func_176110_a() == 1)
                 {
@@ -141,12 +141,12 @@ public class MapItemRenderer
                     float f2 = (float)(b0 / 4 + 0) / 4.0F;
                     float f3 = (float)(b0 % 4 + 1) / 4.0F;
                     float f4 = (float)(b0 / 4 + 1) / 4.0F;
-                    worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+                    worldrenderer.func_181668_a(7, DefaultVertexFormats.field_181707_g);
                     float f5 = -0.001F;
-                    worldrenderer.pos(-1.0D, 1.0D, (double)((float)k * -0.001F)).tex((double)f1, (double)f2).endVertex();
-                    worldrenderer.pos(1.0D, 1.0D, (double)((float)k * -0.001F)).tex((double)f3, (double)f2).endVertex();
-                    worldrenderer.pos(1.0D, -1.0D, (double)((float)k * -0.001F)).tex((double)f3, (double)f4).endVertex();
-                    worldrenderer.pos(-1.0D, -1.0D, (double)((float)k * -0.001F)).tex((double)f1, (double)f4).endVertex();
+                    worldrenderer.func_181662_b(-1.0D, 1.0D, (double)((float)k * -0.001F)).func_181673_a((double)f1, (double)f2).func_181675_d();
+                    worldrenderer.func_181662_b(1.0D, 1.0D, (double)((float)k * -0.001F)).func_181673_a((double)f3, (double)f2).func_181675_d();
+                    worldrenderer.func_181662_b(1.0D, -1.0D, (double)((float)k * -0.001F)).func_181673_a((double)f3, (double)f4).func_181675_d();
+                    worldrenderer.func_181662_b(-1.0D, -1.0D, (double)((float)k * -0.001F)).func_181673_a((double)f1, (double)f4).func_181675_d();
                     tessellator.draw();
                     GlStateManager.popMatrix();
                     ++k;

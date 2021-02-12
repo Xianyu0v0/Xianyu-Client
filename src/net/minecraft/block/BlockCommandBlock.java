@@ -111,7 +111,7 @@ public class BlockCommandBlock extends BlockContainer
 
             if (!worldIn.isRemote)
             {
-                commandblocklogic.setTrackOutput(worldIn.getGameRules().getBoolean("sendCommandFeedback"));
+                commandblocklogic.setTrackOutput(worldIn.getGameRules().getGameRuleBooleanValue("sendCommandFeedback"));
             }
         }
     }

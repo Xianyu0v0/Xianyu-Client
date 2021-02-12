@@ -28,7 +28,7 @@ public class EntityMinecartChest extends EntityMinecartContainer
     {
         super.killMinecart(p_94095_1_);
 
-        if (this.worldObj.getGameRules().getBoolean("doEntityDrops"))
+        if (this.worldObj.getGameRules().getGameRuleBooleanValue("doEntityDrops"))
         {
             this.dropItemWithOffset(Item.getItemFromBlock(Blocks.chest), 1, 0.0F);
         }

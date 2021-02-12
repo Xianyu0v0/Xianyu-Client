@@ -504,7 +504,7 @@ public abstract class EntityPlayer extends EntityLivingBase
         }
     }
 
-    public void handleStatusUpdate(byte id)
+    public void handleHealthUpdate(byte id)
     {
         if (id == 9)
         {
@@ -520,7 +520,7 @@ public abstract class EntityPlayer extends EntityLivingBase
         }
         else
         {
-            super.handleStatusUpdate(id);
+            super.handleHealthUpdate(id);
         }
     }
 
@@ -601,7 +601,7 @@ public abstract class EntityPlayer extends EntityLivingBase
             --this.flyToggleTimer;
         }
 
-        if (this.worldObj.getDifficulty() == EnumDifficulty.PEACEFUL && this.worldObj.getGameRules().getBoolean("naturalRegeneration"))
+        if (this.worldObj.getDifficulty() == EnumDifficulty.PEACEFUL && this.worldObj.getGameRules().getGameRuleBooleanValue("naturalRegeneration"))
         {
             if (this.getHealth() < this.getMaxHealth() && this.ticksExisted % 20 == 0)
             {
@@ -717,12 +717,12 @@ public abstract class EntityPlayer extends EntityLivingBase
         this.setPosition(this.posX, this.posY, this.posZ);
         this.motionY = 0.10000000149011612D;
 
-        if (this.getName().equals("Notch"))
+        if (this.getCommandSenderName().equals("Notch"))
         {
             this.dropItem(new ItemStack(Items.apple, 1), true, false);
         }
 
-        if (!this.worldObj.getGameRules().getBoolean("keepInventory"))
+        if (!this.worldObj.getGameRules().getGameRuleBooleanValue("keepInventory"))
         {
             this.inventory.dropAllItems();
         }
@@ -779,14 +779,14 @@ public abstract class EntityPlayer extends EntityLivingBase
 
         for (ScoreObjective scoreobjective : collection)
         {
-            Score score = this.getWorldScoreboard().getValueFromObjective(this.getName(), scoreobjective);
+            Score score = this.getWorldScoreboard().getValueFromObjective(this.getCommandSenderName(), scoreobjective);
             score.func_96648_a();
         }
     }
 
     private Collection<ScoreObjective> func_175137_e(Entity p_175137_1_)
     {
-        ScorePlayerTeam scoreplayerteam = this.getWorldScoreboard().getPlayersTeam(this.getName());
+        ScorePlayerTeam scoreplayerteam = this.getWorldScoreboard().getPlayersTeam(this.getCommandSenderName());
 
         if (scoreplayerteam != null)
         {
@@ -796,13 +796,13 @@ public abstract class EntityPlayer extends EntityLivingBase
             {
                 for (ScoreObjective scoreobjective : this.getWorldScoreboard().getObjectivesFromCriteria(IScoreObjectiveCriteria.field_178793_i[i]))
                 {
-                    Score score = this.getWorldScoreboard().getValueFromObjective(p_175137_1_.getName(), scoreobjective);
+                    Score score = this.getWorldScoreboard().getValueFromObjective(p_175137_1_.getCommandSenderName(), scoreobjective);
                     score.func_96648_a();
                 }
             }
         }
 
-        ScorePlayerTeam scoreplayerteam1 = this.getWorldScoreboard().getPlayersTeam(p_175137_1_.getName());
+        ScorePlayerTeam scoreplayerteam1 = this.getWorldScoreboard().getPlayersTeam(p_175137_1_.getCommandSenderName());
 
         if (scoreplayerteam1 != null)
         {
@@ -851,7 +851,7 @@ public abstract class EntityPlayer extends EntityLivingBase
 
             if (traceItem)
             {
-                entityitem.setThrower(this.getName());
+                entityitem.setThrower(this.getCommandSenderName());
             }
 
             if (dropAround)
@@ -1644,6 +1644,8 @@ public abstract class EntityPlayer extends EntityLivingBase
 
     /**
      * Return null if bed is invalid
+     *  
+     * @param forceSpawn Spawn at bed location even if bed is missing.
      */
     public static BlockPos getBedSpawnLocation(World worldIn, BlockPos bedLocation, boolean forceSpawn)
     {
@@ -2141,7 +2143,7 @@ public abstract class EntityPlayer extends EntityLivingBase
      */
     protected int getExperiencePoints(EntityPlayer player)
     {
-        if (this.worldObj.getGameRules().getBoolean("keepInventory"))
+        if (this.worldObj.getGameRules().getGameRuleBooleanValue("keepInventory"))
         {
             return 0;
         }
@@ -2184,7 +2186,7 @@ public abstract class EntityPlayer extends EntityLivingBase
             this.field_181017_ao = oldPlayer.field_181017_ao;
             this.field_181018_ap = oldPlayer.field_181018_ap;
         }
-        else if (this.worldObj.getGameRules().getBoolean("keepInventory"))
+        else if (this.worldObj.getGameRules().getGameRuleBooleanValue("keepInventory"))
         {
             this.inventory.copyInventory(oldPlayer.inventory);
             this.experienceLevel = oldPlayer.experienceLevel;
@@ -2224,7 +2226,7 @@ public abstract class EntityPlayer extends EntityLivingBase
     /**
      * Gets the name of this command sender (usually username, but possibly "Rcon")
      */
-    public String getName()
+    public String getCommandSenderName()
     {
         return this.gameProfile.getName();
     }
@@ -2308,7 +2310,7 @@ public abstract class EntityPlayer extends EntityLivingBase
 
     public Team getTeam()
     {
-        return this.getWorldScoreboard().getPlayersTeam(this.getName());
+        return this.getWorldScoreboard().getPlayersTeam(this.getCommandSenderName());
     }
 
     /**
@@ -2316,10 +2318,10 @@ public abstract class EntityPlayer extends EntityLivingBase
      */
     public IChatComponent getDisplayName()
     {
-        IChatComponent ichatcomponent = new ChatComponentText(ScorePlayerTeam.formatPlayerName(this.getTeam(), this.getName()));
-        ichatcomponent.getChatStyle().setChatClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/msg " + this.getName() + " "));
+        IChatComponent ichatcomponent = new ChatComponentText(ScorePlayerTeam.formatPlayerName(this.getTeam(), this.getCommandSenderName()));
+        ichatcomponent.getChatStyle().setChatClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/msg " + this.getCommandSenderName() + " "));
         ichatcomponent.getChatStyle().setChatHoverEvent(this.getHoverEvent());
-        ichatcomponent.getChatStyle().setInsertion(this.getName());
+        ichatcomponent.getChatStyle().setInsertion(this.getCommandSenderName());
         return ichatcomponent;
     }
 
@@ -2401,7 +2403,7 @@ public abstract class EntityPlayer extends EntityLivingBase
      */
     public boolean sendCommandFeedback()
     {
-        return MinecraftServer.getServer().worldServers[0].getGameRules().getBoolean("sendCommandFeedback");
+        return MinecraftServer.getServer().worldServers[0].getGameRules().getGameRuleBooleanValue("sendCommandFeedback");
     }
 
     public boolean replaceItemInInventory(int inventorySlot, ItemStack itemStackIn)

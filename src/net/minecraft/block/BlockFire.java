@@ -150,7 +150,7 @@ public class BlockFire extends Block
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-        if (worldIn.getGameRules().getBoolean("doFireTick"))
+        if (worldIn.getGameRules().getGameRuleBooleanValue("doFireTick"))
         {
             if (!this.canPlaceBlockAt(worldIn, pos))
             {

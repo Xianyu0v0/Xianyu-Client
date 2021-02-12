@@ -136,6 +136,8 @@ public abstract class Container
 
     /**
      * Handles slot click.
+     *  
+     * @param mode 0 = basic click, 1 = shift click, 2 = hotbar, 3 = pick block, 4 = drop, 5 = ?, 6 = double click
      */
     public ItemStack slotClick(int slotId, int clickedButton, int mode, EntityPlayer playerIn)
     {
@@ -504,6 +506,10 @@ public abstract class Container
 
     /**
      * Retries slotClick() in case of failure
+     *  
+     * @param slotId The clicked Slot
+     * @param clickedButton The mouse button that was clicked on the slot
+     * @param playerIn The player interacting with the slot
      */
     protected void retrySlotClick(int slotId, int clickedButton, boolean mode, EntityPlayer playerIn)
     {
@@ -534,6 +540,9 @@ public abstract class Container
 
     /**
      * args: slotID, itemStack to put in slot
+     *  
+     * @param slotID The slot to put the ItemStack in
+     * @param stack The ItemStack to put in the slot
      */
     public void putStackInSlot(int slotID, ItemStack stack)
     {

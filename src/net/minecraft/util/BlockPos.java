@@ -44,6 +44,10 @@ public class BlockPos extends Vec3i
 
     /**
      * Add the given coordinates to the coordinates of this BlockPos
+     *  
+     * @param x X coordinate
+     * @param y Y coordinate
+     * @param z Z coordinate
      */
     public BlockPos add(double x, double y, double z)
     {
@@ -52,6 +56,10 @@ public class BlockPos extends Vec3i
 
     /**
      * Add the given coordinates to the coordinates of this BlockPos
+     *  
+     * @param x X coordinate
+     * @param y Y coordinate
+     * @param z Z coordinate
      */
     public BlockPos add(int x, int y, int z)
     {
@@ -180,6 +188,9 @@ public class BlockPos extends Vec3i
 
     /**
      * Offsets this BlockPos n blocks in the given direction
+     *  
+     * @param facing The direction of the offset
+     * @param n The number of blocks to offset by
      */
     public BlockPos offset(EnumFacing facing, int n)
     {

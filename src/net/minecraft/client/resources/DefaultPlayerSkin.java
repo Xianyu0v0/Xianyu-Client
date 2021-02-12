@@ -21,6 +21,8 @@ public class DefaultPlayerSkin
 
     /**
      * Retrieves the default skin for this player. Depending on the model used this will be Alex or Steve.
+     *  
+     * @param playerUUID The unique ID for the player.
      */
     public static ResourceLocation getDefaultSkin(UUID playerUUID)
     {
@@ -29,6 +31,8 @@ public class DefaultPlayerSkin
 
     /**
      * Retrieves the type of skin that a player is using. The Alex model is slim while the Steve model is default.
+     *  
+     * @param playerUUID The unique ID for the player.
      */
     public static String getSkinType(UUID playerUUID)
     {
@@ -37,6 +41,8 @@ public class DefaultPlayerSkin
 
     /**
      * Checks if a players skin model is slim or the default. The Alex model is slime while the Steve model is default.
+     *  
+     * @param playerUUID The unique ID for the player.
      */
     private static boolean isSlimSkin(UUID playerUUID)
     {

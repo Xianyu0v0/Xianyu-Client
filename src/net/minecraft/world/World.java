@@ -245,6 +245,8 @@ public abstract class World implements IBlockAccess
     /**
      * Checks to see if an air block exists at the provided location. Note that this only checks to see if the blocks
      * material is set to air, meaning it is possible for non-vanilla blocks to still pass this check.
+     *  
+     * @param pos The position of the block being checked.
      */
     public boolean isAirBlock(BlockPos pos)
     {
@@ -331,6 +333,9 @@ public abstract class World implements IBlockAccess
 
     /**
      * Returns back a chunk looked up by chunk coordinates Args: x, y
+     *  
+     * @param chunkX Chunk X Coordinate
+     * @param chunkZ Chunk Z Coordinate
      */
     public Chunk getChunkFromChunkCoords(int chunkX, int chunkZ)
     {
@@ -341,6 +346,9 @@ public abstract class World implements IBlockAccess
      * Sets the block state at a given location. Flag 1 will cause a block update. Flag 2 will send the change to
      * clients (you almost always want this). Flag 4 prevents the block from being re-rendered, if this is a client
      * world. Flags can be added together.
+     *  
+     * @param flags Flag 1 will cause a block update. Flag 2 will send the change to clients (you almost always want
+     * this). Flag 4 prevents the block from being re-rendered, if this is a client world. Flags can be added together.
      */
     public boolean setBlockState(BlockPos pos, IBlockState newState, int flags)
     {
@@ -1569,6 +1577,8 @@ public abstract class World implements IBlockAccess
 
     /**
      * Finds the highest block on the x and z coordinate that is solid or liquid, and returns its y coord.
+     *  
+     * @param pos The object containing the x and z coordinates to check at
      */
     public BlockPos getTopSolidOrLiquidBlock(BlockPos pos)
     {
@@ -2269,6 +2279,10 @@ public abstract class World implements IBlockAccess
 
     /**
      * Attempts to extinguish a fire
+     *  
+     * @param player The player putting out the fire
+     * @param pos The coordinates of the fire
+     * @param side The side from which the player is putting out the fire from
      */
     public boolean extinguishFire(EntityPlayer player, BlockPos pos, EnumFacing side)
     {
@@ -2690,6 +2704,10 @@ public abstract class World implements IBlockAccess
 
     /**
      * Checks to see if a given block is both water and cold enough to freeze.
+     *  
+     * @param pos The block coordinates
+     * @param noWaterAdj If true, this method will only return true if there is a non-water block immediately adjacent
+     * to the specified block
      */
     public boolean canBlockFreeze(BlockPos pos, boolean noWaterAdj)
     {
@@ -2734,6 +2752,9 @@ public abstract class World implements IBlockAccess
 
     /**
      * Checks to see if a given block can accumulate snow from it snowing
+     *  
+     * @param pos The block coordinates
+     * @param checkLight If false, checking for the correct light values will be skipped
      */
     public boolean canSnowAt(BlockPos pos, boolean checkLight)
     {
@@ -3170,7 +3191,7 @@ public abstract class World implements IBlockAccess
     public int getStrongPower(BlockPos pos, EnumFacing direction)
     {
         IBlockState iblockstate = this.getBlockState(pos);
-        return iblockstate.getBlock().getStrongPower(this, pos, iblockstate, direction);
+        return iblockstate.getBlock().isProvidingStrongPower(this, pos, iblockstate, direction);
     }
 
     public WorldType getWorldType()
@@ -3242,7 +3263,7 @@ public abstract class World implements IBlockAccess
     {
         IBlockState iblockstate = this.getBlockState(pos);
         Block block = iblockstate.getBlock();
-        return block.isNormalCube() ? this.getStrongPower(pos) : block.getWeakPower(this, pos, iblockstate, facing);
+        return block.isNormalCube() ? this.getStrongPower(pos) : block.isProvidingWeakPower(this, pos, iblockstate, facing);
     }
 
     public boolean isBlockPowered(BlockPos pos)
@@ -3342,7 +3363,7 @@ public abstract class World implements IBlockAccess
         {
             EntityPlayer entityplayer = (EntityPlayer)this.playerEntities.get(i);
 
-            if (name.equals(entityplayer.getName()))
+            if (name.equals(entityplayer.getCommandSenderName()))
             {
                 return entityplayer;
             }

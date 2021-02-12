@@ -37,6 +37,11 @@ public class PathFinder
 
     /**
      * Internal implementation of creating a path from an entity to a point
+     *  
+     * @param x target x coordinate
+     * @param y target y coordinate
+     * @param z target z coordinate
+     * @param distance max distance
      */
     private PathEntity createEntityPathTo(IBlockAccess blockaccess, Entity entityIn, double x, double y, double z, float distance)
     {
