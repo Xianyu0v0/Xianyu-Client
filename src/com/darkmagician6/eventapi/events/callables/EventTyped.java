@@ -23,9 +23,6 @@ public abstract class EventTyped implements Event, Typed {
         type = eventType;
     }
 
-    /**
-     * @see
-     */
     @Override
     public byte getType() {
         return type;

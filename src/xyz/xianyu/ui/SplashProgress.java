@@ -1,7 +1,6 @@
 package xyz.xianyu.ui;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
@@ -9,6 +8,7 @@ import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
+import xyz.xianyu.util.Font.StartProgressUnicodeFontRenderer;
 
 import java.awt.*;
 
@@ -17,7 +17,7 @@ public class SplashProgress {
     private static int PROGRESS=0;
     private static String CURRENT = "";
     private static ResourceLocation splash;
-    private static FontRenderer ufr;
+    private static StartProgressUnicodeFontRenderer ufr;
 
     public static void update(){
         if(Minecraft.getMinecraft() == null || Minecraft.getMinecraft().getLanguageManager()==null){
@@ -78,7 +78,7 @@ public class SplashProgress {
             return;
         }
         if(ufr==null){
-            ufr = Minecraft.getMinecraft().fontRendererObj;
+            ufr = StartProgressUnicodeFontRenderer.getFontOnPC("微软雅黑",20);
         }
 
         ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft());

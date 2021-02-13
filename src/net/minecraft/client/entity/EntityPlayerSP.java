@@ -1,5 +1,6 @@
 package net.minecraft.client.entity;
 
+import com.darkmagician6.eventapi.EventManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSoundMinecartRiding;
 import net.minecraft.client.audio.PositionedSoundRecord;
@@ -51,6 +52,7 @@ import net.minecraft.util.MovementInput;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
+import xyz.xianyu.events.EventUpdate;
 
 public class EntityPlayerSP extends AbstractClientPlayer
 {
@@ -188,6 +190,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onUpdateWalkingPlayer()
     {
+        EventUpdate e = new EventUpdate(posX,posY,posZ,rotationYaw,rotationPitch,onGround);
+        e.setPre();
+        EventManager.call(e);
         boolean flag = this.isSprinting();
 
         if (flag != this.serverSprintState)
@@ -271,6 +276,8 @@ public class EntityPlayerSP extends AbstractClientPlayer
                 this.lastReportedPitch = this.rotationPitch;
             }
         }
+        e.setPost();
+        EventManager.call(e);
     }
 
     /**

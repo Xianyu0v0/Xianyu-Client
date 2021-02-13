@@ -9,6 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Mouse;
 import xyz.xianyu.Alt.GuiAltManager;
 import xyz.xianyu.Client;
+import xyz.xianyu.util.Font.FontLoaders;
 import xyz.xianyu.util.RenderUtil;
 
 import java.awt.*;
@@ -88,7 +89,7 @@ public class MainMenu extends GuiScreen {
         if(opac<255&&opac+10<255){
             opac+=10;
         }
-        mc.fontRendererObj.drawString(Client.name, sr.getScaledWidth()/2 - (mc.fontRendererObj.getStringWidth(Client.name)/2),sr.getScaledHeight()/2-85 ,new Color(255,255,255,opac).getRGB());
+        FontLoaders.GoogleSans45.drawString(Client.name, sr.getScaledWidth()/2 - (FontLoaders.GoogleSans45.getStringWidth(Client.name)/2),sr.getScaledHeight()/2-85 ,new Color(255,255,255,opac).getRGB());
     }
 
     public void renderBg(int mouseX,int mouseY){
@@ -121,8 +122,8 @@ public class MainMenu extends GuiScreen {
 
     public void renderInfo(){
         ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft());
-        mc.fontRendererObj.drawString(Client.name+" "+Client.version+" With OptiFine_1.8.9_HD_U_L5",0,sr.getScaledHeight()-(mc.fontRendererObj.FONT_HEIGHT),-1);
-        mc.fontRendererObj.drawString("Copyright Mojang AB. Do not distribute!", sr.getScaledWidth()-  mc.fontRendererObj.getStringWidth("Copyright Mojang AB. Do not distribute!") - 4, sr.getScaledHeight() - 10, -1);
+        FontLoaders.Comfortaa16.drawString(Client.name+" "+Client.version+" With OptiFine_1.8.9_HD_U_L5",0,sr.getScaledHeight()-(FontLoaders.Comfortaa16.getHeight()*2),-1);
+        FontLoaders.Comfortaa16.drawString("Copyright Mojang AB. Do not distribute!", sr.getScaledWidth()-  FontLoaders.Comfortaa16.getStringWidth("Copyright Mojang AB. Do not distribute!") - 2, sr.getScaledHeight() - 10, -1);
     }
 
     public boolean isHovered(float x, float y, float x2, float y2, int mouseX, int mouseY) {

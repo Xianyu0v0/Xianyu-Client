@@ -12,12 +12,29 @@ import com.darkmagician6.eventapi.events.Event;
 public abstract class EventCancellable implements Event, Cancellable {
 
     private boolean cancelled;
+    private boolean isPre;
 
     protected EventCancellable() {
     }
 
+    public boolean isPre(){
+        return isPre;
+    }
+
+    public boolean isPost(){
+        return !isPre;
+    }
+
+    public void setPre(){
+        isPre=true;
+    }
+
+    public void setPost(){
+        isPre = false;
+    }
+
     /**
-     * @see
+     *
      */
     @Override
     public boolean isCancelled() {
@@ -25,7 +42,7 @@ public abstract class EventCancellable implements Event, Cancellable {
     }
 
     /**
-     * @see
+     *
      */
     @Override
     public void setCancelled(boolean state) {

@@ -185,6 +185,7 @@ import org.lwjgl.opengl.OpenGLException;
 import org.lwjgl.opengl.PixelFormat;
 import org.lwjgl.util.glu.GLU;
 import xyz.xianyu.Client;
+import xyz.xianyu.module.ModuleManager;
 import xyz.xianyu.ui.MainMenu;
 import xyz.xianyu.ui.SplashProgress;
 
@@ -1920,6 +1921,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
                 if (Keyboard.getEventKeyState())
                 {
+                    ModuleManager.keyPress(k);
                     if (k == 62 && this.entityRenderer != null)
                     {
                         this.entityRenderer.switchUseShader();
