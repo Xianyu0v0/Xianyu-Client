@@ -94,6 +94,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import org.lwjgl.opengl.GLContext;
 import org.lwjgl.util.glu.Project;
+import xyz.xianyu.module.modules.render.Hud;
 import xyz.xianyu.ui.MainMenu;
 
 public class EntityRenderer implements IResourceManagerReloadListener
@@ -707,8 +708,12 @@ public class EntityRenderer implements IResourceManagerReloadListener
             float f1 = -(entityplayer.distanceWalkedModified + f * partialTicks);
             float f2 = entityplayer.prevCameraYaw + (entityplayer.cameraYaw - entityplayer.prevCameraYaw) * partialTicks;
             float f3 = entityplayer.prevCameraPitch + (entityplayer.cameraPitch - entityplayer.prevCameraPitch) * partialTicks;
-            GlStateManager.translate(MathHelper.sin(f1 * (float)Math.PI) * f2 * 0.5F, -Math.abs(MathHelper.cos(f1 * (float)Math.PI) * f2), 0.0F);
-            GlStateManager.rotate(MathHelper.sin(f1 * (float)Math.PI) * f2 * 3.0F, 0.0F, 0.0F, 1.0F);
+            if(Hud.RealBobbing.isEnabled()){
+                GlStateManager.rotate(MathHelper.sin(f * 3.1415927f) * f2 * 5.0f, 0.0f, 0.0f, 1.0f);
+            }else {
+                GlStateManager.translate(MathHelper.sin(f1 * (float) Math.PI) * f2 * 0.5F, -Math.abs(MathHelper.cos(f1 * (float) Math.PI) * f2), 0.0F);
+                GlStateManager.rotate(MathHelper.sin(f1 * (float) Math.PI) * f2 * 3.0F, 0.0F, 0.0F, 1.0F);
+            }
             GlStateManager.rotate(Math.abs(MathHelper.cos(f1 * (float)Math.PI - 0.2F) * f2) * 5.0F, 1.0F, 0.0F, 0.0F);
             GlStateManager.rotate(f3, 1.0F, 0.0F, 0.0F);
         }

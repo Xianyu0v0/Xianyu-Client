@@ -1,5 +1,6 @@
 package net.minecraft.client.gui;
 
+import com.darkmagician6.eventapi.EventManager;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -43,6 +44,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
 import net.minecraft.world.border.WorldBorder;
 import net.optifine.CustomColors;
+import xyz.xianyu.events.EventRender2D;
 
 public class GuiIngame extends Gui
 {
@@ -344,6 +346,8 @@ public class GuiIngame extends Gui
         {
             this.overlayPlayerList.updatePlayerList(false);
         }
+
+        EventManager.call(new EventRender2D(scaledresolution,partialTicks));
 
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         GlStateManager.disableLighting();

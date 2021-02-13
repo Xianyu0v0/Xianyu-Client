@@ -16,5 +16,6 @@ public class Client {
         Display.setTitle("Minecraft 1.8.9 | XianyuClient");
         fontManager = new FontLoaders();
         moduleManager = new ModuleManager();
+        //TODO:Add Config Manager.
     }
 }

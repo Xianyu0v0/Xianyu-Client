@@ -330,7 +330,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     private final Queue < FutureTask<? >> scheduledTasks = Queues. < FutureTask<? >> newArrayDeque();
     private long field_175615_aJ = 0L;
     private final Thread mcThread = Thread.currentThread();
-    private ModelManager modelManager;
+    public ModelManager modelManager;
 
     /**
      * The BlockRenderDispatcher instance that will be used based off gamesettings

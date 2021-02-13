@@ -15,8 +15,11 @@ public class ModuleManager {
         modules.clear();
         //Movement
         modules.add(new Sprint());
+
         //Render
         modules.add(new Hud());
+        modules.add(new ClickGui());
+
         //Other
     }
 
