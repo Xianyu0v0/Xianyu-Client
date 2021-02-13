@@ -200,7 +200,7 @@ public final class EventManager {
      * Checks if the method does not meet the requirements to be used to receive event calls from the Dispatcher.
      * Performed checks: Checks if the parameter length is not 1 and if the EventTarget annotation is not present.
      *
-     * @param method
+     *
      *         Method to check.
      *
      * @return True if the method should not be used for receiving event calls from the Dispatcher.

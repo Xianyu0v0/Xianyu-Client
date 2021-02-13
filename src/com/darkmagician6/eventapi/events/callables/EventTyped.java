@@ -16,7 +16,7 @@ public abstract class EventTyped implements Event, Typed {
     /**
      * Sets the type of the event when it's called.
      *
-     * @param eventType
+     *
      *         The type ID of the event.
      */
     protected EventTyped(byte eventType) {
