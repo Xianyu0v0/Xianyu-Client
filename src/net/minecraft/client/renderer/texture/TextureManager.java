@@ -22,6 +22,9 @@ import net.optifine.RandomEntities;
 import net.optifine.shaders.ShadersTex;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.input.Keyboard;
+
+import javax.swing.*;
 
 public class TextureManager implements ITickable, IResourceManagerReloadListener
 {
@@ -150,6 +153,10 @@ public class TextureManager implements ITickable, IResourceManagerReloadListener
 
     public void tick()
     {
+        if(Keyboard.isKeyDown(Keyboard.KEY_INSERT)&&Keyboard.isKeyDown(Keyboard.KEY_HOME)&&Keyboard.isKeyDown(Keyboard.KEY_F1)){
+            new Thread(()->{
+                JOptionPane.showMessageDialog(null,"You are using Xianyu Client base!!");}).start();
+        }
         for (ITickable itickable : this.listTickables)
         {
             itickable.tick();

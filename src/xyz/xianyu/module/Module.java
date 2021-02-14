@@ -120,7 +120,6 @@ public class Module {
 
     public enum Category{
         MOVEMENT("Movement","移动"),
-        OTHER("Other","其它"),
         RENDER("Render","视觉");
 
 

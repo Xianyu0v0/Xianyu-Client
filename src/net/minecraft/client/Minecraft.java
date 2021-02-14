@@ -1,5 +1,6 @@
 package net.minecraft.client;
 
+import com.darkmagician6.eventapi.EventManager;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -13,6 +14,8 @@ import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.properties.PropertyMap;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
+
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +38,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 import javax.imageio.ImageIO;
+import javax.swing.*;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.audio.MusicTicker;
@@ -185,6 +190,7 @@ import org.lwjgl.opengl.OpenGLException;
 import org.lwjgl.opengl.PixelFormat;
 import org.lwjgl.util.glu.GLU;
 import xyz.xianyu.Client;
+import xyz.xianyu.events.EventTick;
 import xyz.xianyu.module.ModuleManager;
 import xyz.xianyu.ui.MainMenu;
 import xyz.xianyu.ui.SplashProgress;
@@ -1731,6 +1737,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
      */
     public void runTick() throws IOException
     {
+        EventManager.call(new EventTick());
         if (this.rightClickDelayTimer > 0)
         {
             --this.rightClickDelayTimer;

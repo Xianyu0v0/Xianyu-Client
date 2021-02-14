@@ -1,185 +1,1190 @@
-[11:40:57] [Client thread/INFO]: Setting user: Player16
-[11:40:57] [Client thread/INFO]: (Session ID is token:0:Player16)
-[11:40:59] [Client thread/INFO]: [OptiFine] *** Reflector Forge ***
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: mods.betterfoliage.client.BetterFoliageClient
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.asm.transformers.BlamingTransformer
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.event.world.ChunkWatchEvent$UnWatch
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.relauncher.CoreModManager
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.DimensionManager
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Pre
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Post
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.EntityViewRenderEvent$CameraSetup
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.EntityViewRenderEvent$FogColors
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.eventhandler.Event
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.eventhandler.EventBus
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.eventhandler.Event$Result
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.property.ExtendedBlockState
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.client.FMLClientHandler
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.FMLCommonHandler
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.biome.BiomeGenBase.getWaterColorMultiplier
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.addDestroyEffects
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.addHitEffects
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.canCreatureSpawn
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.canRenderInLayer
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.doesSideBlockRendering
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.getBedDirection
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.getExtendedState
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.getLightOpacity
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.getLightValue
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.hasTileEntity
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.isAir
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.isBed
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.isBedFoot
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.isSideSolid
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.ChunkCache.isSideSolid
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.entity.Entity.canRiderInteract
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Field not present: net.minecraft.entity.Entity.captureDrops
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Field not present: net.minecraft.entity.Entity.capturedDrops
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.entity.Entity.shouldRenderInPass
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.entity.Entity.shouldRiderSit
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.event.ForgeEventFactory
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.ForgeHooks
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.ForgeHooksClient
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Field not present: net.minecraft.item.Item.delegate
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.getDurabilityForDisplay
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.getModel
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.onEntitySwing
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.shouldCauseReequipAnimation
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.showDurabilityBar
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.ForgeModContainer
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.potion.PotionEffect.isCurativeItem
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.tileentity.TileEntity.canRenderBreaking
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.tileentity.TileEntity.getRenderBoundingBox
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.tileentity.TileEntity.hasFastRenderer
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.tileentity.TileEntity.shouldRenderInPass
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.client.renderer.vertex.VertexFormatElement$EnumUsage.preDraw
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.client.renderer.vertex.VertexFormatElement$EnumUsage.postDraw
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.World.countEntities
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.World.getPerWorldStorage
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.WorldProvider.getCloudRenderer
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.WorldProvider.getSkyRenderer
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.WorldProvider.getWeatherRenderer
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.WorldProvider.getSaveFolder
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.client.GuiModList
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.IColoredBakedQuad
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.property.IExtendedBlockState
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.IModel
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.IRenderHandler
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.ItemModelMesherForge
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.pipeline.LightUtil
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.Loader
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.MinecraftForge
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.MinecraftForgeClient
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.ModContainer
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.ModelLoader
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderBlockOverlayEvent$OverlayType
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.client.registry.RenderingRegistry
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderItemInFrameEvent
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderLivingEvent$Pre
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderLivingEvent$Post
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderLivingEvent$Specials$Pre
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderLivingEvent$Specials$Post
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.client.SplashProgress
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.event.world.WorldEvent$Load
-[11:40:59] [Client thread/INFO]: [OptiFine] *** Reflector Vanilla ***
-[11:40:59] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: optifine.OptiFineClassTransformer
-[11:40:59] [Client thread/INFO]: LWJGL Version: 2.9.4
-[11:40:59] [Client thread/INFO]: [OptiFine] 
-[11:40:59] [Client thread/INFO]: [OptiFine] OptiFine_1.8.9_HD_U_L5
-[11:40:59] [Client thread/INFO]: [OptiFine] Build: null
-[11:40:59] [Client thread/INFO]: [OptiFine] OS: Windows 10 (amd64) version 10.0
-[11:40:59] [Client thread/INFO]: [OptiFine] Java: 1.8.0_131, Oracle Corporation
-[11:40:59] [Client thread/INFO]: [OptiFine] VM: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
-[11:40:59] [Client thread/INFO]: [OptiFine] LWJGL: 2.9.4
-[11:40:59] [Client thread/INFO]: [OptiFine] OpenGL: Intel(R) UHD Graphics 620, version 4.5.0 - Build 23.20.16.4958, Intel
-[11:40:59] [Client thread/INFO]: [OptiFine] OpenGL Version: 4.5.0
-[11:40:59] [Client thread/INFO]: [OptiFine] OpenGL Fancy fog: Not available (GL_NV_fog_distance)
-[11:40:59] [Client thread/INFO]: [OptiFine] Maximum texture size: 8192x8192
-[11:40:59] [VersionCheck/INFO]: [OptiFine] Checking for new version
-[11:41:00] [Client thread/INFO]: [Shaders] OpenGL Version: 4.5.0 - Build 23.20.16.4958
-[11:41:00] [Client thread/INFO]: [Shaders] Vendor:  Intel
-[11:41:00] [Client thread/INFO]: [Shaders] Renderer: Intel(R) UHD Graphics 620
-[11:41:00] [Client thread/INFO]: [Shaders] Capabilities:  2.0  2.1  3.0  3.2  4.0 
-[11:41:00] [Client thread/INFO]: [Shaders] GL_MAX_DRAW_BUFFERS: 8
-[11:41:00] [Client thread/INFO]: [Shaders] GL_MAX_COLOR_ATTACHMENTS_EXT: 8
-[11:41:00] [Client thread/INFO]: [Shaders] GL_MAX_TEXTURE_IMAGE_UNITS: 32
-[11:41:00] [Client thread/INFO]: [Shaders] Load shaders configuration.
-[11:41:00] [Client thread/INFO]: [Shaders] Save shaders configuration.
-[11:41:00] [Client thread/INFO]: [Shaders] No shaderpack loaded.
-[11:41:00] [Client thread/INFO]: Reloading ResourceManager: Default
-[11:41:00] [Client thread/INFO]: [OptiFine] *** Reloading textures ***
-[11:41:00] [Client thread/INFO]: [OptiFine] Resource packs: Default
-[11:41:00] [Client thread/ERROR]: Couldn't initialize twitch stream
-[11:41:00] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[11:41:01] [Thread-21/INFO]: Initializing LWJGL OpenAL
-[11:41:01] [Thread-21/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[11:41:01] [Thread-21/INFO]: OpenAL initialized.
-[11:41:01] [Sound Library Loader/INFO]: Sound engine started
-[11:41:01] [VersionCheck/INFO]: [OptiFine] Version found: M5
-[11:41:01] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.Attributes
-[11:41:09] [Client thread/INFO]: [OptiFine] Mipmap levels: 4
-[11:41:09] [Client thread/INFO]: [OptiFine] Multitexture: false
-[11:41:09] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/0_glass_white/glass_pane_white.properties
-[11:41:09] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/0_glass_white/glass_white.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/10_glass_purple/glass_pane_purple.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/10_glass_purple/glass_purple.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/11_glass_blue/glass_blue.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/11_glass_blue/glass_pane_blue.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/12_glass_brown/glass_brown.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/12_glass_brown/glass_pane_brown.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/13_glass_green/glass_green.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/13_glass_green/glass_pane_green.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/14_glass_red/glass_pane_red.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/14_glass_red/glass_red.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/15_glass_black/glass_black.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/15_glass_black/glass_pane_black.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/1_glass_orange/glass_orange.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/1_glass_orange/glass_pane_orange.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/2_glass_magenta/glass_magenta.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/2_glass_magenta/glass_pane_magenta.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/3_glass_light_blue/glass_light_blue.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/3_glass_light_blue/glass_pane_light_blue.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/4_glass_yellow/glass_pane_yellow.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/4_glass_yellow/glass_yellow.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/5_glass_lime/glass_lime.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/5_glass_lime/glass_pane_lime.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/6_glass_pink/glass_pane_pink.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/6_glass_pink/glass_pink.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/7_glass_gray/glass_gray.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/7_glass_gray/glass_pane_gray.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/8_glass_silver/glass_pane_silver.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/8_glass_silver/glass_silver.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/9_glass_cyan/glass_cyan.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/9_glass_cyan/glass_pane_cyan.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/bookshelf.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/glass.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/glasspane.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/sandstone.properties
-[11:41:10] [Client thread/INFO]: [OptiFine] Multipass connected textures: false
-[11:41:10] [Client thread/INFO]: [OptiFine] BetterGrass: Parsing default configuration optifine/bettergrass.properties
-[11:41:12] [Client thread/INFO]: Created: 1024x512 textures-atlas
-[11:41:12] [Client thread/INFO]: [OptiFine] Animated sprites: 11
-[11:41:13] [Client thread/INFO]: [OptiFine] *** Reloading custom textures ***
-[11:41:13] [Client thread/INFO]: [OptiFine] Enable face culling: acacia_leaves, birch_leaves, dark_oak_leaves, jungle_leaves, oak_leaves, spruce_leaves
-[11:41:28] [Server thread/INFO]: Starting integrated minecraft server version 1.9
-[11:41:28] [Server thread/INFO]: Generating keypair
-[11:41:28] [Server thread/INFO]: Preparing start region for level 0
-[11:41:28] [Server thread/INFO]: Changing view distance to 8, from 10
-[11:41:31] [Server thread/INFO]: Player16[local:E:d46475c4] logged in with entity id 74 at (-367.2272152114414, 4.0, 158.12578664329394)
-[11:41:31] [Server thread/INFO]: Player16 加入了游戏
-[11:41:32] [Client thread/INFO]: [CHAT] 新的§eOptiFine§f版本现已可用：§e§nHD Ultra M5§r§f
-[11:41:32] [Server thread/INFO]: Saving and pausing game...
-[11:41:32] [Server thread/INFO]: Saving chunks for level '新的世界'/Overworld
-[11:41:32] [Server thread/INFO]: Saving chunks for level '新的世界'/Nether
-[11:41:32] [Server thread/INFO]: Saving chunks for level '新的世界'/The End
-[11:41:53] [Server thread/INFO]: Player16 刚刚获得了 [打开物品栏] 成就！
-[11:41:53] [Client thread/INFO]: [CHAT] Player16 刚刚获得了 [打开物品栏] 成就！
-[11:41:54] [Client thread/INFO]: Stopping!
-[11:41:54] [Client thread/INFO]: SoundSystem shutting down...
-[11:41:54] [Server thread/INFO]: Stopping server
-[11:41:54] [Server thread/INFO]: Saving players
-[11:41:54] [Server thread/INFO]: Saving worlds
-[11:41:54] [Server thread/INFO]: Saving chunks for level '新的世界'/Overworld
-[11:41:54] [Server thread/INFO]: Saving chunks for level '新的世界'/Nether
-[11:41:54] [Server thread/INFO]: Saving chunks for level '新的世界'/The End
-[11:41:54] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[20:31:39] [Client thread/INFO]: Setting user: Player77
+[20:31:39] [Client thread/INFO]: (Session ID is token:0:Player77)
+[20:31:40] [Client thread/INFO]: [OptiFine] *** Reflector Forge ***
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: mods.betterfoliage.client.BetterFoliageClient
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.asm.transformers.BlamingTransformer
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.event.world.ChunkWatchEvent$UnWatch
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.relauncher.CoreModManager
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.DimensionManager
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Pre
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Post
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.EntityViewRenderEvent$CameraSetup
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.EntityViewRenderEvent$FogColors
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.eventhandler.Event
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.eventhandler.EventBus
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.eventhandler.Event$Result
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.property.ExtendedBlockState
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.client.FMLClientHandler
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.FMLCommonHandler
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.biome.BiomeGenBase.getWaterColorMultiplier
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.addDestroyEffects
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.addHitEffects
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.canCreatureSpawn
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.canRenderInLayer
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.doesSideBlockRendering
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.getBedDirection
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.getExtendedState
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.getLightOpacity
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.getLightValue
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.hasTileEntity
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.isAir
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.isBed
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.isBedFoot
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.block.Block.isSideSolid
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.ChunkCache.isSideSolid
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.entity.Entity.canRiderInteract
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Field not present: net.minecraft.entity.Entity.captureDrops
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Field not present: net.minecraft.entity.Entity.capturedDrops
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.entity.Entity.shouldRenderInPass
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.entity.Entity.shouldRiderSit
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.event.ForgeEventFactory
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.ForgeHooks
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.ForgeHooksClient
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Field not present: net.minecraft.item.Item.delegate
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.getDurabilityForDisplay
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.getModel
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.onEntitySwing
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.shouldCauseReequipAnimation
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.item.Item.showDurabilityBar
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.ForgeModContainer
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.potion.PotionEffect.isCurativeItem
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.tileentity.TileEntity.canRenderBreaking
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.tileentity.TileEntity.getRenderBoundingBox
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.tileentity.TileEntity.hasFastRenderer
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.tileentity.TileEntity.shouldRenderInPass
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.client.renderer.vertex.VertexFormatElement$EnumUsage.preDraw
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.client.renderer.vertex.VertexFormatElement$EnumUsage.postDraw
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.World.countEntities
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.World.getPerWorldStorage
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.WorldProvider.getCloudRenderer
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.WorldProvider.getSkyRenderer
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.WorldProvider.getWeatherRenderer
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.world.WorldProvider.getSaveFolder
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.client.GuiModList
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.IColoredBakedQuad
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.property.IExtendedBlockState
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.IModel
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.IRenderHandler
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.ItemModelMesherForge
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.pipeline.LightUtil
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.Loader
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.common.MinecraftForge
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.MinecraftForgeClient
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.common.ModContainer
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.ModelLoader
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderBlockOverlayEvent$OverlayType
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.client.registry.RenderingRegistry
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderItemInFrameEvent
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderLivingEvent$Pre
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderLivingEvent$Post
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderLivingEvent$Specials$Pre
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.event.RenderLivingEvent$Specials$Post
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.fml.client.SplashProgress
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.event.world.WorldEvent$Load
+[20:31:40] [Client thread/INFO]: [OptiFine] *** Reflector Vanilla ***
+[20:31:40] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: optifine.OptiFineClassTransformer
+[20:31:40] [Client thread/INFO]: LWJGL Version: 2.9.4
+[20:31:41] [Client thread/INFO]: [OptiFine] 
+[20:31:41] [Client thread/INFO]: [OptiFine] OptiFine_1.8.9_HD_U_L5
+[20:31:41] [Client thread/INFO]: [OptiFine] Build: null
+[20:31:41] [Client thread/INFO]: [OptiFine] OS: Windows 10 (amd64) version 10.0
+[20:31:41] [Client thread/INFO]: [OptiFine] Java: 1.8.0_131, Oracle Corporation
+[20:31:41] [Client thread/INFO]: [OptiFine] VM: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+[20:31:41] [Client thread/INFO]: [OptiFine] LWJGL: 2.9.4
+[20:31:41] [Client thread/INFO]: [OptiFine] OpenGL: Intel(R) UHD Graphics 620, version 4.5.0 - Build 23.20.16.4958, Intel
+[20:31:41] [Client thread/INFO]: [OptiFine] OpenGL Version: 4.5.0
+[20:31:41] [Client thread/INFO]: [OptiFine] OpenGL Fancy fog: Not available (GL_NV_fog_distance)
+[20:31:41] [Client thread/INFO]: [OptiFine] Maximum texture size: 8192x8192
+[20:31:41] [VersionCheck/INFO]: [OptiFine] Checking for new version
+[20:31:41] [Client thread/INFO]: [Shaders] OpenGL Version: 4.5.0 - Build 23.20.16.4958
+[20:31:41] [Client thread/INFO]: [Shaders] Vendor:  Intel
+[20:31:41] [Client thread/INFO]: [Shaders] Renderer: Intel(R) UHD Graphics 620
+[20:31:41] [Client thread/INFO]: [Shaders] Capabilities:  2.0  2.1  3.0  3.2  4.0 
+[20:31:41] [Client thread/INFO]: [Shaders] GL_MAX_DRAW_BUFFERS: 8
+[20:31:41] [Client thread/INFO]: [Shaders] GL_MAX_COLOR_ATTACHMENTS_EXT: 8
+[20:31:41] [Client thread/INFO]: [Shaders] GL_MAX_TEXTURE_IMAGE_UNITS: 32
+[20:31:41] [Client thread/INFO]: [Shaders] Load shaders configuration.
+[20:31:41] [Client thread/INFO]: [Shaders] Save shaders configuration.
+[20:31:41] [Client thread/INFO]: [Shaders] No shaderpack loaded.
+[20:31:42] [Client thread/INFO]: Reloading ResourceManager: Default
+[20:31:42] [Client thread/INFO]: [OptiFine] *** Reloading textures ***
+[20:31:42] [Client thread/INFO]: [OptiFine] Resource packs: Default
+[20:31:42] [Client thread/ERROR]: Couldn't initialize twitch stream
+[20:31:42] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[20:31:42] [Thread-21/INFO]: Initializing LWJGL OpenAL
+[20:31:42] [Thread-21/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:31:42] [VersionCheck/INFO]: [OptiFine] Version found: M5
+[20:31:43] [Thread-21/INFO]: OpenAL initialized.
+[20:31:43] [Sound Library Loader/INFO]: Sound engine started
+[20:31:43] [Client thread/INFO]: [OptiFine] (Reflector) Class not present: net.minecraftforge.client.model.Attributes
+[20:31:48] [Client thread/INFO]: [OptiFine] Mipmap levels: 4
+[20:31:48] [Client thread/INFO]: [OptiFine] Multitexture: false
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/0_glass_white/glass_pane_white.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/0_glass_white/glass_white.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/10_glass_purple/glass_pane_purple.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/10_glass_purple/glass_purple.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/11_glass_blue/glass_blue.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/11_glass_blue/glass_pane_blue.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/12_glass_brown/glass_brown.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/12_glass_brown/glass_pane_brown.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/13_glass_green/glass_green.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/13_glass_green/glass_pane_green.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/14_glass_red/glass_pane_red.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/14_glass_red/glass_red.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/15_glass_black/glass_black.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/15_glass_black/glass_pane_black.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/1_glass_orange/glass_orange.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/1_glass_orange/glass_pane_orange.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/2_glass_magenta/glass_magenta.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/2_glass_magenta/glass_pane_magenta.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/3_glass_light_blue/glass_light_blue.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/3_glass_light_blue/glass_pane_light_blue.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/4_glass_yellow/glass_pane_yellow.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/4_glass_yellow/glass_yellow.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/5_glass_lime/glass_lime.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/5_glass_lime/glass_pane_lime.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/6_glass_pink/glass_pane_pink.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/6_glass_pink/glass_pink.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/7_glass_gray/glass_gray.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/7_glass_gray/glass_pane_gray.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/8_glass_silver/glass_pane_silver.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/8_glass_silver/glass_silver.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/9_glass_cyan/glass_cyan.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/9_glass_cyan/glass_pane_cyan.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/bookshelf.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/glass.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/glasspane.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] ConnectedTextures: mcpatcher/ctm/default/sandstone.properties
+[20:31:48] [Client thread/INFO]: [OptiFine] Multipass connected textures: false
+[20:31:48] [Client thread/INFO]: [OptiFine] BetterGrass: Parsing default configuration optifine/bettergrass.properties
+[20:31:49] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[20:31:49] [Client thread/INFO]: [OptiFine] Animated sprites: 11
+[20:31:50] [Client thread/INFO]: [OptiFine] *** Reloading custom textures ***
+[20:31:50] [Client thread/INFO]: [OptiFine] Enable face culling: acacia_leaves, birch_leaves, dark_oak_leaves, jungle_leaves, oak_leaves, spruce_leaves
+[20:32:09] [Server thread/INFO]: Starting integrated minecraft server version 1.9
+[20:32:09] [Server thread/INFO]: Generating keypair
+[20:32:10] [Server thread/INFO]: Preparing start region for level 0
+[20:32:10] [Server thread/INFO]: Changing view distance to 8, from 10
+[20:32:32] [Server thread/INFO]: Player77[local:E:9e3e977b] logged in with entity id 53 at (-383.69999998807907, 4.0, 67.63436159735676)
+[20:32:32] [Server thread/INFO]: Player77 加入了游戏
+[20:32:33] [Server thread/INFO]: Saving and pausing game...
+[20:32:33] [Client thread/INFO]: [CHAT] 新的§eOptiFine§f版本现已可用：§e§nHD Ultra M5§r§f
+[20:32:33] [Server thread/INFO]: Saving chunks for level '新的世界'/Overworld
+[20:32:33] [Server thread/INFO]: Saving chunks for level '新的世界'/Nether
+[20:32:33] [Server thread/INFO]: Saving chunks for level '新的世界'/The End
+[20:32:35] [Server thread/INFO]: Player77 刚刚获得了 [打开物品栏] 成就！
+[20:32:35] [Client thread/INFO]: [CHAT] Player77 刚刚获得了 [打开物品栏] 成就！
+[20:32:37] [Server thread/INFO]: Saving and pausing game...
+[20:32:37] [Server thread/INFO]: Saving chunks for level '新的世界'/Overworld
+[20:32:37] [Server thread/INFO]: Saving chunks for level '新的世界'/Nether
+[20:32:37] [Server thread/INFO]: Saving chunks for level '新的世界'/The End
+[20:32:45] [Server thread/INFO]: Saving and pausing game...
+[20:32:45] [Server thread/INFO]: Saving chunks for level '新的世界'/Overworld
+[20:32:45] [Server thread/INFO]: Saving chunks for level '新的世界'/Nether
+[20:32:45] [Server thread/INFO]: Saving chunks for level '新的世界'/The End
+[20:34:07] [Server thread/INFO]: Saving and pausing game...
+[20:34:07] [Server thread/INFO]: Saving chunks for level '新的世界'/Overworld
+[20:34:07] [Server thread/INFO]: Saving chunks for level '新的世界'/Nether
+[20:34:07] [Server thread/INFO]: Saving chunks for level '新的世界'/The End
+[20:34:14] [Server thread/INFO]: Saving and pausing game...
+[20:34:14] [Server thread/INFO]: Saving chunks for level '新的世界'/Overworld
+[20:34:14] [Server thread/INFO]: Saving chunks for level '新的世界'/Nether
+[20:34:14] [Server thread/INFO]: Saving chunks for level '新的世界'/The End
+[20:34:16] [Server thread/INFO]: Stopping server
+[20:34:16] [Server thread/INFO]: Saving players
+[20:34:16] [Server thread/INFO]: Saving worlds
+[20:34:16] [Server thread/INFO]: Saving chunks for level '新的世界'/Overworld
+[20:34:16] [Server thread/INFO]: Saving chunks for level '新的世界'/Nether
+[20:34:16] [Server thread/INFO]: Saving chunks for level '新的世界'/The End
+[20:34:22] [Client thread/INFO]: Connecting to mc.remiaft.com, 25565
+[20:34:28] [Client thread/INFO]: [CHAT] Remiaft NetWork » 请输入 /register <密码> <重复密码> 以注册
+[20:34:33] [Client thread/INFO]: [CHAT] 注册成功~
+[20:34:33] [Client thread/INFO]: [CHAT] Remiaft NetWork » 请输入“/email add <你的邮箱> <再输入一次以确认>”以把你的邮箱添加到此帐号
+[20:34:33] [Client thread/INFO]: [CHAT] Remiaft NetWork » 登录成功~
+[20:34:33] [Client thread/INFO]: [CHAT] 正在连接至服务器...
+[20:34:34] [Client thread/INFO]: [CHAT] 
+[20:34:34] [Client thread/INFO]: [CHAT] 跳到传送门中
+[20:34:34] [Client thread/INFO]: [CHAT] 或者右键点击你的指南针来开始游戏
+[20:34:40] [Client thread/INFO]: [CHAT] 
+[20:34:40] [Client thread/INFO]: [CHAT] 你也可以
+[20:34:40] [Client thread/INFO]: [CHAT] 右键点击传送门附近任意一个NPC
+[20:34:44] [Client thread/INFO]: [CHAT] 
+[20:34:44] [Client thread/INFO]: [CHAT] 请查看你的物品栏.
+[20:34:44] [Client thread/INFO]: [CHAT] 这里有玩具和更多内容!
+[20:34:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:34:47] [Client thread/INFO]: [CHAT] 
+[20:34:47] [Client thread/INFO]: [CHAT] §c- §f举报指令§f: /report (玩家id) (理由)
+[20:34:47] [Client thread/INFO]: [CHAT] §c- §f玩家交流群：§a§l903552250
+[20:34:47] [Client thread/INFO]: [CHAT] 
+[20:34:48] [Client thread/INFO]: [CHAT] 
+[20:34:48] [Client thread/INFO]: [CHAT] 访问我们的网站!
+[20:34:48] [Client thread/INFO]: [CHAT] www.remiaft.com - 新闻, 讨论以及更多内容!
+[20:34:48] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§73553255§f: b §b§l§n(点击传送)
+[20:35:01] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Elsa§f: bw §b§l§n(点击传送)
+[20:35:04] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Mr_xinren§f: sw §b§l§n(点击传送)
+[20:35:08] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7KillerSeven_233§f: qiqi §b§l§n(点击传送)
+[20:35:08] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7App1elove§f: bw §b§l§n(点击传送)
+[20:35:19] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7IamDeadfish§f: sw §b§l§n(点击传送)
+[20:35:30] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Trisomie_ §a✔§f: 超能力起床 §b§l§n(点击传送)
+[20:35:37] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§9[Helper] YOUNGK1ING_ §a✔§f: sw §b§l§n(点击传送)
+[20:35:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:35:47] [Client thread/INFO]: [CHAT] 
+[20:35:47] [Client thread/INFO]: [CHAT] §c- §f 身着金缕衣，内心末必幸福；
+[20:35:47] [Client thread/INFO]: [CHAT] §c- §f 露宿星空下，绝非无缘幸福。
+[20:35:47] [Client thread/INFO]: [CHAT] §c- §f 物质或许可以左右幸福的维度，
+[20:35:47] [Client thread/INFO]: [CHAT] §c- §f 但绝不可能触及幸福的深度。
+[20:35:47] [Client thread/INFO]: [CHAT] 
+[20:35:49] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§b[DONATE] SuiFeng2333 §c✔§f: ？ §b§l§n(点击传送)
+[20:35:56] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7XnLan_Daydream§f: chao neng li qi chuang §b§l§n(点击传送)
+[20:36:08] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7App1elove§f: bw §b§l§n(点击传送)
+[20:36:08] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Ksdawteawa§f: 200g §b§l§n(点击传送)
+[20:36:10] [Client thread/INFO]: [CHAT] 
+[20:36:12] [Client thread/INFO]: [CHAT] §7XxSorakaxX §f: hh
+[20:36:13] [Client thread/INFO]: [CHAT] ❤宠物喵正在保驾护航...
+[20:36:13] [Client thread/INFO]: [CHAT] Player77加入了游戏 (12/16)
+[20:36:13] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7machaoqaq§f: sw §b§l§n(点击传送)
+[20:36:14] [Client thread/INFO]: [CHAT] 游戏将在5秒后开始!
+[20:36:14] [Client thread/INFO]: [CHAT] wgsm加入了游戏 (13/16)
+[20:36:14] [Client thread/INFO]: [CHAT] FierceYeoman: ZEN ME XUAN neng li
+[20:36:15] [Client thread/INFO]: [CHAT] 游戏将在4秒后开始!
+[20:36:16] [Client thread/INFO]: [CHAT] 游戏将在3秒后开始!
+[20:36:16] [Client thread/INFO]: [CHAT] lixufanQQQ加入了游戏 (14/16)
+[20:36:17] [Client thread/INFO]: [CHAT] 游戏将在2秒后开始!
+[20:36:17] [Client thread/INFO]: [CHAT] 游戏将在1秒后开始!
+[20:36:19] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:36:19] [Client thread/INFO]: [CHAT]                                    起床战争
+[20:36:19] [Client thread/INFO]: [CHAT] 
+[20:36:19] [Client thread/INFO]: [CHAT]         在商店里选择一项超能力！它们将会在10秒后启用！
+[20:36:19] [Client thread/INFO]: [CHAT] 
+[20:36:19] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:36:19] [Client thread/INFO]: [CHAT] 你尚未选择一项超能力,因此你的超能力被设定为袋鼠!
+[20:36:20] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: 队友跟大s.b一样 你不打人你玩你妈起床啊 §b§l§n(点击传送)
+[20:36:26] [Client thread/ERROR]: Item entity 493 has no item?!
+[20:36:28] [Client thread/INFO]: [CHAT] 超能力已启用!
+[20:36:38] [Client thread/INFO]: [CHAT] 更改你的超能力为剑客!
+[20:36:39] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人 §b§l§n(点击传送)
+[20:36:40] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§a[Builder] VillagerKingdom §c❤§f: 刚问我要金苹果咋就走了呢，随风主播( §b§l§n(点击传送)
+[20:36:44] [Client thread/INFO]: [CHAT] App1elove 掉入了虚空
+[20:36:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:36:47] [Client thread/INFO]: [CHAT] 
+[20:36:47] [Client thread/INFO]: [CHAT] §c- §f---§cRemaift服务器§f---
+[20:36:47] [Client thread/INFO]: [CHAT] §c- §f欢迎加入§e§lRemiaft NetWork§f!
+[20:36:47] [Client thread/INFO]: [CHAT] §c- §f服务器QQ群:§a§l903552250
+[20:36:47] [Client thread/INFO]: [CHAT] 
+[20:36:47] [Client thread/ERROR]: Item entity 712 has no item?!
+[20:36:47] [Client thread/ERROR]: Item entity 712 has no item?!
+[20:36:47] [Client thread/ERROR]: Item entity 712 has no item?!
+[20:36:47] [Client thread/ERROR]: Item entity 712 has no item?!
+[20:36:47] [Client thread/ERROR]: Item entity 712 has no item?!
+[20:36:51] [Client thread/INFO]: [CHAT] Noob_Wuya 掉入了虚空
+[20:36:53] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§73553255§f: 有管理吗，bvdawads在玩pot的时候，有珍珠打人，没了跑路 §b§l§n(点击传送)
+[20:37:00] [Client thread/INFO]: [CHAT] Starzhufeng 掉入了虚空
+[20:37:02] [Client thread/INFO]: [CHAT] IamDeadfish 被击入虚空, 击杀者: AQiu______
+[20:37:05] [Client thread/ERROR]: Item entity 943 has no item?!
+[20:37:05] [Client thread/ERROR]: Item entity 943 has no item?!
+[20:37:05] [Client thread/ERROR]: Item entity 943 has no item?!
+[20:37:05] [Client thread/ERROR]: Item entity 943 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:12] [Client thread/ERROR]: Item entity 1022 has no item?!
+[20:37:18] [Client thread/INFO]: [CHAT] KillerSeven_233 掉入了虚空
+[20:37:18] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:37:18] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:37:19] [Client thread/INFO]: [CHAT] Trisomie_ 掉入了虚空
+[20:37:21] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7gzxworld §a✔§f: awaawa §b§l§n(点击传送)
+[20:37:23] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7met2222§f: qiqi §b§l§n(点击传送)
+[20:37:23] [Client thread/INFO]: [CHAT] FierceYeoman 掉入了虚空
+[20:37:23] [Client thread/ERROR]: Item entity 1175 has no item?!
+[20:37:27] [Client thread/INFO]: [CHAT] Noob_Wuya 掉入了虚空
+[20:37:27] [Client thread/INFO]: [CHAT] 你购买了永久的铁护甲
+[20:37:28] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:37:28] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:37:30] [Client thread/INFO]: [CHAT] 你购买了永久的剪刀
+[20:37:30] [Client thread/INFO]: [CHAT] 你购买了木镐 (效率 I)
+[20:37:30] [Client thread/INFO]: [CHAT] 你购买了木斧 (效率 I)
+[20:37:31] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:37:32] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:37:33] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7David10086§f: SW §b§l§n(点击传送)
+[20:37:33] [Client thread/INFO]: [CHAT] oooo0 被击倒, 击杀者: App1elove
+[20:37:39] [Client thread/INFO]: [CHAT] App1elove 被击倒, 击杀者: lixufanQQQ
+[20:37:40] [Client thread/INFO]: [CHAT] lixufanQQQ 被击倒, 击杀者: wgsm
+[20:37:40] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人 §b§l§n(点击传送)
+[20:37:41] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7FrozenPalacy §a✔§f: 我是傻逼 §b§l§n(点击传送)
+[20:37:47] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Z_xiaDDJ §a✔§f: 独立宣言 §b§l§n(点击传送)
+[20:37:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:37:47] [Client thread/INFO]: [CHAT] 
+[20:37:47] [Client thread/INFO]: [CHAT] §c- §f服务器游戏内容反馈/建议
+[20:37:47] [Client thread/INFO]: [CHAT] §c- §f请前往: https://bbs.remiaft.com 
+[20:37:47] [Client thread/INFO]: [CHAT] 
+[20:37:53] [Client thread/INFO]: [CHAT] +1铁锭
+[20:37:53] [Client thread/INFO]: [CHAT] +2绿宝石
+[20:37:53] [Client thread/INFO]: [CHAT] wgsm 被击倒, 击杀者: Player77
+[20:37:53] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Huang_Shoushouda§f: bedwars梦幻模式 点此参加---> §b§l§n(点击传送)
+[20:38:02] [Client thread/INFO]: [CHAT] AQiu______ 被击倒, 击杀者: FierceYeoman
+[20:38:03] [Client thread/INFO]: [CHAT] Ink_MoqiGG 被击入虚空, 击杀者: App1elove
+[20:38:05] [Client thread/INFO]: [CHAT] +3铁锭
+[20:38:05] [Client thread/INFO]: [CHAT] Noob_Wuya 被击倒, 击杀者: Player77
+[20:38:05] [Client thread/INFO]: [CHAT] FierceYeoman 被击倒, 击杀者: wgsm
+[20:38:09] [Client thread/INFO]: [CHAT] Trisomie_购买了挖掘疲劳陷阱
+[20:38:13] [Client thread/INFO]: [CHAT] IamDeadfish 被击入虚空, 击杀者: App1elove
+[20:38:20] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:38:20] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:38:24] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7nnnaaaddd2§f: dwd §b§l§n(点击传送)
+[20:38:28] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7wasdsadzd§f: 速度好吗？ §b§l§n(点击传送)
+[20:38:30] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§71173519956§f: 来这 §b§l§n(点击传送)
+[20:38:33] [Client thread/INFO]: [CHAT] Elsa 被击入虚空, 击杀者: FierceYeoman
+[20:38:34] [Client thread/INFO]: [CHAT] 
+[20:38:34] [Client thread/INFO]: [CHAT] 床被破坏了 > 蓝队的床被拆了, 破坏者: AQiu______
+[20:38:34] [Client thread/INFO]: [CHAT] 
+[20:38:36] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7urbbrzcsda§f: bw §b§l§n(点击传送)
+[20:38:40] [Client thread/INFO]: [CHAT] App1elove 被击入虚空, 击杀者: Ink_MoqiGG  最终击杀!
+[20:38:40] [Client thread/INFO]: [CHAT] AQiu______ 掉入了虚空
+[20:38:41] [Client thread/INFO]: [CHAT] Trisomie_ 被击倒, 击杀者: KillerSeven_233
+[20:38:45] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7App1elove§f: bw §b§l§n(点击传送)
+[20:38:47] [Client thread/INFO]: [CHAT] IamDeadfish 被击倒, 击杀者: Noob_Wuya
+[20:38:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:38:47] [Client thread/INFO]: [CHAT] 
+[20:38:47] [Client thread/INFO]: [CHAT] §c- §f全服喊话: §l/hh <内容>
+[20:38:47] [Client thread/INFO]: [CHAT] §c- §f正版验证: §l/zb (仅限大厅)
+[20:38:47] [Client thread/INFO]: [CHAT] 
+[20:38:49] [Client thread/INFO]: [CHAT] FierceYeoman 被击入虚空, 击杀者: wgsm
+[20:38:50] [Client thread/INFO]: [CHAT] lixufanQQQ 被击入虚空, 击杀者: wgsm
+[20:38:51] [Client thread/INFO]: [CHAT] 
+[20:38:51] [Client thread/INFO]: [CHAT]  团灭 > 蓝队已被淘汰!
+[20:38:51] [Client thread/INFO]: [CHAT] 
+[20:38:51] [Client thread/INFO]: [CHAT] Noob_Wuya 被击倒, 击杀者: KillerSeven_233  最终击杀!
+[20:38:54] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: bw §b§l§n(点击传送)
+[20:38:56] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7chunshui138§f: B §b§l§n(点击传送)
+[20:38:57] [Client thread/INFO]: [CHAT] KillerSeven_233 被击倒, 击杀者: Player77
+[20:39:02] [Client thread/INFO]: [CHAT] oooo0 被击倒, 击杀者: Player77
+[20:39:03] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:39:03] [Client thread/INFO]: [CHAT] Player77 被击倒, 击杀者: wgsm
+[20:39:04] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:39:05] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:39:06] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:39:07] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:39:08] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:39:08] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:39:13] [Client thread/INFO]: [CHAT] lixufanQQQ 被击倒, 击杀者: wgsm
+[20:39:15] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:39:19] [Client thread/INFO]: [CHAT] Trisomie_ 被击倒, 击杀者: AQiu______
+[20:39:20] [Client thread/INFO]: [CHAT] AQiu______ 被击倒, 击杀者: Elsa
+[20:39:23] [Client thread/INFO]: [CHAT] wgsm 被击入虚空, 击杀者: Player77
+[20:39:24] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Star_end§f: QwQ §b§l§n(点击传送)
+[20:39:24] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7nnnaaaddd2§f: dwd §b§l§n(点击传送)
+[20:39:26] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:39:26] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:39:26] [Client thread/INFO]: [CHAT] lixufanQQQ 被击入虚空, 击杀者: Elsa
+[20:39:28] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7wasdsadzd§f: 速度好吗？ §b§l§n(点击传送)
+[20:39:29] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:39:29] [Client thread/INFO]: [CHAT] Player77 被击入虚空, 击杀者: Elsa
+[20:39:29] [Client thread/INFO]: [CHAT] +2铁锭
+[20:39:29] [Client thread/INFO]: [CHAT] +3金锭
+[20:39:29] [Client thread/INFO]: [CHAT] Elsa 被击入虚空, 击杀者: Player77
+[20:39:30] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:39:31] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§71173519956§f: 来这 §b§l§n(点击传送)
+[20:39:31] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:39:32] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:39:33] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Mr_xinren§f: sw §b§l§n(点击传送)
+[20:39:33] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:39:34] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7David10086§f: E §b§l§n(点击传送)
+[20:39:34] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:39:34] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:39:35] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7k978§f: 555555555555 §b§l§n(点击传送)
+[20:39:40] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7ZGFyingmo §a✔§f: 空岛来人 §b§l§n(点击传送)
+[20:39:42] [Client thread/INFO]: [CHAT] [喊话] [红队] IamDeadfish: az 
+[20:39:45] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7App1elove§f: bw20s §b§l§n(点击传送)
+[20:39:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:39:47] [Client thread/INFO]: [CHAT] 
+[20:39:47] [Client thread/INFO]: [CHAT] §c- §f举报指令§f: /report (玩家id) (理由)
+[20:39:47] [Client thread/INFO]: [CHAT] §c- §f玩家交流群：§a§l903552250
+[20:39:47] [Client thread/INFO]: [CHAT] 
+[20:39:48] [Client thread/ERROR]: Item entity 3155 has no item?!
+[20:39:48] [Client thread/ERROR]: Item entity 3155 has no item?!
+[20:39:51] [Client thread/INFO]: [CHAT] FierceYeoman 掉入了虚空
+[20:39:53] [Client thread/INFO]: [CHAT] lixufanQQQ 被击入虚空, 击杀者: Ink_MoqiGG
+[20:40:00] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:40:01] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:40:01] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:40:02] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: bw §b§l§n(点击传送)
+[20:40:02] [Client thread/INFO]: [CHAT] Trisomie_ 被击倒, 击杀者: Elsa
+[20:40:03] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7machaoqaq§f: 呕 §b§l§n(点击传送)
+[20:40:10] [Client thread/INFO]: [CHAT] oooo0 被击入虚空, 击杀者: FierceYeoman
+[20:40:11] [Client thread/INFO]: [CHAT] IamDeadfish 被击入虚空, 击杀者: AQiu______
+[20:40:11] [Client thread/INFO]: [CHAT] +2铁锭
+[20:40:11] [Client thread/INFO]: [CHAT] +1金锭
+[20:40:11] [Client thread/INFO]: [CHAT] Ink_MoqiGG 被击倒, 击杀者: Player77
+[20:40:15] [Client thread/INFO]: [CHAT] FierceYeoman 被击入虚空, 击杀者: Ink_MoqiGG
+[20:40:21] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§71q2w§f: 超能力 §b§l§n(点击传送)
+[20:40:26] [Client thread/INFO]: [CHAT] Elsa 被击倒, 击杀者: Player77
+[20:40:28] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Thomas_Jack_§f: bw §b§l§n(点击传送)
+[20:40:31] [Client thread/INFO]: [CHAT] KillerSeven_233 被击倒, 击杀者: Player77
+[20:40:32] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:40:32] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:40:32] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7FierceYeoman§f: bw §b§l§n(点击传送)
+[20:40:32] [Client thread/INFO]: [CHAT] lixufanQQQ 被击入虚空, 击杀者: KillerSeven_233
+[20:40:39] [Client thread/INFO]: [CHAT] 挖掘疲劳陷阱触发了!
+[20:40:47] [Client thread/INFO]: [CHAT] lixufanQQQ 被击倒, 击杀者: AQiu______
+[20:40:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:40:47] [Client thread/INFO]: [CHAT] 
+[20:40:47] [Client thread/INFO]: [CHAT] §c- §f 身着金缕衣，内心末必幸福；
+[20:40:47] [Client thread/INFO]: [CHAT] §c- §f 露宿星空下，绝非无缘幸福。
+[20:40:47] [Client thread/INFO]: [CHAT] §c- §f 物质或许可以左右幸福的维度，
+[20:40:47] [Client thread/INFO]: [CHAT] §c- §f 但绝不可能触及幸福的深度。
+[20:40:47] [Client thread/INFO]: [CHAT] 
+[20:40:48] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7ShiningJulyy§f: rush §b§l§n(点击传送)
+[20:40:52] [Client thread/INFO]: [CHAT] 你只能破坏由玩家放置的方块!
+[20:40:53] [Client thread/INFO]: [CHAT] oooo0 掉入了虚空
+[20:40:54] [Client thread/INFO]: [CHAT] 你只能破坏由玩家放置的方块!
+[20:40:54] [Client thread/INFO]: [CHAT] Player77 被击倒, 击杀者: KillerSeven_233
+[20:40:54] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:40:58] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:40:58] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:40:58] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:40:59] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:40:59] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:40:59] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:40:59] [Client thread/INFO]: [CHAT] AQiu______ 被击倒, 击杀者: lixufanQQQ
+[20:41:01] [Client thread/INFO]: [CHAT] Elsa 掉入了虚空
+[20:41:03] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:41:04] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:41:05] [Client thread/INFO]: [CHAT] [喊话] [绿队] AQiu______ ✔: ka le ? 
+[20:41:06] [Client thread/ERROR]: Item entity 3979 has no item?!
+[20:41:07] [Client thread/INFO]: [CHAT] wgsm 被击入虚空, 击杀者: Player77
+[20:41:08] [Client thread/INFO]: [CHAT] Trisomie_ 被击入虚空, 击杀者: oooo0
+[20:41:12] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7820830§f: bw §b§l§n(点击传送)
+[20:41:19] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人 §b§l§n(点击传送)
+[20:41:23] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:41:23] [Client thread/INFO]: [CHAT] Player77 掉入了虚空
+[20:41:24] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:41:25] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:41:26] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:41:27] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:41:28] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:41:28] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:41:31] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:41:31] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:41:31] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:41:40] [Client thread/INFO]: [CHAT] IamDeadfish 被击入虚空, 击杀者: Trisomie_
+[20:41:43] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:41:43] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:41:44] [Client thread/INFO]: [CHAT] Trisomie_ 掉入了虚空
+[20:41:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:41:47] [Client thread/INFO]: [CHAT] 
+[20:41:47] [Client thread/INFO]: [CHAT] §c- §f---§cRemaift服务器§f---
+[20:41:47] [Client thread/INFO]: [CHAT] §c- §f欢迎加入§e§lRemiaft NetWork§f!
+[20:41:47] [Client thread/INFO]: [CHAT] §c- §f服务器QQ群:§a§l903552250
+[20:41:47] [Client thread/INFO]: [CHAT] 
+[20:41:51] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§71q2w§f: 超能力 §b§l§n(点击传送)
+[20:41:53] [Client thread/INFO]: [CHAT] wgsm 掉入了虚空
+[20:42:05] [Client thread/INFO]: [CHAT] Elsa 被击入虚空, 击杀者: AQiu______
+[20:42:07] [Client thread/INFO]: [CHAT] wgsm 被击入虚空, 击杀者: Player77
+[20:42:08] [Client thread/ERROR]: Item entity 4524 has no item?!
+[20:42:08] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:42:08] [Client thread/INFO]: [CHAT] Player77 被击入虚空, 击杀者: wgsm
+[20:42:09] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:42:10] [Client thread/INFO]: [CHAT] 
+[20:42:10] [Client thread/INFO]: [CHAT] 床被破坏了 > 绿队的床被拆了, 破坏者: lixufanQQQ
+[20:42:10] [Client thread/INFO]: [CHAT] 
+[20:42:10] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:42:11] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:42:12] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:42:13] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:42:13] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:42:14] [Client thread/INFO]: [CHAT] Trisomie_ 掉入了虚空
+[20:42:17] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:42:18] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:42:18] [Client thread/INFO]: [CHAT] 钻石生成器已被升级至II级!
+[20:42:20] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:42:22] [Client thread/INFO]: [CHAT] AQiu______ 被击入虚空, 击杀者: oooo0  最终击杀!
+[20:42:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:42:47] [Client thread/INFO]: [CHAT] 
+[20:42:47] [Client thread/INFO]: [CHAT] §c- §f服务器游戏内容反馈/建议
+[20:42:47] [Client thread/INFO]: [CHAT] §c- §f请前往: https://bbs.remiaft.com 
+[20:42:47] [Client thread/INFO]: [CHAT] 
+[20:42:49] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:42:49] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:43:04] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:43:04] [Client thread/INFO]: [CHAT] Player77 被击入虚空, 击杀者: Elsa
+[20:43:05] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:43:06] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:43:07] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:43:08] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:43:09] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:43:09] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:43:12] [Client thread/ERROR]: Item entity 5112 has no item?!
+[20:43:15] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:43:15] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:43:16] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:43:17] [Client thread/INFO]: [CHAT] 你购买了铁镐 (效率 II)
+[20:43:17] [Client thread/INFO]: [CHAT] Trisomie_ 被击入虚空, 击杀者: IamDeadfish
+[20:43:18] [Client thread/INFO]: [CHAT] 你购买了石斧 (效率 I)
+[20:43:18] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7App1elove§f: bw §b§l§n(点击传送)
+[20:43:19] [Client thread/ERROR]: Item entity 5193 has no item?!
+[20:43:19] [Client thread/ERROR]: Item entity 5193 has no item?!
+[20:43:22] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7ItsLoganMC§f: bw §b§l§n(点击传送)
+[20:43:34] [Client thread/INFO]: [CHAT] 
+[20:43:34] [Client thread/INFO]: [CHAT]  团灭 > 绿队已被淘汰!
+[20:43:34] [Client thread/INFO]: [CHAT] 
+[20:43:34] [Client thread/INFO]: [CHAT] wgsm 掉入了虚空  最终击杀!
+[20:43:45] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:43:45] [Client thread/INFO]: [CHAT] Player77 被击入虚空, 击杀者: Ink_MoqiGG
+[20:43:45] [Client thread/INFO]: [CHAT] +3铁锭
+[20:43:45] [Client thread/INFO]: [CHAT] Ink_MoqiGG 被击入虚空, 击杀者: Player77
+[20:43:46] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:43:47] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:43:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:43:47] [Client thread/INFO]: [CHAT] 
+[20:43:47] [Client thread/INFO]: [CHAT] §c- §f全服喊话: §l/hh <内容>
+[20:43:47] [Client thread/INFO]: [CHAT] §c- §f正版验证: §l/zb (仅限大厅)
+[20:43:47] [Client thread/INFO]: [CHAT] 
+[20:43:48] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:43:49] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:43:49] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Green_King§f: 快来吧，选择属于你的钞能力 §b§l§n(点击传送)
+[20:43:50] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:43:50] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:43:53] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:43:53] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:43:53] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:43:54] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7wgsm§f: 操你妈 卡你妈 §b§l§n(点击传送)
+[20:44:00] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:44:00] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:44:07] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: 超能量 §b§l§n(点击传送)
+[20:44:16] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Dolido§f: 巴拉啦能量 §b§l§n(点击传送)
+[20:44:21] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:44:21] [Client thread/INFO]: [CHAT] Player77 被击倒, 击杀者: IamDeadfish
+[20:44:21] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7chunshui138§f: U §b§l§n(点击传送)
+[20:44:22] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:44:23] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:44:24] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:44:25] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:44:25] [Client thread/INFO]: [CHAT] 
+[20:44:25] [Client thread/INFO]: [CHAT] 床被破坏了 > 红队的床被拆了, 破坏者: Trisomie_
+[20:44:25] [Client thread/INFO]: [CHAT] 
+[20:44:26] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:44:26] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:44:28] [Client thread/INFO]: [CHAT] 你只能破坏由玩家放置的方块!
+[20:44:29] [Client thread/INFO]: [CHAT] +32铁锭
+[20:44:29] [Client thread/INFO]: [CHAT] +20硬币! (最终击杀)
+[20:44:29] [Client thread/INFO]: [CHAT] IamDeadfish 被击倒, 击杀者: Player77  最终击杀!
+[20:44:31] [Client thread/INFO]: [CHAT] Trisomie_ 被击入虚空, 击杀者: Ink_MoqiGG
+[20:44:36] [Client thread/INFO]: [CHAT] +20硬币! (最终击杀)
+[20:44:36] [Client thread/INFO]: [CHAT] Elsa 被击入虚空, 击杀者: Player77  最终击杀!
+[20:44:36] [Client thread/ERROR]: Item entity 5734 has no item?!
+[20:44:36] [Client thread/ERROR]: Item entity 5734 has no item?!
+[20:44:36] [Client thread/ERROR]: Item entity 5734 has no item?!
+[20:44:36] [Client thread/ERROR]: Item entity 5734 has no item?!
+[20:44:36] [Client thread/ERROR]: Item entity 5734 has no item?!
+[20:44:36] [Client thread/ERROR]: Item entity 5734 has no item?!
+[20:44:36] [Client thread/ERROR]: Item entity 5734 has no item?!
+[20:44:39] [Client thread/INFO]: [CHAT] 你购买了铁剑
+[20:44:39] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:44:39] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:44:45] [Client thread/INFO]: [CHAT] 你购买了金苹果
+[20:44:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:44:47] [Client thread/INFO]: [CHAT] 
+[20:44:47] [Client thread/INFO]: [CHAT] §c- §f举报指令§f: /report (玩家id) (理由)
+[20:44:47] [Client thread/INFO]: [CHAT] §c- §f玩家交流群：§a§l903552250
+[20:44:47] [Client thread/INFO]: [CHAT] 
+[20:44:53] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7met2222§f: 1 §b§l§n(点击传送)
+[20:44:54] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7urbbrzcsda§f:  bw §b§l§n(点击传送)
+[20:44:57] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7nnnaaaddd2§f: dwd §b§l§n(点击传送)
+[20:45:00] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Raging_Rindzler §a✔§f: 狗逼延迟 §b§l§n(点击传送)
+[20:45:02] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人挨打 §b§l§n(点击传送)
+[20:45:04] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7lish§f: adawda §b§l§n(点击传送)
+[20:45:06] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:45:06] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:45:07] [Client thread/INFO]: [CHAT] Ink_MoqiGG 被击入虚空, 击杀者: Trisomie_  最终击杀!
+[20:45:35] [Client thread/INFO]: [CHAT] Trisomie_ 被击入虚空, 击杀者: oooo0
+[20:45:37] [Client thread/INFO]: [CHAT] +38铁锭
+[20:45:37] [Client thread/INFO]: [CHAT] +6金锭
+[20:45:37] [Client thread/INFO]: [CHAT] 
+[20:45:37] [Client thread/INFO]: [CHAT]  团灭 > 红队已被淘汰!
+[20:45:37] [Client thread/INFO]: [CHAT] 
+[20:45:37] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:45:37] [Client thread/INFO]: [CHAT]                                    起床战争
+[20:45:37] [Client thread/INFO]: [CHAT] 
+[20:45:37] [Client thread/INFO]: [CHAT]                            黄队 - lixufanQQQ, Player77, FierceYeoman, Trisomie_
+[20:45:37] [Client thread/INFO]: [CHAT] 
+[20:45:37] [Client thread/INFO]: [CHAT] 
+[20:45:37] [Client thread/INFO]: [CHAT]                    击杀数第一名 - Player77 - 14
+[20:45:37] [Client thread/INFO]: [CHAT]                    击杀数第二名 - wgsm - 7
+[20:45:37] [Client thread/INFO]: [CHAT]                    击杀数第三名 - Ink_MoqiGG - 5
+[20:45:37] [Client thread/INFO]: [CHAT] 
+[20:45:37] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:45:37] [Client thread/INFO]: [CHAT] +20硬币! (最终击杀)
+[20:45:37] [Client thread/INFO]: [CHAT] oooo0 被击倒, 击杀者: Player77  最终击杀!
+[20:45:38] [Client thread/INFO]: [CHAT] Player77: gg
+[20:45:39] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:45:39] [Client thread/INFO]: [CHAT]                             奖励总览
+[20:45:39] [Client thread/INFO]: [CHAT] 
+[20:45:39] [Client thread/INFO]: [CHAT]    你获得了
+[20:45:39] [Client thread/INFO]: [CHAT]      • 220 起床战争硬币
+[20:45:39] [Client thread/INFO]: [CHAT] 
+[20:45:39] [Client thread/INFO]: [CHAT] 
+[20:45:39] [Client thread/INFO]: [CHAT] 你获得了200起床战争经验
+[20:45:39] [Client thread/INFO]: [CHAT] 
+[20:45:39] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:45:41] [Client thread/INFO]: [CHAT] Trisomie_ ✔: GG
+[20:45:45] [Client thread/INFO]: [CHAT] Player77: gg
+[20:45:51] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:45:51] [Client thread/INFO]: [CHAT] 
+[20:45:51] [Client thread/INFO]: [CHAT] §c- §f 身着金缕衣，内心末必幸福；
+[20:45:51] [Client thread/INFO]: [CHAT] §c- §f 露宿星空下，绝非无缘幸福。
+[20:45:51] [Client thread/INFO]: [CHAT] §c- §f 物质或许可以左右幸福的维度，
+[20:45:51] [Client thread/INFO]: [CHAT] §c- §f 但绝不可能触及幸福的深度。
+[20:45:51] [Client thread/INFO]: [CHAT] 
+[20:45:57] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Elsa§f: bw---------------------------------> §b§l§n(点击传送)
+[20:46:01] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: bw speed §b§l§n(点击传送)
+[20:46:02] [Client thread/INFO]: [CHAT] ❤宠物喵正在保驾护航...
+[20:46:02] [Client thread/INFO]: [CHAT] Player77加入了游戏 (6/16)
+[20:46:03] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7urbbrzcsda§f: bw §b§l§n(点击传送)
+[20:46:05] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人挨打！！！ §b§l§n(点击传送)
+[20:46:11] [Client thread/INFO]: [CHAT] Yuwan359加入了游戏 (5/16)
+[20:46:14] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: 吵你啦 §b§l§n(点击传送)
+[20:46:14] [Client thread/INFO]: [CHAT] Ink_MoqiGG加入了游戏 (6/16)
+[20:46:14] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§9[Helper] YOUNGK1ING_ §a✔§f: sw §b§l§n(点击传送)
+[20:46:16] [Client thread/INFO]: [CHAT] 2455262加入了游戏 (7/16)
+[20:46:30] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7820830§f: bw §b§l§n(点击传送)
+[20:46:42] [Client thread/INFO]: [CHAT] star003加入了游戏 (8/16)
+[20:46:46] [Client thread/INFO]: [CHAT] Ink_MoqiGG ✔: 我用BLC客户端
+[20:46:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:46:47] [Client thread/INFO]: [CHAT] 
+[20:46:47] [Client thread/INFO]: [CHAT] §c- §f---§cRemaift服务器§f---
+[20:46:47] [Client thread/INFO]: [CHAT] §c- §f欢迎加入§e§lRemiaft NetWork§f!
+[20:46:47] [Client thread/INFO]: [CHAT] §c- §f服务器QQ群:§a§l903552250
+[20:46:47] [Client thread/INFO]: [CHAT] 
+[20:46:50] [Client thread/INFO]: [CHAT] [SkinsRestorer] Your skin has been changed.
+[20:46:50] [Client thread/INFO]: [CHAT] Error: You can change your skin again in 22 seconds.
+[20:46:53] [Client thread/INFO]: [CHAT] Green_King加入了游戏 (9/16)
+[20:46:56] [Client thread/INFO]: [CHAT] Elsa: 我也是(doge)
+[20:46:58] [Client thread/INFO]: [CHAT] 游戏将在30秒后开始!
+[20:47:01] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: bw §b§l§n(点击传送)
+[20:47:04] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Mnicraft§f: 超能力有网易司马的回弹 §b§l§n(点击传送)
+[20:47:04] [Client thread/INFO]: [CHAT] Player77: I use XianyuClient XD
+[20:47:08] [Client thread/INFO]: [CHAT] akkdjjddw加入了游戏 (9/16)
+[20:47:12] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7TheHamSpanker§f: BUHC §b§l§n(点击传送)
+[20:47:13] [Client thread/INFO]: [CHAT] Yuwan359加入了游戏 (10/16)
+[20:47:13] [Client thread/INFO]: [CHAT] 游戏将在15秒后开始!
+[20:47:14] [Client thread/INFO]: [CHAT] 2455262加入了游戏 (11/16)
+[20:47:16] [Client thread/INFO]: [CHAT] JoeDoge加入了游戏 (12/16)
+[20:47:18] [Client thread/INFO]: [CHAT] 游戏将在10秒后开始!
+[20:47:19] [Client thread/INFO]: [CHAT] Zheng_MuR加入了游戏 (13/16)
+[20:47:21] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7ML_tekxing§f: 挂雨停还吞方块 §b§l§n(点击传送)
+[20:47:22] [Client thread/INFO]: [CHAT] yi_ran_hao加入了游戏 (14/16)
+[20:47:22] [Client thread/INFO]: [CHAT] Elsa: hh
+[20:47:23] [Client thread/INFO]: [CHAT] 游戏将在5秒后开始!
+[20:47:23] [Client thread/INFO]: [CHAT] KSKdddsa加入了游戏 (15/16)
+[20:47:24] [Client thread/INFO]: [CHAT] 游戏将在4秒后开始!
+[20:47:25] [Client thread/INFO]: [CHAT] 游戏将在3秒后开始!
+[20:47:25] [Client thread/INFO]: [CHAT] asaasasas加入了游戏 (16/16)
+[20:47:25] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7wgsm§f: 操你妈 卡你妈 §b§l§n(点击传送)
+[20:47:26] [Client thread/INFO]: [CHAT] 游戏将在2秒后开始!
+[20:47:27] [Client thread/INFO]: [CHAT] 游戏将在1秒后开始!
+[20:47:28] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:47:28] [Client thread/INFO]: [CHAT]                                    起床战争
+[20:47:28] [Client thread/INFO]: [CHAT] 
+[20:47:28] [Client thread/INFO]: [CHAT]         在商店里选择一项超能力！它们将会在10秒后启用！
+[20:47:28] [Client thread/INFO]: [CHAT] 
+[20:47:28] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:47:38] [Client thread/INFO]: [CHAT] 超能力已启用!
+[20:47:48] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:47:48] [Client thread/INFO]: [CHAT] 
+[20:47:48] [Client thread/INFO]: [CHAT] §c- §f服务器游戏内容反馈/建议
+[20:47:48] [Client thread/INFO]: [CHAT] §c- §f请前往: https://bbs.remiaft.com 
+[20:47:48] [Client thread/INFO]: [CHAT] 
+[20:47:52] [Client thread/ERROR]: Item entity 721 has no item?!
+[20:47:56] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7sliver130§f: wo yu dao wang yi te se le §b§l§n(点击传送)
+[20:47:59] [Client thread/INFO]: [CHAT] JoeDoge 掉入了虚空
+[20:48:01] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: bw speed §b§l§n(点击传送)
+[20:48:04] [Client thread/INFO]: [CHAT] 2455262 掉入了虚空
+[20:48:07] [Client thread/ERROR]: Item entity 891 has no item?!
+[20:48:12] [Client thread/INFO]: [CHAT] KSKdddsa 掉入了虚空
+[20:48:14] [Client thread/INFO]: [CHAT] Yuwan359 掉入了虚空
+[20:48:19] [Client thread/INFO]: [CHAT] [3✫] [蓝队] KSKdddsa: bug wars
+[20:48:23] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: chaonianla §b§l§n(点击传送)
+[20:48:28] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:48:28] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:48:32] [Client thread/INFO]: [CHAT] 你购买了永久的铁护甲
+[20:48:34] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:48:36] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7David10086§f: SW §b§l§n(点击传送)
+[20:48:36] [Client thread/INFO]: [CHAT] 你购买了永久的剪刀
+[20:48:37] [Client thread/INFO]: [CHAT] 你购买了木镐 (效率 I)
+[20:48:37] [Client thread/INFO]: [CHAT] 你购买了木斧 (效率 I)
+[20:48:38] [Client thread/INFO]: [CHAT] 你购买了末影石
+[20:48:39] [Client thread/INFO]: [CHAT] 你购买了硬化粘土
+[20:48:39] [Client thread/INFO]: [CHAT] 铁锭不足! 还需要铁锭x11!
+[20:48:40] [Client thread/INFO]: [CHAT] Green_King 被击倒, 击杀者: Ink_MoqiGG
+[20:48:42] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7820830§f: bw §b§l§n(点击传送)
+[20:48:43] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7nnnaaaddd2§f: dwd §b§l§n(点击传送)
+[20:48:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:48:47] [Client thread/INFO]: [CHAT] 
+[20:48:47] [Client thread/INFO]: [CHAT] §c- §f全服喊话: §l/hh <内容>
+[20:48:47] [Client thread/INFO]: [CHAT] §c- §f正版验证: §l/zb (仅限大厅)
+[20:48:47] [Client thread/INFO]: [CHAT] 
+[20:48:52] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7FreakyNanc§f: sw §b§l§n(点击传送)
+[20:48:56] [Client thread/INFO]: [CHAT] star003 掉入了虚空
+[20:49:02] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: bw speedt §b§l§n(点击传送)
+[20:49:02] [Client thread/INFO]: [CHAT] 2455262 掉入了虚空
+[20:49:03] [Client thread/INFO]: [CHAT] 
+[20:49:03] [Client thread/INFO]: [CHAT] 床被破坏了 > 黄队的床被拆了, 破坏者: Ink_MoqiGG
+[20:49:03] [Client thread/INFO]: [CHAT] 
+[20:49:04] [Client thread/INFO]: [CHAT] Elsa 被击入虚空, 击杀者: Zheng_MuR
+[20:49:06] [Client thread/INFO]: [CHAT] yi_ran_hao 被击入虚空, 击杀者: urbbrzcsda
+[20:49:07] [Client thread/INFO]: [CHAT] star003 被击倒, 击杀者: Ink_MoqiGG  最终击杀!
+[20:49:14] [Client thread/INFO]: [CHAT] asaasasas 掉入了虚空  最终击杀!
+[20:49:21] [Client thread/INFO]: [CHAT] Identico 被击倒, 击杀者: 2455262  最终击杀!
+[20:49:24] [Client thread/INFO]: [CHAT] akkdjjddw 被击倒, 击杀者: Player77
+[20:49:26] [Client thread/INFO]: [CHAT] Green_King 被击倒, 击杀者: Player77
+[20:49:29] [Client thread/INFO]: [CHAT] KSKdddsa 掉入了虚空
+[20:49:29] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:49:29] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:49:42] [Client thread/INFO]: [CHAT] Ink_MoqiGG 被击入虚空, 击杀者: star003
+[20:49:42] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7asaasasas§f: bw cnlms §b§l§n(点击传送)
+[20:49:43] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Bedrock1489 §a✔§f: sw 2/12 §b§l§n(点击传送)
+[20:49:43] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7thsga12w§f: SW §b§l§n(点击传送)
+[20:49:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:49:47] [Client thread/INFO]: [CHAT] 
+[20:49:47] [Client thread/INFO]: [CHAT] §c- §f举报指令§f: /report (玩家id) (理由)
+[20:49:47] [Client thread/INFO]: [CHAT] §c- §f玩家交流群：§a§l903552250
+[20:49:47] [Client thread/INFO]: [CHAT] 
+[20:49:50] [Client thread/ERROR]: Item entity 1857 has no item?!
+[20:49:51] [Client thread/ERROR]: Item entity 2002 has no item?!
+[20:49:55] [Client thread/INFO]: [CHAT] 
+[20:49:55] [Client thread/INFO]: [CHAT] 床被破坏了 > 绿队的床被拆了, 破坏者: yi_ran_hao
+[20:49:55] [Client thread/INFO]: [CHAT] 
+[20:49:58] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: 把LiquidBounce开起来 [doge] §b§l§n(点击传送)
+[20:50:02] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7KSKdddsa§f: bug wars §b§l§n(点击传送)
+[20:50:03] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7met2222§f: ohhhhhhhhhhhhh §b§l§n(点击传送)
+[20:50:03] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:50:03] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:50:07] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7chunshui138§f: 干 §b§l§n(点击传送)
+[20:50:11] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人挨打！！！ §b§l§n(点击传送)
+[20:50:21] [Client thread/INFO]: [CHAT] yi_ran_hao 被击入虚空, 击杀者: Zheng_MuR
+[20:50:22] [Client thread/INFO]: [CHAT] Zheng_MuR 被击入虚空, 击杀者: yi_ran_hao  最终击杀!
+[20:50:30] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:50:30] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:50:30] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§a[VIP§a] W1lf §a✔§f: bw §b§l§n(点击传送)
+[20:50:35] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§a[VIP§a] Yi_Fanqwq§f: wdsjwanddg g管理火速f §b§l§n(点击传送)
+[20:50:41] [Client thread/INFO]: [CHAT] +2铁锭
+[20:50:41] [Client thread/INFO]: [CHAT] +2金锭
+[20:50:41] [Client thread/INFO]: [CHAT] urbbrzcsda 被击入虚空, 击杀者: Player77
+[20:50:46] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§71q2w§f: 超能力 §b§l§n(点击传送)
+[20:50:48] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:50:48] [Client thread/INFO]: [CHAT] 
+[20:50:48] [Client thread/INFO]: [CHAT] §c- §f 身着金缕衣，内心末必幸福；
+[20:50:48] [Client thread/INFO]: [CHAT] §c- §f 露宿星空下，绝非无缘幸福。
+[20:50:48] [Client thread/INFO]: [CHAT] §c- §f 物质或许可以左右幸福的维度，
+[20:50:48] [Client thread/INFO]: [CHAT] §c- §f 但绝不可能触及幸福的深度。
+[20:50:48] [Client thread/INFO]: [CHAT] 
+[20:50:54] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Chilife§f: 空岛 §b§l§n(点击传送)
+[20:51:01] [Client thread/INFO]: [CHAT] +20硬币! (最终击杀)
+[20:51:01] [Client thread/INFO]: [CHAT] akkdjjddw 被击倒, 击杀者: Player77  最终击杀!
+[20:51:01] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:51:01] [Client thread/INFO]: [CHAT] Player77 被击倒, 击杀者: Yuwan359
+[20:51:02] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:51:03] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:51:05] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:51:06] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:51:06] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:51:07] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:51:07] [Client thread/ERROR]: Item entity 2870 has no item?!
+[20:51:10] [Client thread/INFO]: [CHAT] 你购买了铁剑
+[20:51:11] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:51:11] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:51:21] [Client thread/INFO]: [CHAT] 
+[20:51:21] [Client thread/INFO]: [CHAT]  团灭 > 绿队已被淘汰!
+[20:51:21] [Client thread/INFO]: [CHAT] 
+[20:51:21] [Client thread/INFO]: [CHAT] Yuwan359 被击倒, 击杀者: 2455262  最终击杀!
+[20:51:31] [Client thread/INFO]: [CHAT] 2455262 被击倒, 击杀者: yi_ran_hao
+[20:51:36] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:51:36] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:51:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:51:47] [Client thread/INFO]: [CHAT] 
+[20:51:47] [Client thread/INFO]: [CHAT] §c- §f---§cRemaift服务器§f---
+[20:51:47] [Client thread/INFO]: [CHAT] §c- §f欢迎加入§e§lRemiaft NetWork§f!
+[20:51:47] [Client thread/INFO]: [CHAT] §c- §f服务器QQ群:§a§l903552250
+[20:51:47] [Client thread/INFO]: [CHAT] 
+[20:51:53] [Client thread/INFO]: [CHAT] Ink_MoqiGG 掉入了虚空
+[20:51:55] [Client thread/INFO]: [CHAT] yi_ran_hao 被击入虚空, 击杀者: Elsa
+[20:51:56] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7KillerSeven_233§f: father §b§l§n(点击传送)
+[20:51:57] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Thomas_Jack_§f: 5 5 5 §b§l§n(点击传送)
+[20:52:03] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§73aaHbyvy§f: bw §b§l§n(点击传送)
+[20:52:03] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§71q2w§f: 1 §b§l§n(点击传送)
+[20:52:04] [Client thread/INFO]: [CHAT] 你将在5秒后重生!
+[20:52:04] [Client thread/INFO]: [CHAT] Player77 被击倒, 击杀者: 2455262
+[20:52:05] [Client thread/INFO]: [CHAT] 你将在4秒后重生!
+[20:52:06] [Client thread/INFO]: [CHAT] 你将在3秒后重生!
+[20:52:07] [Client thread/INFO]: [CHAT] 你将在2秒后重生!
+[20:52:08] [Client thread/INFO]: [CHAT] 你将在1秒后重生!
+[20:52:08] [Client thread/INFO]: [CHAT] 你将在0秒后重生!
+[20:52:08] [Client thread/INFO]: [CHAT] 你已经重生!
+[20:52:13] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:52:14] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:52:17] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:52:42] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:52:42] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:52:46] [Client thread/ERROR]: Item entity 1187 has no item?!
+[20:52:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:52:47] [Client thread/INFO]: [CHAT] 
+[20:52:47] [Client thread/INFO]: [CHAT] §c- §f服务器游戏内容反馈/建议
+[20:52:47] [Client thread/INFO]: [CHAT] §c- §f请前往: https://bbs.remiaft.com 
+[20:52:47] [Client thread/INFO]: [CHAT] 
+[20:52:48] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Green_King§f: bedwars §b§l§n(点击传送)
+[20:52:53] [Client thread/INFO]: [CHAT] yi_ran_hao 被击入虚空, 击杀者: 2455262
+[20:52:56] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7thsga12w§f: SW §b§l§n(点击传送)
+[20:52:59] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: ?我tm剑客冲你 你说我外挂？？？ §b§l§n(点击传送)
+[20:53:01] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7dabaoni233§f: rush §b§l§n(点击传送)
+[20:53:07] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人挨打！！！ §b§l§n(点击传送)
+[20:53:11] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:53:16] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:53:16] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7ImXiMo §a✔§f: RUSH LAI REN BAO DA WO §b§l§n(点击传送)
+[20:53:16] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:53:16] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:53:17] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7nnnaaaddd2§f: dwd §b§l§n(点击传送)
+[20:53:22] [Client thread/ERROR]: Item entity 3823 has no item?!
+[20:53:28] [Client thread/INFO]: [CHAT] 钻石生成器已被升级至II级!
+[20:53:37] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7GFR_YeHan§f: eeegods you are L §b§l§n(点击传送)
+[20:53:43] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:53:43] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:53:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:53:47] [Client thread/INFO]: [CHAT] 
+[20:53:47] [Client thread/INFO]: [CHAT] §c- §f全服喊话: §l/hh <内容>
+[20:53:47] [Client thread/INFO]: [CHAT] §c- §f正版验证: §l/zb (仅限大厅)
+[20:53:47] [Client thread/INFO]: [CHAT] 
+[20:53:48] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7FreakyNanc§f: se §b§l§n(点击传送)
+[20:53:51] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§71173519956§f:  ; §b§l§n(点击传送)
+[20:53:52] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§b[DONATE] SuiFeng2333 §c✔§f: 天坑 §b§l§n(点击传送)
+[20:53:57] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§6[MVP§c++§6] xiaowowo §d[mvp]§f: BW §b§l§n(点击传送)
+[20:53:59] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: ?我tm剑客冲你 你说我外挂？？？ §b§l§n(点击传送)
+[20:53:59] [Client thread/INFO]: [CHAT] 
+[20:53:59] [Client thread/INFO]: [CHAT] 床被破坏了 > 你的床被拆了, 破坏者: 2455262
+[20:53:59] [Client thread/INFO]: [CHAT] 
+[20:54:01] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7dabaoni233§f: rush_bedwars §b§l§n(点击传送)
+[20:54:05] [Client thread/INFO]: [CHAT] Player77购买了装备强化
+[20:54:10] [Client thread/INFO]: [CHAT] +32铁锭
+[20:54:10] [Client thread/INFO]: [CHAT] +4金锭
+[20:54:10] [Client thread/INFO]: [CHAT] 2455262 被击倒, 击杀者: Player77
+[20:54:13] [Client thread/INFO]: [CHAT] 你购买了木板
+[20:54:14] [Client thread/INFO]: [CHAT] 你购买了铁剑
+[20:54:14] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Chilife§f: 空岛 §b§l§n(点击传送)
+[20:54:16] [Client thread/ERROR]: Item entity 4173 has no item?!
+[20:54:16] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7investigatin §a✔§f: win~win~win~ §b§l§n(点击传送)
+[20:54:18] [Client thread/ERROR]: Item entity 4183 has no item?!
+[20:54:21] [Client thread/INFO]: [CHAT] yi_ran_hao 被击入虚空, 击杀者: urbbrzcsda  最终击杀!
+[20:54:23] [Client thread/INFO]: [CHAT] 你购买了金苹果
+[20:54:23] [Client thread/INFO]: [CHAT] 你购买了金苹果
+[20:54:24] [Client thread/INFO]: [CHAT] 你购买了金苹果
+[20:54:30] [Client thread/INFO]: [CHAT] 2455262 掉入了虚空
+[20:54:31] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Fire_Bloom§f: bw §b§l§n(点击传送)
+[20:54:34] [Client thread/INFO]: [CHAT] 你购买了TNT
+[20:54:35] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7met2222§f: sapnap行为，见了敌人就跑 §b§l§n(点击传送)
+[20:54:41] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7bro_ovo §a✔§f: is lunar hack or reach? §b§l§n(点击传送)
+[20:54:44] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:54:44] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:54:47] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:54:47] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:54:48] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:54:48] [Client thread/INFO]: [CHAT] 
+[20:54:48] [Client thread/INFO]: [CHAT] §c- §f举报指令§f: /report (玩家id) (理由)
+[20:54:48] [Client thread/INFO]: [CHAT] §c- §f玩家交流群：§a§l903552250
+[20:54:48] [Client thread/INFO]: [CHAT] 
+[20:55:17] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7thsga12w§f: SW §b§l§n(点击传送)
+[20:55:18] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§2[MOD] 7RegeditL §c❤§f: 新的反作弊检测!来玩梦幻bw体验下;w; §b§l§n(点击传送)
+[20:55:23] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Mnicraft§f: 快门一按，____ §b§l§n(点击传送)
+[20:55:24] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人挨打！！！ §b§l§n(点击传送)
+[20:55:25] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7VictoryDeanie §a✔§f: you ling fang kuai! §b§l§n(点击传送)
+[20:55:45] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:55:45] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:55:48] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:55:48] [Client thread/INFO]: [CHAT] 
+[20:55:48] [Client thread/INFO]: [CHAT] §c- §f 身着金缕衣，内心末必幸福；
+[20:55:48] [Client thread/INFO]: [CHAT] §c- §f 露宿星空下，绝非无缘幸福。
+[20:55:48] [Client thread/INFO]: [CHAT] §c- §f 物质或许可以左右幸福的维度，
+[20:55:48] [Client thread/INFO]: [CHAT] §c- §f 但绝不可能触及幸福的深度。
+[20:55:48] [Client thread/INFO]: [CHAT] 
+[20:55:54] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Fire_Bloom§f: bw §b§l§n(点击传送)
+[20:55:56] [Client thread/INFO]: [CHAT] +62铁锭
+[20:55:56] [Client thread/INFO]: [CHAT] +6金锭
+[20:55:56] [Client thread/INFO]: [CHAT] urbbrzcsda 被击倒, 击杀者: Player77
+[20:56:15] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7lish§f: bw §b§l§n(点击传送)
+[20:56:16] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7FFFFOP§f: bw §b§l§n(点击传送)
+[20:56:27] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Mnicraft§f: 快门一按，____ §b§l§n(点击传送)
+[20:56:28] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§727layy §a✔§f: rush §b§l§n(点击传送)
+[20:56:30] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7leavemealone§f: bw床上战争♂♂超 §b§l§n(点击传送)
+[20:56:32] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: 搞基 §b§l§n(点击传送)
+[20:56:34] [Client thread/INFO]: [CHAT] urbbrzcsda 掉入了虚空
+[20:56:35] [Client thread/INFO]: [CHAT] Elsa 被击入虚空, 击杀者: yi_ran_hao
+[20:56:35] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: cbw §b§l§n(点击传送)
+[20:56:38] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7wdsjwanddg§f: bw §b§l§n(点击传送)
+[20:56:39] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§73aaHbyvy§f: hhhhh §b§l§n(点击传送)
+[20:56:46] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:56:46] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:56:48] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:56:48] [Client thread/INFO]: [CHAT] 
+[20:56:48] [Client thread/INFO]: [CHAT] §c- §f---§cRemaift服务器§f---
+[20:56:48] [Client thread/INFO]: [CHAT] §c- §f欢迎加入§e§lRemiaft NetWork§f!
+[20:56:48] [Client thread/INFO]: [CHAT] §c- §f服务器QQ群:§a§l903552250
+[20:56:48] [Client thread/INFO]: [CHAT] 
+[20:56:49] [Client thread/INFO]: [CHAT] 
+[20:56:49] [Client thread/INFO]: [CHAT]  团灭 > 蓝队已被淘汰!
+[20:56:49] [Client thread/INFO]: [CHAT] 
+[20:56:49] [Client thread/INFO]: [CHAT] Player77 被击入虚空, 击杀者: Ink_MoqiGG  最终击杀!
+[20:56:50] [Client thread/INFO]: [CHAT] [旁观者] Player77: gg
+[20:56:52] [Client thread/INFO]: [CHAT] [旁观者] Player77: gg
+[20:56:54] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Chilife§f: 空岛 §b§l§n(点击传送)
+[20:56:56] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7thsga12w§f: SW §b§l§n(点击传送)
+[20:57:00] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7spelfout§f: gan §b§l§n(点击传送)
+[20:57:06] [Client thread/ERROR]: Item entity 3562 has no item?!
+[20:57:06] [Client thread/ERROR]: Item entity 3562 has no item?!
+[20:57:06] [Client thread/ERROR]: Item entity 3562 has no item?!
+[20:57:08] [Client thread/INFO]: [CHAT] 2455262 掉入了虚空
+[20:57:09] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7GFR_YeHan§f: BW §b§l§n(点击传送)
+[20:57:12] [Client thread/INFO]: [CHAT] [旁观者] 2455262: 退
+[20:57:17] [Client thread/INFO]: [CHAT] ❤宠物喵正在保驾护航...
+[20:57:17] [Client thread/INFO]: [CHAT] Player77加入了游戏 (6/16)
+[20:57:19] [Client thread/INFO]: [CHAT] lish加入了游戏 (7/16)
+[20:57:21] [Client thread/INFO]: [CHAT] CleanOverlay加入了游戏 (8/16)
+[20:57:24] [Client thread/INFO]: [CHAT] Daddywanzi加入了游戏 (9/16)
+[20:57:30] [Client thread/INFO]: [CHAT] lish: blue
+[20:57:35] [Client thread/INFO]: [CHAT] 你加入了蓝队!
+[20:57:36] [Client thread/INFO]: [CHAT] 游戏将在30秒后开始!
+[20:57:43] [Client thread/INFO]: [CHAT] spelfout: az
+[20:57:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:57:47] [Client thread/INFO]: [CHAT] 
+[20:57:47] [Client thread/INFO]: [CHAT] §c- §f服务器游戏内容反馈/建议
+[20:57:47] [Client thread/INFO]: [CHAT] §c- §f请前往: https://bbs.remiaft.com 
+[20:57:47] [Client thread/INFO]: [CHAT] 
+[20:57:51] [Client thread/INFO]: [CHAT] 游戏将在15秒后开始!
+[20:57:56] [Client thread/INFO]: [CHAT] 游戏将在10秒后开始!
+[20:57:57] [Client thread/INFO]: [CHAT] Weightless加入了游戏 (9/16)
+[20:57:57] [Client thread/INFO]: [CHAT] momodaxiaochen加入了游戏 (10/16)
+[20:57:59] [Client thread/INFO]: [CHAT] 你加入了黄队!
+[20:57:59] [Client thread/INFO]: [CHAT] lish: red
+[20:58:01] [Client thread/INFO]: [CHAT] Yuwan359加入了游戏 (11/16)
+[20:58:01] [Client thread/INFO]: [CHAT] 你加入了蓝队!
+[20:58:01] [Client thread/INFO]: [CHAT] 游戏将在5秒后开始!
+[20:58:01] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人挨打！！！ 6连胜了！！！ §b§l§n(点击传送)
+[20:58:02] [Client thread/INFO]: [CHAT] 游戏将在4秒后开始!
+[20:58:03] [Client thread/INFO]: [CHAT] dream_mom加入了游戏 (12/16)
+[20:58:03] [Client thread/INFO]: [CHAT] _xingxi_加入了游戏 (13/16)
+[20:58:03] [Client thread/INFO]: [CHAT] 游戏将在3秒后开始!
+[20:58:04] [Client thread/INFO]: [CHAT] 游戏将在2秒后开始!
+[20:58:05] [Client thread/INFO]: [CHAT] 游戏将在1秒后开始!
+[20:58:07] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:58:07] [Client thread/INFO]: [CHAT]                                    起床战争
+[20:58:07] [Client thread/INFO]: [CHAT] 
+[20:58:07] [Client thread/INFO]: [CHAT]         在商店里选择一项超能力！它们将会在10秒后启用！
+[20:58:07] [Client thread/INFO]: [CHAT] 
+[20:58:07] [Client thread/INFO]: [CHAT] ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+[20:58:16] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7TeaL___ §a✔§f: 吃屎 §b§l§n(点击传送)
+[20:58:16] [Client thread/INFO]: [CHAT] 超能力已启用!
+[20:58:22] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7spelfout§f: cnm §b§l§n(点击传送)
+[20:58:23] [Client thread/INFO]: [CHAT] lish 掉入了虚空
+[20:58:30] [Client thread/INFO]: [CHAT] 你购买了末影石
+[20:58:30] [Client thread/INFO]: [CHAT] 铁锭不足! 还需要铁锭x4!
+[20:58:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:58:47] [Client thread/INFO]: [CHAT] 
+[20:58:47] [Client thread/INFO]: [CHAT] §c- §f全服喊话: §l/hh <内容>
+[20:58:47] [Client thread/INFO]: [CHAT] §c- §f正版验证: §l/zb (仅限大厅)
+[20:58:47] [Client thread/INFO]: [CHAT] 
+[20:58:52] [Client thread/INFO]: [CHAT] [3✫] [蓝队] momodaxiaochen: 卡了
+[20:58:55] [Client thread/INFO]: [CHAT] [0✫] [蓝队] Weightless: ???
+[20:58:55] [Client thread/INFO]: [CHAT] [0✫] [蓝队] Player77: e
+[20:58:56] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7asaasasas§f: 8号打假赛的首先推出 §b§l§n(点击传送)
+[20:58:58] [Client thread/INFO]: [CHAT] [0✫] [蓝队] Weightless: wc
+[20:59:05] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7momodaxiaochen§f: 卡了 §b§l§n(点击传送)
+[20:59:09] [Client thread/INFO]: [CHAT] [0✫] [蓝队] Weightless: 我在虚空
+[20:59:14] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: me too §b§l§n(点击传送)
+[20:59:15] [Client thread/INFO]: [CHAT] [0✫] [蓝队] Weightless: 还卡么
+[20:59:16] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7TeaL___ §a✔§f: R I P §b§l§n(点击传送)
+[20:59:18] [Client thread/INFO]: [CHAT] [喊话] [蓝队] Player77: ??? 
+[20:59:18] [Client thread/INFO]: [CHAT] spelfout 掉入了虚空
+[20:59:22] [Client thread/INFO]: [CHAT] +25起床战争经验
+[20:59:22] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[20:59:24] [Client thread/ERROR]: Item entity 1006 has no item?!
+[20:59:24] [Client thread/ERROR]: Item entity 1006 has no item?!
+[20:59:24] [Client thread/ERROR]: Item entity 1006 has no item?!
+[20:59:24] [Client thread/ERROR]: Item entity 1006 has no item?!
+[20:59:24] [Client thread/ERROR]: Item entity 1006 has no item?!
+[20:59:24] [Client thread/ERROR]: Item entity 1006 has no item?!
+[20:59:26] [Client thread/INFO]: [CHAT] Weightless 掉入了虚空
+[20:59:27] [Client thread/ERROR]: Item entity 1067 has no item?!
+[20:59:28] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Player77§f: rip rmc §b§l§n(点击传送)
+[20:59:28] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Steve_Wang§f: super面筋马 §b§l§n(点击传送)
+[20:59:30] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7David10086§f: SW §b§l§n(点击传送)
+[20:59:31] [Client thread/INFO]: [CHAT] _xingxi_ 掉入了虚空
+[20:59:32] [Client thread/INFO]: [CHAT] 你购买了永久的铁护甲
+[20:59:33] [Client thread/INFO]: [CHAT] 你购买了石剑
+[20:59:33] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:59:35] [Client thread/INFO]: [CHAT] 你购买了永久的剪刀
+[20:59:35] [Client thread/INFO]: [CHAT] 你购买了木镐 (效率 I)
+[20:59:36] [Client thread/INFO]: [CHAT] 你购买了木斧 (效率 I)
+[20:59:37] [Client thread/INFO]: [CHAT] You have been muted by 7RegeditL for '违规言论'.
+This mute will expire in 30 天.
+[20:59:37] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[20:59:40] [Client thread/INFO]: [CHAT] 
+[20:59:40] [Client thread/INFO]: [CHAT]  团灭 > 红队已被淘汰!
+[20:59:40] [Client thread/INFO]: [CHAT] 
+[20:59:41] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7urbbrzcsda§f: guan li zai ma? §b§l§n(点击传送)
+[20:59:41] [Client thread/INFO]: [CHAT] You have been muted by 7RegeditL for '违规言论'.
+This mute will expire in 1 天.
+[20:59:46] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7chunshui138§f: SW §b§l§n(点击传送)
+[20:59:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[20:59:47] [Client thread/INFO]: [CHAT] 
+[20:59:47] [Client thread/INFO]: [CHAT] §c- §f举报指令§f: /report (玩家id) (理由)
+[20:59:47] [Client thread/INFO]: [CHAT] §c- §f玩家交流群：§a§l903552250
+[20:59:48] [Client thread/INFO]: [CHAT] 
+[20:59:48] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7bro_ovo §a✔§f: yamedie~ §b§l§n(点击传送)
+[20:59:55] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7lilDumplin §a✔§f: 超能力 §b§l§n(点击传送)
+[20:59:59] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§71q2w§f: 超能力 §b§l§n(点击传送)
+[21:00:00] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7nnnaaaddd2§f: dwd §b§l§n(点击传送)
+[21:00:00] [Client thread/INFO]: [CHAT] 你购买了硬化粘土
+[21:00:00] [Client thread/INFO]: [CHAT] 你购买了硬化粘土
+[21:00:04] [Client thread/INFO]: [CHAT] 你购买了木板
+[21:00:04] [Client thread/INFO]: [CHAT] 你购买了木板
+[21:00:07] [Client thread/INFO]: [CHAT] +25起床战争经验
+[21:00:07] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[21:00:10] [Client thread/INFO]: [CHAT] _xingxi_ 掉入了虚空
+[21:00:10] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7App1elove§f: bw §b§l§n(点击传送)
+[21:00:11] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7820830§f: bw U §b§l§n(点击传送)
+[21:00:14] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Elsa§f: 管理卡bug了 §b§l§n(点击传送)
+[21:00:14] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7GANPANDWNDM §a✔§f: 你们延迟多少 §b§l§n(点击传送)
+[21:00:15] [Client thread/INFO]: [CHAT] 
+[21:00:15] [Client thread/INFO]: [CHAT] 床被破坏了 > 黄队的床被拆了, 破坏者: spelfout
+[21:00:15] [Client thread/INFO]: [CHAT] 
+[21:00:15] [Client thread/INFO]: [CHAT] Weightless 掉入了虚空
+[21:00:20] [Client thread/INFO]: [CHAT] _xingxi_ 被击倒, 击杀者: spelfout  最终击杀!
+[21:00:22] [Client thread/INFO]: [CHAT] TeaL___ 掉入了虚空
+[21:00:24] [Client thread/ERROR]: Item entity 1562 has no item?!
+[21:00:25] [Client thread/ERROR]: Item entity 1563 has no item?!
+[21:00:26] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§727layy §a✔§f: 1145141919810ms §b§l§n(点击传送)
+[21:00:27] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Jello_Daxian §a✔§f: bw §b§l§n(点击传送)
+[21:00:31] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7FreakyNanc§f: sw §b§l§n(点击传送)
+[21:00:38] [Client thread/INFO]: [CHAT] [0✫] [蓝队] Weightless: 职业还回档？？
+[21:00:42] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: -1ms §b§l§n(点击传送)
+[21:00:48] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[21:00:48] [Client thread/INFO]: [CHAT] 
+[21:00:48] [Client thread/INFO]: [CHAT] §c- §f 身着金缕衣，内心末必幸福；
+[21:00:48] [Client thread/INFO]: [CHAT] §c- §f 露宿星空下，绝非无缘幸福。
+[21:00:48] [Client thread/INFO]: [CHAT] §c- §f 物质或许可以左右幸福的维度，
+[21:00:48] [Client thread/INFO]: [CHAT] §c- §f 但绝不可能触及幸福的深度。
+[21:00:48] [Client thread/INFO]: [CHAT] 
+[21:00:48] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7ABIGBIGPIG§f: 0.5ms §b§l§n(点击传送)
+[21:00:52] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7lixufanQQQ§f: 起床来人 §b§l§n(点击传送)
+[21:00:58] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人挨打！！！ 7连胜了！！！ §b§l§n(点击传送)
+[21:00:59] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7qiuiu§f: 1000ms §b§l§n(点击传送)
+[21:01:02] [Client thread/INFO]: [CHAT] momodaxiaochen 被击倒, 击杀者: TeaL___
+[21:01:03] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§a[Builder] VillagerKingdom §c❤§f: 第一次见延迟低于0的人，好牛 §b§l§n(点击传送)
+[21:01:07] [Client thread/INFO]: [CHAT] 
+[21:01:07] [Client thread/INFO]: [CHAT]  团灭 > 黄队已被淘汰!
+[21:01:07] [Client thread/INFO]: [CHAT] 
+[21:01:07] [Client thread/INFO]: [CHAT] 14525463 被击入虚空, 击杀者: spelfout  最终击杀!
+[21:01:08] [Client thread/INFO]: [CHAT] +25起床战争经验
+[21:01:08] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[21:01:18] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Ink_MoqiGG §a✔§f: 管理来一下可以吗，这里都没有人了，可是却显示有人 §b§l§n(点击传送)
+[21:01:22] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Mnicraft§f: 78ms §b§l§n(点击传送)
+[21:01:22] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7thsga12w§f: SW §b§l§n(点击传送)
+[21:01:23] [Client thread/INFO]: [CHAT] momodaxiaochen 被击倒, 击杀者: TeaL___
+[21:01:24] [Client thread/INFO]: [CHAT] +68铁锭
+[21:01:24] [Client thread/INFO]: [CHAT] +13金锭
+[21:01:24] [Client thread/INFO]: [CHAT] +3绿宝石
+[21:01:24] [Client thread/INFO]: [CHAT] dream_mom 被击倒, 击杀者: Player77
+[21:01:26] [Client thread/ERROR]: Item entity 2090 has no item?!
+[21:01:26] [Client thread/ERROR]: Item entity 2090 has no item?!
+[21:01:26] [Client thread/ERROR]: Item entity 2090 has no item?!
+[21:01:26] [Client thread/ERROR]: Item entity 2090 has no item?!
+[21:01:26] [Client thread/ERROR]: Item entity 2090 has no item?!
+[21:01:26] [Client thread/ERROR]: Item entity 2090 has no item?!
+[21:01:27] [Client thread/ERROR]: Item entity 2098 has no item?!
+[21:01:27] [Client thread/INFO]: [CHAT] 
+[21:01:27] [Client thread/INFO]: [CHAT] 床被破坏了 > 绿队的床被拆了, 破坏者: Player77
+[21:01:27] [Client thread/INFO]: [CHAT] 
+[21:01:27] [Client thread/INFO]: [CHAT] 
+[21:01:27] [Client thread/INFO]: [CHAT] 床被破坏了 > 你的床被拆了, 破坏者: TeaL___
+[21:01:27] [Client thread/INFO]: [CHAT] 
+[21:01:29] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7bro_ovo §a✔§f: yamedie~ §b§l§n(点击传送)
+[21:01:32] [Client thread/INFO]: [CHAT] momodaxiaochen 被击倒, 击杀者: TeaL___  最终击杀!
+[21:01:33] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Insidecactus§f: MLG §b§l§n(点击传送)
+[21:01:33] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7GANPANDWNDM §a✔§f: 170ms §b§l§n(点击传送)
+[21:01:33] [Client thread/INFO]: [CHAT] +3铁锭
+[21:01:33] [Client thread/INFO]: [CHAT] +20硬币! (最终击杀)
+[21:01:33] [Client thread/INFO]: [CHAT] dream_mom 被击倒, 击杀者: Player77  最终击杀!
+[21:01:41] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7SJ_Miniduke§f: Fire_Bloom §b§l§n(点击传送)
+[21:01:45] [Client thread/INFO]: [CHAT] 你购买了铁剑
+[21:01:45] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7A_lucky_man§f: -1ms -1ms=10000ms §b§l§n(点击传送)
+[21:01:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[21:01:47] [Client thread/INFO]: [CHAT] 
+[21:01:47] [Client thread/INFO]: [CHAT] §c- §f---§cRemaift服务器§f---
+[21:01:47] [Client thread/INFO]: [CHAT] §c- §f欢迎加入§e§lRemiaft NetWork§f!
+[21:01:47] [Client thread/INFO]: [CHAT] §c- §f服务器QQ群:§a§l903552250
+[21:01:47] [Client thread/INFO]: [CHAT] 
+[21:01:49] [Client thread/INFO]: [CHAT] 你购买了金苹果
+[21:01:49] [Client thread/INFO]: [CHAT] 你购买了金苹果
+[21:01:51] [Client thread/ERROR]: Item entity 2284 has no item?!
+[21:01:51] [Client thread/ERROR]: Item entity 2284 has no item?!
+[21:01:58] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7pigdapa §a✔§f: 客服来玩啊hh §b§l§n(点击传送)
+[21:01:59] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[21:01:59] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[21:02:00] [Client thread/INFO]: [CHAT] 你购买了羊毛
+[21:02:03] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Walker4709 §a✔§f: fu wu qi za ka le §b§l§n(点击传送)
+[21:02:04] [Client thread/ERROR]: Item entity 2350 has no item?!
+[21:02:09] [Client thread/INFO]: [CHAT] +25起床战争经验
+[21:02:09] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[21:02:13] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Fire_Bloom§f: bw §b§l§n(点击传送)
+[21:02:22] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Chilife§f: 空岛 §b§l§n(点击传送)
+[21:02:24] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7_xingxi_§f: ka §b§l§n(点击传送)
+[21:02:25] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Mnicraft§f: 中国移动 §b§l§n(点击传送)
+[21:02:28] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Bedrock1489 §a✔§f: wtf §b§l§n(点击传送)
+[21:02:41] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7RookieDinosaur§f: SW §b§l§n(点击传送)
+[21:02:43] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7qiuiu§f: kkkkkkkk §b§l§n(点击传送)
+[21:02:47] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[21:02:47] [Client thread/INFO]: [CHAT] 
+[21:02:47] [Client thread/INFO]: [CHAT] §c- §f服务器游戏内容反馈/建议
+[21:02:47] [Client thread/INFO]: [CHAT] §c- §f请前往: https://bbs.remiaft.com 
+[21:02:47] [Client thread/INFO]: [CHAT] 
+[21:02:51] [Client thread/INFO]: [CHAT] [0✫] [蓝队] Weightless: 发育
+[21:02:54] [Client thread/ERROR]: Item entity 2543 has no item?!
+[21:02:57] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7asaasasas§f: ？？？ §b§l§n(点击传送)
+[21:03:08] [Client thread/ERROR]: Item entity 2292 has no item?!
+[21:03:10] [Client thread/INFO]: [CHAT] +25起床战争经验
+[21:03:10] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[21:03:22] [Client thread/INFO]: [CHAT] 你购买了火球
+[21:03:22] [Client thread/INFO]: [CHAT] 你购买了火球
+[21:03:45] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7RookieDinosaur§f: SW §b§l§n(点击传送)
+[21:03:48] [Client thread/INFO]: [CHAT] §cRemiaft ● NetWork §7>>
+[21:03:48] [Client thread/INFO]: [CHAT] 
+[21:03:48] [Client thread/INFO]: [CHAT] §c- §f全服喊话: §l/hh <内容>
+[21:03:48] [Client thread/INFO]: [CHAT] §c- §f正版验证: §l/zb (仅限大厅)
+[21:03:48] [Client thread/INFO]: [CHAT] 
+[21:04:05] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7EeeGods§f: sw来人挨打！！！ 8连胜了！！！ §b§l§n(点击传送)
+[21:04:06] [Client thread/INFO]: [CHAT] 钻石生成器已被升级至II级!
+[21:04:09] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Freak_can §a✔§f: qc §b§l§n(点击传送)
+[21:04:11] [Client thread/INFO]: [CHAT] +25起床战争经验
+[21:04:11] [Client thread/INFO]: [CHAT] +20硬币! (时长奖励)
+[21:04:17] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7urbbrzcsda§f: az §b§l§n(点击传送)
+[21:04:18] [Client thread/ERROR]: Item entity 2796 has no item?!
+[21:04:27] [Client thread/INFO]: [CHAT] Player77 被击倒, 击杀者: spelfout  最终击杀!
+[21:04:30] [Client thread/INFO]: [CHAT] 举报 >> /report <玩家> <原因>
+[21:04:35] [Client thread/INFO]: [CHAT] 举报 >> 已成功举报该玩家.
+[21:04:35] [Client thread/INFO]: [CHAT] §6[全服喊话] §f§7Ink_MoqiGG §a✔§f: 爱人 §b§l§n(点击传送)
+[21:04:37] [Client thread/INFO]: Stopping!
+[21:04:37] [Client thread/INFO]: SoundSystem shutting down...
+[21:04:37] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

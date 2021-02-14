@@ -1,3 +1,11 @@
+OldAnimations:X:0.0
+OldAnimations:Y:0.15
+OldAnimations:Z:0.0
+OldAnimations:Mode:Vanilla
+OldAnimations:Speed:10.0
+OldAnimations:EveryThingBlock:false
+OldAnimations:EveryTimeBlock:false
+OldAnimations:KeyBind:25
 ClickGui:KeyBind:54
 Sprint:KeyBind:49
 Hud:Language:English

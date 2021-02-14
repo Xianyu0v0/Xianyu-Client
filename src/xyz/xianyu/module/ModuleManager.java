@@ -1,10 +1,14 @@
 package xyz.xianyu.module;
 
 import com.darkmagician6.eventapi.EventManager;
+import com.darkmagician6.eventapi.EventTarget;
+import org.lwjgl.input.Keyboard;
 import xyz.xianyu.events.EventKey;
+import xyz.xianyu.events.EventTick;
 import xyz.xianyu.module.modules.movement.*;
 import xyz.xianyu.module.modules.render.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -18,6 +22,7 @@ public class ModuleManager {
 
         //Render
         modules.add(new Hud());
+        modules.add(new Animations());
         modules.add(new ClickGui());
 
         //Other
