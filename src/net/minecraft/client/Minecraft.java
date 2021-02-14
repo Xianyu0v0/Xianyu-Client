@@ -1040,6 +1040,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
      */
     public void shutdownMinecraftApplet()
     {
+        Client.onStop();
         try
         {
             this.stream.shutdownStream();
@@ -1435,6 +1436,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
      */
     public void shutdown()
     {
+        Client.onStop();
         this.running = false;
     }
 

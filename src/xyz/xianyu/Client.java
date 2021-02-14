@@ -3,6 +3,7 @@ package xyz.xianyu;
 import org.lwjgl.opengl.Display;
 import xyz.xianyu.Alt.AltManager;
 import xyz.xianyu.module.ModuleManager;
+import xyz.xianyu.util.Config;
 import xyz.xianyu.util.Font.FontLoaders;
 
 public class Client {
@@ -16,6 +17,12 @@ public class Client {
         Display.setTitle("Minecraft 1.8.9 | XianyuClient");
         fontManager = new FontLoaders();
         moduleManager = new ModuleManager();
-        //TODO:Add Config Manager.
+        Config.loadMods();
+        Config.loadValues();
+    }
+
+    public static void onStop(){
+        Config.saveValue();
+        Config.saveMods();
     }
 }

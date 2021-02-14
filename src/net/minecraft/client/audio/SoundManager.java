@@ -487,7 +487,7 @@ public class SoundManager
         }
         catch (MalformedURLException var4)
         {
-            throw new Error("TODO: Sanely handle url exception! :D");
+            throw new Error("Sanely handle url exception! :D");
         }
     }
 

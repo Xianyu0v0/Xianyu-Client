@@ -395,7 +395,7 @@ public class MannTriangulator implements Triangulator {
 			if (nx * nx + ny * ny < EPSILON) {
 				nx = dx1;
 				ny = dy2;
-				angle = 1; // TODO: nx1,ny1 and nx2,ny2 facing ?
+				angle = 1;
 				if (dx1 * dx2 + dy1 * dy2 > 0) {
 					nx = -dx1;
 					ny = -dy1;

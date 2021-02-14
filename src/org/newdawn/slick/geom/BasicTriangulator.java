@@ -431,7 +431,5 @@ public class BasicTriangulator implements Triangulator {
 	 * @see Triangulator#startHole()
 	 */
 	public void startHole() {
-		// TODO Auto-generated method stub
-		
 	}
 }

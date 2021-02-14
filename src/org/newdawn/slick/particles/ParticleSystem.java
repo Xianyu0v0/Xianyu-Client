@@ -617,8 +617,7 @@ public class ParticleSystem {
 	 * Create a duplicate of this system. This would have been nicer as a different interface
 	 * but may cause to much API change headache. Maybe next full version release it should be
 	 * rethought.
-	 * 
-	 * TODO: Consider refactor at next point release
+	 *
 	 * 
 	 * @return A copy of this particle system
 	 * @throws SlickException Indicates a failure during copy or a invalid particle system to be duplicated

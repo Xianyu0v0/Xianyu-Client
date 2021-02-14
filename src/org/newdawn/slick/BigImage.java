@@ -25,7 +25,6 @@ import org.newdawn.slick.util.ResourceLoader;
  * This implementation does come with limitations and some performance impact
  * however - so use only when absolutely required.
  *
- * TODO: The code in here isn't pretty, really needs revisiting with a comment stick.
  * 
  * @author kevin
  */

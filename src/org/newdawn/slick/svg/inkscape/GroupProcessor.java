@@ -7,7 +7,6 @@ import org.newdawn.slick.svg.ParsingException;
 import org.w3c.dom.Element;
 
 /**
- * TODO: Document this class
  *
  * @author kevin
  */

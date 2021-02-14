@@ -45,7 +45,5 @@ public class EmptyTransition implements Transition {
 
 
 	public void init(GameState firstState, GameState secondState) {
-		// TODO Auto-generated method stub
-		
 	}
 }

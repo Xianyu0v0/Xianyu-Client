@@ -97,11 +97,15 @@ public class Module {
     public void toggle(){
         toggled = !toggled;
         if(toggled){
-            mc.thePlayer.playSound("random.click",1.0f,0.6f);
+            if(mc.thePlayer!=null){
+                mc.thePlayer.playSound("random.click",1.0f,0.6f);
+            }
             onEnable();
             EventManager.register(this);
         }else{
-            mc.thePlayer.playSound("random.click",1.0f,0.5f);
+            if(mc.thePlayer!=null) {
+                mc.thePlayer.playSound("random.click", 1.0f, 0.5f);
+            }
             onDisable();
             EventManager.unregister(this);
         }

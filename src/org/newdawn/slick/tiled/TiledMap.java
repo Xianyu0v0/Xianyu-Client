@@ -419,7 +419,7 @@ public class TiledMap {
 	 * @param lineByLine True if we should render line by line, i.e. giving us a chance
 	 * to render something else between lines (@see {@link #renderedLine(int, int, int)}
 	 * 
-	 * TODO: [Isometric map] Render stuff between lines, concept of line differs from ortho maps
+	 * [Isometric map] Render stuff between lines, concept of line differs from ortho maps
 	 */
 	protected void renderIsometricMap(int x,int y,int sx,int sy,int width,int height,Layer layer,boolean lineByLine){
 		ArrayList drawLayers = layers;

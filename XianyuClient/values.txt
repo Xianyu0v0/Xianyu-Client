@@ -1,0 +1,10 @@
+ClickGui:KeyBind:54
+Sprint:KeyBind:49
+Hud:Language:English
+Hud:ArrayListMode:Flux
+Hud:ArrayList:true
+Hud:RGB:true
+Hud:ShowArmor:true
+Hud:FastChat:true
+Hud:RealBobbing:true
+Hud:KeyBind:0
