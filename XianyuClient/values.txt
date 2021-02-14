@@ -3,8 +3,8 @@ OldAnimations:Y:0.15
 OldAnimations:Z:0.0
 OldAnimations:Mode:Vanilla
 OldAnimations:Speed:10.0
-OldAnimations:EveryThingBlock:false
-OldAnimations:EveryTimeBlock:false
+OldAnimations:EveryThingBlock:true
+OldAnimations:EveryTimeBlock:true
 OldAnimations:KeyBind:25
 ClickGui:KeyBind:54
 Sprint:KeyBind:49

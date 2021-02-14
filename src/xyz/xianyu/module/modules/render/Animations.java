@@ -18,13 +18,12 @@ public class Animations extends Module {
 	public final static NumberSetting x = new NumberSetting("X","X",0.0,-1.0,1.0,0.05);
 	public final static NumberSetting y = new NumberSetting("Y","Y",0.15,-1.0,1.0,0.05);
 	public static BooleanSetting EveryThingBlock = new BooleanSetting("EveryThingBlock","所有物品防砍",false);
-	public static BooleanSetting EveryTimeBlock = new BooleanSetting("EveryTimeBlock","所有时间防砍",false);
 	public final static NumberSetting z = new NumberSetting("Z","Z",0.0,-1.0,1.0,0.05);
 	public final static ModeSetting Modes = new ModeSetting("Mode","防砍模式","Vanilla","Vanilla","1.7","Remix","Lunar","Screw","Swang","Swank","Swing","Swong","SwAing","Custom","Gay","Punch","Winter","rotate");
 	public final static NumberSetting Speed = new NumberSetting("Speed","速度", 10.0, 1.0, 50.0, 1.0);
     public Animations() {
         super("OldAnimations","防砍动画", Keyboard.KEY_P, Category.RENDER);
-        this.addSettings(x,y,z,Modes,Speed,EveryThingBlock,EveryTimeBlock);
+        this.addSettings(x,y,z,Modes,Speed,EveryThingBlock);
     }
 
     @EventTarget
@@ -37,14 +36,8 @@ public class Animations extends Module {
     public static void attemptSwing() {
     	if (mc.thePlayer.getItemInUseCount() > 0) {
             boolean mouseDown = mc.gameSettings.keyBindAttack.isKeyDown() && mc.gameSettings.keyBindUseItem.isKeyDown();
-            if(EveryTimeBlock.isEnabled()){
-                if(mouseDown){
-                    swingItem(mc.thePlayer);
-                }
-            }else{
-                if (mouseDown && !mc.objectMouseOver.typeOfHit.equals(MovingObjectPosition.MovingObjectType.ENTITY) && mc.objectMouseOver.typeOfHit.equals(MovingObjectPosition.MovingObjectType.BLOCK)) {
-                    swingItem(mc.thePlayer);
-                }
+            if (mouseDown && !mc.objectMouseOver.typeOfHit.equals(MovingObjectPosition.MovingObjectType.ENTITY) && mc.objectMouseOver.typeOfHit.equals(MovingObjectPosition.MovingObjectType.BLOCK)) {
+                swingItem(mc.thePlayer);
             }
         }
     }
